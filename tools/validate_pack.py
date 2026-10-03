@@ -2,6 +2,7 @@
 """Data-only ZIP verifier. Android remains authoritative for import and RAR decoding."""
 import io
 import json
+from pathlib import Path
 from pathlib import PurePosixPath
 import re
 import sys
@@ -10,6 +11,8 @@ from PIL import Image
 
 
 def validate(filename):
+    if Path(filename).stat().st_size > 8 * 1024 * 1024:
+        raise ValueError('压缩文件超过 8 MB')
     with ZipFile(filename) as archive:
         entries = archive.infolist()
         if len(entries) > 256 or sum(e.file_size for e in entries) > 16 * 1024 * 1024:
@@ -31,11 +34,16 @@ def validate(filename):
         if archive.getinfo(manifests[0]).file_size > 65536:
             raise ValueError('manifest 超过 64 KB')
         manifest = json.loads(archive.read(manifests[0]))
-        if manifest.get('format') != 'c17-statusbar-icons' or type(manifest.get('version')) is not int or manifest['version'] != 1 or manifest.get('render', 'mask') != 'mask':
+        version = manifest.get('version')
+        if manifest.get('format') != 'c17-statusbar-icons' or type(version) not in (int, float) or version not in (1, 2) or manifest.get('render', 'mask') != 'mask':
             raise ValueError('规范版本或 render 无效')
+        if version == 1 and 'fallback' in manifest:
+            raise ValueError('v1 不支持 fallback 字段')
+        if version == 2 and manifest.get('fallback') != 'native':
+            raise ValueError('v2 必须声明 fallback 为 native')
         for field, maximum in [('name', 64), ('author', 128), ('license', 128)]:
             value = manifest.get(field, '')
-            if not isinstance(value, str) or len(value) > maximum or field != 'author' and not value.strip():
+            if not isinstance(value, str) or len(value.strip()) > maximum or any(ord(c) < 32 or 127 <= ord(c) < 160 for c in value.strip()) or field != 'author' and not value.strip():
                 raise ValueError(field + ' 无效')
         mapping = manifest.get('icons')
         if not isinstance(mapping, dict) or not 1 <= len(mapping) <= 128:
@@ -48,10 +56,11 @@ def validate(filename):
                     raise ValueError('图片格式或尺寸无效：' + asset)
                 if 'A' not in image.getbands() and 'transparency' not in image.info:
                     raise ValueError('图片缺少透明通道：' + asset)
-        for family, states in [('wifi.', ['none', *map(str, range(5))]), ('cellular.', ['none', *map(str, range(5))]), ('battery.', list(map(str, range(0, 101, 10)))), ('battery.charging.', list(map(str, range(0, 101, 10))))]:
-            if any(k.startswith(family) for k in mapping) and any(family + state not in mapping for state in states):
-                raise ValueError('缺少系列状态：' + family)
-        print('通过：', manifest['name'], len(mapping), '个图标；未执行 Android/RAR/SystemUI 测试')
+        if version == 1:
+            for family, states in [('wifi.', ['none', *map(str, range(5))]), ('cellular.', ['none', *map(str, range(5))]), ('battery.', list(map(str, range(0, 101, 10)))), ('battery.charging.', list(map(str, range(0, 101, 10))))]:
+                if any(k.startswith(family) for k in mapping) and any(family + state not in mapping for state in states):
+                    raise ValueError('缺少系列状态：' + family)
+        print('通过：', manifest['name'], len(mapping), f'个图标，v{int(version)}；未执行 Android/RAR/SystemUI 测试')
 
 
 if __name__ == '__main__':

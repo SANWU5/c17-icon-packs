@@ -1,11 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "C17 状态栏图标包 v1",
+  "title": "C17 状态栏图标包 v1 / v2",
+  "description": "C17 模块 1.8.1 同时支持 v1 完整系列与声明 fallback=native 的 v2 部分状态图标包。",
   "type": "object",
   "required": ["format", "version", "name", "license", "icons"],
   "properties": {
     "format": {"const": "c17-statusbar-icons"},
-    "version": {"const": 1},
+    "version": {"type": "integer", "enum": [1, 2]},
+    "fallback": {"const": "native"},
     "name": {"type": "string", "minLength": 1, "maxLength": 64},
     "author": {"type": "string", "maxLength": 128},
     "license": {"type": "string", "minLength": 1, "maxLength": 128},
@@ -16,5 +18,9 @@
       "additionalProperties": {"type": "string", "pattern": "^assets/[a-zA-Z0-9][a-zA-Z0-9_-]{0,63}\\.(png|webp)$"}
     }
   },
-  "$comment": "Family coverage rules additionally require complete Wi-Fi/cellular state sets and 11-step battery sets; use tools/validate_pack.py and the Android importer."
+  "allOf": [
+    {"if": {"properties": {"version": {"const": 1}}}, "then": {"not": {"required": ["fallback"]}}},
+    {"if": {"properties": {"version": {"const": 2}}}, "then": {"required": ["fallback"]}}
+  ],
+  "$comment": "v1 additionally requires complete declared Wi-Fi/cellular state sets and 11-step battery sets. v2 requires fallback=native and permits partial families. Missing v2 charging artwork must not reuse ordinary battery artwork. Use tools/validate_pack.py and the Android importer."
 }

@@ -110,6 +110,30 @@ def build(name, complete):
     print(destination, len(mapping), 'roles')
 
 
+def build_partial():
+    """An original v2 example deliberately omits every other Wi-Fi level."""
+    folder = ROOT / 'examples' / 'partial-native'
+    assets = folder / 'assets'
+    assets.mkdir(parents=True, exist_ok=True)
+    wifi(4).save(assets / 'wifi-4.png')
+    hint('location').save(assets / 'location.png')
+    manifest = dict(format='c17-statusbar-icons', version=2, fallback='native',
+                    name='部分状态原生回退教学示例', author='aiingjie', license='MIT',
+                    render='mask', icons={'wifi.4': 'assets/wifi-4.png',
+                                         'hint.location': 'assets/location.png'})
+    (folder / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    (folder / 'LICENSE.txt').write_bytes((ROOT / 'LICENSE').read_bytes())
+    dist = ROOT / 'dist'
+    dist.mkdir(exist_ok=True)
+    destination = dist / 'partial-native.zip'
+    with ZipFile(destination, 'w', ZIP_DEFLATED) as archive:
+        for path in sorted(folder.rglob('*')):
+            if path.is_file():
+                archive.write(path, path.relative_to(folder).as_posix())
+    print(destination, len(manifest['icons']), 'roles')
+
+
 if __name__ == '__main__':
     build('minimal-hints', False)
     build('complete-outline', True)
+    build_partial()

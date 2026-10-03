@@ -1,0 +1,13 @@
+{
+  "format": "c17-statusbar-icons",
+  "version": 2,
+  "fallback": "native",
+  "name": "部分状态原生回退教学示例",
+  "author": "aiingjie",
+  "license": "MIT",
+  "render": "mask",
+  "icons": {
+    "wifi.4": "assets/wifi-4.png",
+    "hint.location": "assets/location.png"
+  }
+}
