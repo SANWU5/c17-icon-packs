@@ -1,0 +1,12 @@
+{
+  "format": "c17-statusbar-icons",
+  "version": 1,
+  "name": "蓝牙定位教学示例",
+  "author": "aiingjie",
+  "license": "MIT",
+  "render": "mask",
+  "icons": {
+    "hint.bluetooth": "assets/bluetooth.png",
+    "hint.location": "assets/location.png"
+  }
+}

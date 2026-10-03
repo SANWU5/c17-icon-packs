@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "C17 状态栏图标包 v1",
+  "type": "object",
+  "required": ["format", "version", "name", "license", "icons"],
+  "properties": {
+    "format": {"const": "c17-statusbar-icons"},
+    "version": {"const": 1},
+    "name": {"type": "string", "minLength": 1, "maxLength": 64},
+    "author": {"type": "string", "maxLength": 128},
+    "license": {"type": "string", "minLength": 1, "maxLength": 128},
+    "render": {"const": "mask"},
+    "icons": {
+      "type": "object", "minProperties": 1, "maxProperties": 128,
+      "propertyNames": {"pattern": "^(hint\\.[a-z][a-z0-9_]{0,47}(\\.(on|off))?|(wifi|cellular)\\.([0-4]|none)|battery\\.(charging\\.)?(0|[1-9]0|100))$"},
+      "additionalProperties": {"type": "string", "pattern": "^assets/[a-zA-Z0-9][a-zA-Z0-9_-]{0,63}\\.(png|webp)$"}
+    }
+  },
+  "$comment": "Family coverage rules additionally require complete Wi-Fi/cellular state sets and 11-step battery sets; use tools/validate_pack.py and the Android importer."
+}
