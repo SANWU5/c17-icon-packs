@@ -158,6 +158,29 @@ def cellular(level=4):
     return shapes
 
 
+
+def cellular_stacked(secondary: bool, state: str):
+    """Independent row artwork in one shared 19x16 frame; never crop either row."""
+    level = 0 if state == "none" else int(state)
+    shapes = []
+    for index, x in enumerate((2.75, 7.25, 11.75, 16.25)):
+        if secondary:
+            shapes.append(circle(x, 13.5, 1.1, fill=index < level, width=.6))
+        else:
+            height = 2.5 + index * 2
+            shapes.append(rect(x - 1.25, 10 - height, 2.5, height, .65,
+                               fill=index < level, width=.7))
+    if state == "none":
+        shapes.append(line((1.5, 12), (17.5, 15), width=.8) if secondary
+                      else line((1.5, 2), (17.5, 9.6), width=.8))
+    return shapes
+
+
+
+def canvas_for(target: str):
+    return (19, 16) if target in ("cellular.stacked_primary", "cellular.stacked_secondary") else (24, 24)
+
+
 def battery(level):
     shapes = [rect(2.5, 6.5, 18, 11, 2.6, width=1.6), line((22, 10), (22, 14), width=1.6)]
     if level > 0:
@@ -546,6 +569,8 @@ def tile_artwork(target: str, state: str):
 def artwork(target: str, state: str):
     if target == "wifi": return wifi(4) + [slash()] if state == "none" else wifi(int(state))
     if target == "cellular": return cellular(0) + [slash()] if state == "none" else cellular(int(state))
+    if target in ("cellular.stacked_primary", "cellular.stacked_secondary"):
+        return cellular_stacked(target == "cellular.stacked_secondary", state)
     if target in ("battery", "battery.charging"): return battery(int(state))
     if target.startswith("hint."):
         name = target.removeprefix("hint.")
@@ -568,16 +593,18 @@ def artwork(target: str, state: str):
     raise KeyError(f"No original drawing for {target}.{state}")
 
 
-def xml_bytes(shapes):
+def xml_bytes(shapes, viewport=(24, 24)):
+    width, height = viewport
     return ('<?xml version="1.0" encoding="utf-8"?>\n'
             '<!-- Original C17示例库; GPL-3.0-only; no traced third-party artwork. -->\n'
-            '<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">\n'
+            f'<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="{width}dp" android:height="{height}dp" android:viewportWidth="{width}" android:viewportHeight="{height}">\n'
             + "\n".join(shape.xml() for shape in shapes) + '\n</vector>\n').encode("utf-8")
 
 
-def raster(shapes, size=96, supersample=4):
-    scale = size * supersample / 24
-    image = Image.new("L", (size * supersample, size * supersample), 0)
+def raster(shapes, size=96, supersample=4, viewport=(24, 24)):
+    width = round(size * viewport[0] / viewport[1])
+    scale = size * supersample / viewport[1]
+    image = Image.new("L", (width * supersample, size * supersample), 0)
     draw = ImageDraw.Draw(image)
     for shape in shapes:
         for vertices, ins, outs, closed in shape.paths():
@@ -602,13 +629,13 @@ def raster(shapes, size=96, supersample=4):
                 # Round line caps and joins are shared with the XML contract.
                 for x, y in (pixels if len(pixels) < 8 else [pixels[0], pixels[-1]]):
                     draw.ellipse((x-radius, y-radius, x+radius, y+radius), fill=255)
-    image = image.resize((size, size), Image.Resampling.LANCZOS)
-    result = Image.new("RGBA", (size, size), "white"); result.putalpha(image)
+    image = image.resize((width, size), Image.Resampling.LANCZOS)
+    result = Image.new("RGBA", (width, size), "white"); result.putalpha(image)
     return result
 
 
-def png_bytes(shapes, size=96):
-    output = io.BytesIO(); raster(shapes, size).save(output, "PNG", optimize=True)
+def png_bytes(shapes, size=96, viewport=(24, 24)):
+    output = io.BytesIO(); raster(shapes, size, viewport=viewport).save(output, "PNG", optimize=True)
     return output.getvalue()
 
 
@@ -661,6 +688,8 @@ def write_zip(destination, manifest, resources):
                "LICENSE.txt": LICENSE.encode("utf-8"), "README.md": (
                    "# C17示例库\n\n原创圆润几何图标。只包含本版固定角色表，不能据此宣称全控制中心适配。\n"
                    "PNG 与 VectorDrawable 使用同一几何母版；mask 跟随实际宿主颜色。\n"
+                   "本包含双排信号新角色，要求 beta96/code189 或更新版本；beta94/beta95 不支持。\n"
+                   "双排上柱与下点保留共同19×16画布，不能分别裁边放大；PNG为114×96。\n"
                    "电池不包含百分数字或充电闪电，仍由原生绘制。动画资源通过准入不等于已接入原生播放。\n"
                    "主包包含 XML，备用包包含96px PNG。两者均仅在用户选择范围后应用。\n").encode("utf-8"), **resources}
     with zipfile.ZipFile(destination, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
@@ -686,10 +715,12 @@ def contact_sheet(roles, drawings, output):
         for dark, left in ((False, x+16), (True, x+115)):
             draw.rounded_rectangle((left, y+9, left+90, y+77), radius=9, fill="#22272f" if dark else "#f2f4f7")
             for size, dx in ((18, 2), (24, 24), (36, 53)):
-                icon = raster(drawings[row["role"]], size)
+                viewport = canvas_for(row["target"])
+                display_height = round(size * min(1, viewport[1] / viewport[0]))
+                icon = raster(drawings[row["role"]], display_height, viewport=viewport)
                 if not dark:
                     color = Image.new("RGBA", icon.size, "#141a22"); color.putalpha(icon.getchannel("A")); icon = color
-                image.paste(icon, (left+dx, y+44-size//2), icon)
+                image.paste(icon, (left+dx, y+44-display_height//2), icon)
         draw.text((x+16, y+86), row["role"], fill="#1b2633", font=small)
         title = row["title"] + (" · 待接入" if not row["supported"] else "")
         draw.text((x+16, y+108), title[:26], fill="#596473", font=small)
@@ -712,7 +743,8 @@ def main():
     vector_resources, png_resources, vector_icons, png_icons = {}, {}, {}, {}
     for row in roles:
         role = row["role"]; safe_name = role.replace(".", "-")
-        vector_data = xml_bytes(drawings[role]); png_data = png_bytes(drawings[role])
+        viewport = canvas_for(row["target"])
+        vector_data = xml_bytes(drawings[role], viewport); png_data = png_bytes(drawings[role], viewport=viewport)
         with Image.open(io.BytesIO(png_data)) as image:
             alpha = image.getchannel("A")
             if alpha.getbbox() is None or alpha.getextrema()[0] != 0:

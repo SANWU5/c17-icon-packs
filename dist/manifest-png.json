@@ -185,6 +185,66 @@
       "render": "mask",
       "sha256": "0dc4228b93e324f33de791d9612227c791539a6e6dc434bf96c84a754a1d0ae7"
     },
+    "cellular.stacked_primary.none": {
+      "source": "assets/cellular-stacked_primary-none.png",
+      "render": "mask",
+      "sha256": "cfdfc108ee32dd08e31ee5e63dba1dcc659ce2f12b4c189ee96a7b551c21c4ff"
+    },
+    "cellular.stacked_primary.0": {
+      "source": "assets/cellular-stacked_primary-0.png",
+      "render": "mask",
+      "sha256": "5a6bc6f0d59aead6c739c5f0e7b31505765d576ccbd4b0fd39b7fe0e64fe74be"
+    },
+    "cellular.stacked_primary.1": {
+      "source": "assets/cellular-stacked_primary-1.png",
+      "render": "mask",
+      "sha256": "e498bda3ec9725b8749ee47d883f101e5b395071e3f68b8a3155167fc208123a"
+    },
+    "cellular.stacked_primary.2": {
+      "source": "assets/cellular-stacked_primary-2.png",
+      "render": "mask",
+      "sha256": "25ae129ca501777660761562a0c474d6ed12bbf8386990b4f16bc09884567fc6"
+    },
+    "cellular.stacked_primary.3": {
+      "source": "assets/cellular-stacked_primary-3.png",
+      "render": "mask",
+      "sha256": "622383e7fd3ec1f636c6001b3b57196f253a9afc28216202f25cafa36e4a2743"
+    },
+    "cellular.stacked_primary.4": {
+      "source": "assets/cellular-stacked_primary-4.png",
+      "render": "mask",
+      "sha256": "4dbd0bd6357ccefb676b6ef5ba388e287a869d28f6c366196ff65cf6ce3a980f"
+    },
+    "cellular.stacked_secondary.none": {
+      "source": "assets/cellular-stacked_secondary-none.png",
+      "render": "mask",
+      "sha256": "80d4ee97b605d97f89b67232acf67aaf91817460300d583de24588e806daac1e"
+    },
+    "cellular.stacked_secondary.0": {
+      "source": "assets/cellular-stacked_secondary-0.png",
+      "render": "mask",
+      "sha256": "76c0462a73f36d694804a9dcbdf10caa5f1b46812eccf57a13d4307071523b79"
+    },
+    "cellular.stacked_secondary.1": {
+      "source": "assets/cellular-stacked_secondary-1.png",
+      "render": "mask",
+      "sha256": "dc64542e5144b1e0aad506d22d755e5b96e142ac67d7aba4257fbd00d1416ae8"
+    },
+    "cellular.stacked_secondary.2": {
+      "source": "assets/cellular-stacked_secondary-2.png",
+      "render": "mask",
+      "sha256": "44e892e83cc15eb3cfed93688ef15261ee36ac664d436fac0e65719e3d2823e3"
+    },
+    "cellular.stacked_secondary.3": {
+      "source": "assets/cellular-stacked_secondary-3.png",
+      "render": "mask",
+      "sha256": "cd2beb69dec2e47278157df6e177ba8b407bcfe6c99a1ecfd57fddba630798b7"
+    },
+    "cellular.stacked_secondary.4": {
+      "source": "assets/cellular-stacked_secondary-4.png",
+      "render": "mask",
+      "sha256": "e5dfceb2c703a338d7e008674b3bc28491da8f50fa89157decf46842a31231cd"
+    },
     "battery.0": {
       "source": "assets/battery-0.png",
       "render": "mask",

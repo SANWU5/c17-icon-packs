@@ -1,12 +1,12 @@
 # C17 图标管理 v3
 
-适用于 **C17 1.8.3-beta.95 / code188 测试版**的图标管理 v3。v3 包格式与 beta94/code187 相同；下文的可见高度归一、总开关和预览流程以 beta95/code188 为准，不能据此推定旧版行为。规范与源码接入不代表全部功能已通过手机视觉验收。旧 v1/v2 包不能直接用于新版。主模块：[c17-statusbar](https://github.com/SANWU5/c17-statusbar)。历史规范已移至 [docs/legacy](docs/legacy/README.md)。
+适用于 **C17 1.8.3-beta.96 / code189 及更新测试版**的图标管理 v3。包格式仍为v3，新增双排蜂窝信号角色；本仓库新版示例含这些角色，**beta94/code187、beta95/code188不能导入**。不含新角色的旧v3包仍可用于新版。可见高度归一、总开关和预览流程始于beta95，双排共用画布规则始于beta96。规范与源码接入不代表手机视觉验收通过。旧v1/v2包不能直接导入。主模块：[c17-statusbar](https://github.com/SANWU5/c17-statusbar)。[历史规范](docs/legacy/README.md)。
 
 本仓库只收录规范、制作工具和原创资源。没有PUI图案、用户主题、原始OEM APK、反汇编代码、手机截图或用户配置，也不提供旧主题导入功能。
 
 ## C17示例库与操作
 
-- [C17示例库 · XML主包](dist/c17-rounded-27.zip)：177个登记静态角色、3个纯图形短转场声明。
+- [C17示例库 · XML主包](dist/c17-rounded-27.zip)：189个登记静态角色、3个纯图形短转场声明。
 - [96px PNG备用包](dist/c17-rounded-27-png.zip)：相同原创几何和状态。
 - [浅深色接触表](dist/contact-sheet.png)、[角色快照](roles.json)、[制作报告与SHA-256](dist/report.json)。
 
@@ -16,6 +16,8 @@
 
 App入口为 **其他 → 图标管理**，首页分“选套装”和“自定义”。导入或下载先暂存预览，选择范围并查看缺项后应用；取消暂存不入库、不改效果。高级选项也可“仅加入图标库”，供稍后自定义选取。单个目标可选择系统默认或具体图案，再按需设置颜色、透明度、逐状态与动画。总开关关闭后保留已保存的选择并恢复系统或功能默认图案；关闭时保存选择不会自动启用总开关。删除来源后受影响图案回退，独立颜色和透明度保留。
 
+新版管理界面直接显示“状态栏 / 控制中心 / 其他”应用范围，控制中心包含快捷开关、滑块和页脚；只有包内存在图案的范围可选择。“我的套装”直接提供改名和删除，删除前确认受影响的选择。导入时显示名称不能与已入库套装重复，冲突时须手动改名；名称比较去除首尾空白，并忽略大小写及全角/半角兼容差异。同内容包明确提示已入库，可复用已有套装，不重复创建副本。局部改名只修改显示名称，不改变内容身份或原始素材。
+
 角色明确“系统默认”优先；其他情况依次尝试明确单项来源、所选范围套装中的同一角色、原生。不借另一档信号、普通电池或另一开关状态。包不改变原生开关、系统隐藏条件、点击、无障碍、位置或布局。
 
 ## 文件格式
@@ -23,6 +25,8 @@ App入口为 **其他 → 图标管理**，首页分“选套装”和“自定�
 ZIP内恰好一个`manifest.json`，位于根目录或统一的一层外部文件夹中。建议发布独立ZIP，整个规范仓库含多个历史示例，不能作为一个图标包导入。
 
 本页两个 `dist` ZIP 可单独下载后从文件导入。App“从 GitHub 导入”按仓库寻找 Release 资源 `icon-pack-v3.zip`；仅把规范和 `dist` 文件推送到仓库，不会自动生成这个 Release 资源，也不表示整个源码仓库可导入。
+
+也可导入[XML主包直链](https://raw.githubusercontent.com/SANWU5/c17-icon-packs/main/dist/c17-rounded-27.zip)或[PNG备用包直链](https://raw.githubusercontent.com/SANWU5/c17-icon-packs/main/dist/c17-rounded-27-png.zip)。自行制作的不同内容包若使用同一名称，导入前需手动区分名称。
 
 ```text
 manifest.json
@@ -61,6 +65,8 @@ README.md
 
 原文件、原始位图 RGB/Alpha 与完整画布保留，只在绘制时使用缓存的可见源区域。预览使用同一解码规则去掉外围透明留白；这是显示归一，不是重写素材。空白或无法得到有效边界的图案在运行时保留原生。边界只在后台计算，热绘制不读文件、不扫描像素、不逐帧生成裁剪图。
 
+**beta96双排信号例外：** `cellular.stacked_primary.*`与`cellular.stacked_secondary.*`使用同一个19×16逻辑画布，上排柱形、下排圆点分别占据自己的位置。两行保留完整透明画布叠合，不能各自裁边或撑满高度；XML栅格化的居中留白也保留相同位置，预览一致。示例XML为19dp×16dp、PNG为114×96。其他静态角色继续采用可见高度规则。
+
 动态图形本版不按每帧可见边界归一，以免播放时尺寸跳动；静态端点的规则不能当作整段动画已完成高度适配。制作时保持动画全程画布与端点一致，并检查真实宿主效果。[详细边界](docs/V3-VALIDATION.zh-CN.md)仍适用。
 
 动态为受限纯图形 **Lottie JSON**，仅接受shape layer及group/path/fill/stroke/transform/ellipse/rectangle。至少一项包含真实变化的两帧；静态或不变关键帧不能冒充动画。禁止图片、文字、表达式、mask/effects、父层、3D、时间重映射和外部资源。稳定切换≤800ms，真实瞬态≤1500ms。
@@ -78,13 +84,14 @@ README.md
 
 ## 角色和真实状态
 
-[roles.json](roles.json)是生产Registry的177角色、89目标快照，包含`hint/wifi/cellular/battery/tile/slider/media/device/footer`。`supported`是该版源码接入状态，不是每台ROM或视觉效果的验收结果。未知但语法安全的角色只可保留为候选，包不能定义原生类、方法、Tile spec或新增宿主。
+[roles.json](roles.json)是生产Registry的189角色、91目标快照，包含`hint/wifi/cellular/battery/tile/slider/media/device/footer`。`supported`是该版源码接入状态，不是每台ROM或视觉效果的验收结果。未知但语法安全的角色只可保留为候选，包不能定义原生类、方法、Tile spec或新增宿主。
 
 - 相机/麦克风`.on`为**允许访问**，`.off`为**阻止访问**，不能把“隐私屏蔽开启”画成`.on`。
 - 旋转`.on`为自动旋转、`.off`为旋转锁定。蓝牙磁贴开启不等于耳机已连接。
 - 支付、扫码、计算器、锁屏和电源等只有`.default`操作入口。铃声用`silent/vibrate/ring`；录屏用`unavailable/idle/recording`。
 - `tile.cast`没有当前OEM stock factory分支；`controls/wallet`复杂服务入口仍保留原生。品牌照片、自定义媒体动作、第三方TileService不会因有图案就成为适配目标。
 - 电池图只画外形和进度，不嵌百分数字、字母或闪电，避免与原生重复。
+- 单排`cellular`与双排`cellular.stacked_primary/stacked_secondary`各有`none/0/1/2/3/4`。双排两行分别按真实信号档位选图，缺项保留对应原生行，不借单排或另一行。已登记蜂窝目标的未知状态、额外后缀及未登记子目标均拒绝。
 
 允许部分状态包；已登记目标的非法状态（如`wifi.5`、`tile.alipay.on`）必须拒绝。
 

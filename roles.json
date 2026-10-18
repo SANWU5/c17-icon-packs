@@ -248,6 +248,102 @@
     "title": "蜂窝信号 · 满格"
   },
   {
+    "role": "cellular.stacked_primary.none",
+    "scope": "cellular",
+    "state": "none",
+    "supported": true,
+    "target": "cellular.stacked_primary",
+    "title": "双排信号 · 主卡上排 · 无服务"
+  },
+  {
+    "role": "cellular.stacked_primary.0",
+    "scope": "cellular",
+    "state": "0",
+    "supported": true,
+    "target": "cellular.stacked_primary",
+    "title": "双排信号 · 主卡上排 · 零格"
+  },
+  {
+    "role": "cellular.stacked_primary.1",
+    "scope": "cellular",
+    "state": "1",
+    "supported": true,
+    "target": "cellular.stacked_primary",
+    "title": "双排信号 · 主卡上排 · 一格"
+  },
+  {
+    "role": "cellular.stacked_primary.2",
+    "scope": "cellular",
+    "state": "2",
+    "supported": true,
+    "target": "cellular.stacked_primary",
+    "title": "双排信号 · 主卡上排 · 两格"
+  },
+  {
+    "role": "cellular.stacked_primary.3",
+    "scope": "cellular",
+    "state": "3",
+    "supported": true,
+    "target": "cellular.stacked_primary",
+    "title": "双排信号 · 主卡上排 · 三格"
+  },
+  {
+    "role": "cellular.stacked_primary.4",
+    "scope": "cellular",
+    "state": "4",
+    "supported": true,
+    "target": "cellular.stacked_primary",
+    "title": "双排信号 · 主卡上排 · 满格"
+  },
+  {
+    "role": "cellular.stacked_secondary.none",
+    "scope": "cellular",
+    "state": "none",
+    "supported": true,
+    "target": "cellular.stacked_secondary",
+    "title": "双排信号 · 副卡下排 · 无服务"
+  },
+  {
+    "role": "cellular.stacked_secondary.0",
+    "scope": "cellular",
+    "state": "0",
+    "supported": true,
+    "target": "cellular.stacked_secondary",
+    "title": "双排信号 · 副卡下排 · 零格"
+  },
+  {
+    "role": "cellular.stacked_secondary.1",
+    "scope": "cellular",
+    "state": "1",
+    "supported": true,
+    "target": "cellular.stacked_secondary",
+    "title": "双排信号 · 副卡下排 · 一格"
+  },
+  {
+    "role": "cellular.stacked_secondary.2",
+    "scope": "cellular",
+    "state": "2",
+    "supported": true,
+    "target": "cellular.stacked_secondary",
+    "title": "双排信号 · 副卡下排 · 两格"
+  },
+  {
+    "role": "cellular.stacked_secondary.3",
+    "scope": "cellular",
+    "state": "3",
+    "supported": true,
+    "target": "cellular.stacked_secondary",
+    "title": "双排信号 · 副卡下排 · 三格"
+  },
+  {
+    "role": "cellular.stacked_secondary.4",
+    "scope": "cellular",
+    "state": "4",
+    "supported": true,
+    "target": "cellular.stacked_secondary",
+    "title": "双排信号 · 副卡下排 · 满格"
+  },
+  {
     "role": "battery.0",
     "scope": "battery",
     "state": "0",

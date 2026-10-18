@@ -32,6 +32,11 @@ BASE = {"format": "c17-statusbar-icons", "version": 3, "id": "check-original", "
         "icons": {role: {"source": "assets/a.png", "render": "mask"} for role in ("wifi.1", "tile.flashlight.off", "tile.flashlight.on")},
         "transitions": {"tile.flashlight.off_to_on": {"source": "assets/a.json", "from": "off", "to": "on", "reversible": False}}}
 ASSETS = {"assets/a.png": picture(), "assets/a.json": MOTION}
+ROLE_SNAPSHOT = json.loads((ROOT / "roles.json").read_text("utf-8"))
+EXPECTED_ROLES = {row["role"] for row in ROLE_SNAPSHOT}
+STACKED_TARGETS = ("cellular.stacked_primary", "cellular.stacked_secondary")
+STACKED_ROLES = sorted(row["role"] for row in ROLE_SNAPSHOT if row["target"] in STACKED_TARGETS)
+assert set(STACKED_ROLES) == {target + "." + state for target in STACKED_TARGETS for state in ("none", "0", "1", "2", "3", "4")}, "sync the production role snapshot before running these checks"
 cases, negatives = 0, 0
 
 
@@ -75,6 +80,17 @@ def change_animation(change):
 def change_xml(change):
     def mutate(manifest, assets):
         manifest["icons"]["wifi.1"]["source"] = "assets/a.xml"; assets["assets/a.xml"] = change(VECTOR)
+    return mutate
+
+
+def add_stacked_role(role):
+    def mutate(manifest, assets):
+        # Keep a shared 19x16 canvas: the two layers occupy distinct vertical bands.
+        image = Image.new("RGBA", (19, 16), (255, 255, 255, 0))
+        image.putpixel((9, 11 if role.startswith("cellular.stacked_secondary.") else 3), (255, 255, 255, 255))
+        data = io.BytesIO(); image.save(data, "PNG")
+        assets["assets/stacked.png"] = data.getvalue()
+        manifest["icons"][role] = {"source": "assets/stacked.png", "render": "mask"}
     return mutate
 
 
@@ -126,9 +142,15 @@ with tempfile.TemporaryDirectory(prefix="c17-v3-validator-") as temporary:
         ("vector", change_xml(lambda data: data), {}),
         ("original-color", lambda m, a: m["icons"]["wifi.1"].update(render="color"), {}),
         ("safe-unknown-candidate", lambda m, a: m["icons"].update({"hint.new_service.default": {"source": "assets/a.png"}}), {}),
+        ("safe-unknown-other-scopes", lambda m, a: m["icons"].update({scope + ".new_service.default": {"source": "assets/a.png"} for scope in ("tile", "slider", "media", "device", "footer")}), {}),
         ("numeric-exact-version", lambda m, a: m.update(version=3.0), {}),
     ]:
         case(directory, name, change, reject=False, **kwargs)
+    for role in STACKED_ROLES:
+        case(directory, "valid-" + role, add_stacked_role(role), reject=False)
+    for role in ("cellular.5", "cellular.unknown.0", *(
+            target + suffix for target in STACKED_TARGETS for suffix in (".5", ".on", ".default", "", ".4.extra"))):
+        case(directory, "invalid-" + role, add_stacked_role(role))
     manifest_cases = {
         "old-v2": lambda m, a: m.update(version=2), "boolean-version": lambda m, a: m.update(version=True),
         "old-root-render": lambda m, a: m.update(render="mask"), "native-class-field": lambda m, a: m.update(nativeClass="java.lang.Runtime"),
@@ -190,6 +212,10 @@ with tempfile.TemporaryDirectory(prefix="c17-v3-validator-") as temporary:
     case(directory, "zip-trailing-data", post=lambda path: path.write_bytes(path.read_bytes()+b"unsafe"))
     case(directory, "self-extracting-executable", post=self_extracting)
     for archive in (ROOT / "dist/c17-rounded-27.zip", ROOT / "dist/c17-rounded-27-png.zip"):
-        result = validate(archive); assert result["icons"] == 177 and result["animations"] == 3; cases += 1
+        result = validate(archive)
+        with zipfile.ZipFile(archive) as source:
+            packaged_roles = set(json.loads(source.read("manifest.json"))["icons"])
+        assert packaged_roles == EXPECTED_ROLES and result["icons"] == len(EXPECTED_ROLES) and result["animations"] == 3
+        cases += 1
 
 print(f"v3 validator checks passed: {cases}; malformed packages rejected: {negatives}; Android/OEM validation remains separate")

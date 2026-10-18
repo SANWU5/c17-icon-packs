@@ -101,7 +101,7 @@ v2 中未提供的状态继续尝试后续启用库，最终保留系统或模�
 
 ## 示例和验证
 
-[PUI 资源对应表](docs/PUI-RESOURCE-MAPPING.zh-CN.md)记录所提供 ColorOS 17 包中的状态栏资源类别、可对应角色和缺项，仅包含清点结果，不转载素材。
+[PUI 资源对应表](PUI-RESOURCE-MAPPING.zh-CN.md)记录所提供 ColorOS 17 包中的状态栏资源类别、可对应角色和缺项，仅包含清点结果，不转载素材。
 
 `examples/minimal-hints/` 是可与现有默认样式混用的 v1 最小示例；`examples/complete-outline/` 是 v1 完整系列示例；`examples/partial-native/` 是 v2 部分状态回退示例。对应归档为 `dist/hints-only.zip`、`dist/icon-pack.zip` 和 `dist/partial-native.zip`。它们仅演示规范和透明蒙版，不是 PUI 图标转载。
 

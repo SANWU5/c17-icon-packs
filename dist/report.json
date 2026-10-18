@@ -1,11 +1,11 @@
 {
-  "roles": 177,
-  "targets": 89,
-  "supported_roles": 172,
+  "roles": 189,
+  "targets": 91,
+  "supported_roles": 184,
   "animations": 3,
-  "vector_bytes": 127001,
-  "png_bytes": 449734,
-  "vector_sha256": "94ed834bd530b08e2a36ae52f857563e646b49aaa0108171f842cf446dd20be6",
-  "png_sha256": "2da9ece1c4d73dd12f58725469645207324427299db651e5d544eed136397a08",
+  "vector_bytes": 135899,
+  "png_bytes": 466358,
+  "vector_sha256": "1af02148ce53b38515d7ebda4573aa8a1cc6a389be145284c6e578e962cd9479",
+  "png_sha256": "66fef945fa5637fd163998c9d60ac2eef11ea4c18402f46749bcdf7264fbc0aa",
   "note": "Registered roles only; static/XML/animation admission is not native visual or playback validation."
 }

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "C17 图标管理 v3 图标包",
-  "description": "1.8.3-beta.95/code188 测试版，v3格式兼容beta94/code187；schema不能替代真实资源与Android生产准入或静态可见高度验收。",
+  "description": "1.8.3-beta.96/code189 测试版；蜂窝双排角色要求code189及以上，beta94/code187与beta95/code188不支持此扩展。包格式仍为v3，旧v3包可导入新版。schema不能替代真实资源与Android生产准入或共用画布绘制验收。",
   "type": "object", "additionalProperties": false,
   "required": ["format", "version", "fallback", "id", "name", "license", "icons"],
   "properties": {
@@ -12,7 +12,18 @@
     "license": {"type": "string", "minLength": 1, "maxLength": 128},
     "icons": {
       "type": "object", "minProperties": 1, "maxProperties": 512,
-      "propertyNames": {"type": "string", "maxLength": 128, "pattern": "^(hint|wifi|cellular|battery|tile|slider|media|device|footer)(\\.[a-z0-9][a-z0-9_]{0,47}){1,5}$"},
+      "propertyNames": {
+        "type": "string", "maxLength": 128,
+        "pattern": "^(hint|wifi|cellular|battery|tile|slider|media|device|footer)(\\.[a-z0-9][a-z0-9_]{0,47}){1,5}$",
+        "if": {"pattern": "^cellular(?:\\.|$)"},
+        "then": {"enum": [
+          "cellular.none", "cellular.0", "cellular.1", "cellular.2", "cellular.3", "cellular.4",
+          "cellular.stacked_primary.none", "cellular.stacked_primary.0", "cellular.stacked_primary.1",
+          "cellular.stacked_primary.2", "cellular.stacked_primary.3", "cellular.stacked_primary.4",
+          "cellular.stacked_secondary.none", "cellular.stacked_secondary.0", "cellular.stacked_secondary.1",
+          "cellular.stacked_secondary.2", "cellular.stacked_secondary.3", "cellular.stacked_secondary.4"
+        ]}
+      },
       "additionalProperties": {"$ref": "#/$defs/staticAsset"}
     },
     "transitions": {
@@ -39,5 +50,5 @@
       }
     }
   },
-  "$comment": "跨字段from/to、精确静态端点、已知目标状态、重复JSON键、字节摘要、PNG/XML/Lottie预算另由桌面工具和Android严格parser检查。"
+  "$comment": "cellular仅接受三个已登记目标的none/0..4状态，双排两层须保留19×16共用透明viewport，不可分别裁边撑满。其他范围保留原有角色语法；跨字段from/to、精确静态端点、其他已知目标状态、重复JSON键、字节摘要、PNG/XML/Lottie预算另由桌面工具和Android严格parser检查。"
 }
