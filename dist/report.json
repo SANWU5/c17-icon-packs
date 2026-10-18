@@ -1,0 +1,11 @@
+{
+  "roles": 177,
+  "targets": 89,
+  "supported_roles": 172,
+  "animations": 3,
+  "vector_bytes": 127001,
+  "png_bytes": 449734,
+  "vector_sha256": "94ed834bd530b08e2a36ae52f857563e646b49aaa0108171f842cf446dd20be6",
+  "png_sha256": "2da9ece1c4d73dd12f58725469645207324427299db651e5d544eed136397a08",
+  "note": "Registered roles only; static/XML/animation admission is not native visual or playback validation."
+}

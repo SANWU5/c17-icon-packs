@@ -1,0 +1,1418 @@
+[
+  {
+    "role": "hint.bluetooth.on",
+    "scope": "hint",
+    "state": "on",
+    "supported": true,
+    "target": "hint.bluetooth",
+    "title": "蓝牙 · 已连接"
+  },
+  {
+    "role": "hint.bluetooth.off",
+    "scope": "hint",
+    "state": "off",
+    "supported": true,
+    "target": "hint.bluetooth",
+    "title": "蓝牙 · 未连接"
+  },
+  {
+    "role": "hint.location.default",
+    "scope": "hint",
+    "state": "default",
+    "supported": true,
+    "target": "hint.location",
+    "title": "定位 · 系统显示状态"
+  },
+  {
+    "role": "hint.alarm_clock.default",
+    "scope": "hint",
+    "state": "default",
+    "supported": true,
+    "target": "hint.alarm_clock",
+    "title": "闹钟 · 系统显示状态"
+  },
+  {
+    "role": "hint.zen.default",
+    "scope": "hint",
+    "state": "default",
+    "supported": true,
+    "target": "hint.zen",
+    "title": "勿扰 · 系统显示状态"
+  },
+  {
+    "role": "hint.volume.default",
+    "scope": "hint",
+    "state": "default",
+    "supported": true,
+    "target": "hint.volume",
+    "title": "静音与振动 · 系统显示状态"
+  },
+  {
+    "role": "hint.hotspot.default",
+    "scope": "hint",
+    "state": "default",
+    "supported": true,
+    "target": "hint.hotspot",
+    "title": "个人热点 · 系统显示状态"
+  },
+  {
+    "role": "hint.headset.default",
+    "scope": "hint",
+    "state": "default",
+    "supported": true,
+    "target": "hint.headset",
+    "title": "耳机 · 系统显示状态"
+  },
+  {
+    "role": "hint.rotate.default",
+    "scope": "hint",
+    "state": "default",
+    "supported": true,
+    "target": "hint.rotate",
+    "title": "屏幕旋转 · 系统显示状态"
+  },
+  {
+    "role": "hint.vpn.default",
+    "scope": "hint",
+    "state": "default",
+    "supported": true,
+    "target": "hint.vpn",
+    "title": "VPN · 系统显示状态"
+  },
+  {
+    "role": "hint.nfc.default",
+    "scope": "hint",
+    "state": "default",
+    "supported": true,
+    "target": "hint.nfc",
+    "title": "NFC · 系统显示状态"
+  },
+  {
+    "role": "hint.cast.default",
+    "scope": "hint",
+    "state": "default",
+    "supported": true,
+    "target": "hint.cast",
+    "title": "投屏 · 系统显示状态"
+  },
+  {
+    "role": "hint.screen_record.default",
+    "scope": "hint",
+    "state": "default",
+    "supported": true,
+    "target": "hint.screen_record",
+    "title": "屏幕录制 · 系统显示状态"
+  },
+  {
+    "role": "hint.microphone.default",
+    "scope": "hint",
+    "state": "default",
+    "supported": true,
+    "target": "hint.microphone",
+    "title": "麦克风 · 系统显示状态"
+  },
+  {
+    "role": "hint.camera.default",
+    "scope": "hint",
+    "state": "default",
+    "supported": true,
+    "target": "hint.camera",
+    "title": "相机 · 系统显示状态"
+  },
+  {
+    "role": "hint.privacy_call.default",
+    "scope": "hint",
+    "state": "default",
+    "supported": true,
+    "target": "hint.privacy_call",
+    "title": "通话隐私 · 系统显示状态"
+  },
+  {
+    "role": "hint.usb.default",
+    "scope": "hint",
+    "state": "default",
+    "supported": true,
+    "target": "hint.usb",
+    "title": "USB · 系统显示状态"
+  },
+  {
+    "role": "hint.hd.default",
+    "scope": "hint",
+    "state": "default",
+    "supported": true,
+    "target": "hint.hd",
+    "title": "高清通话 · 系统显示状态"
+  },
+  {
+    "role": "hint.airplane.default",
+    "scope": "hint",
+    "state": "default",
+    "supported": true,
+    "target": "hint.airplane",
+    "title": "飞行模式 · 系统显示状态"
+  },
+  {
+    "role": "wifi.none",
+    "scope": "wifi",
+    "state": "none",
+    "supported": true,
+    "target": "wifi",
+    "title": "Wi-Fi · 未连接"
+  },
+  {
+    "role": "wifi.0",
+    "scope": "wifi",
+    "state": "0",
+    "supported": true,
+    "target": "wifi",
+    "title": "Wi-Fi · 零格"
+  },
+  {
+    "role": "wifi.1",
+    "scope": "wifi",
+    "state": "1",
+    "supported": true,
+    "target": "wifi",
+    "title": "Wi-Fi · 一格"
+  },
+  {
+    "role": "wifi.2",
+    "scope": "wifi",
+    "state": "2",
+    "supported": true,
+    "target": "wifi",
+    "title": "Wi-Fi · 两格"
+  },
+  {
+    "role": "wifi.3",
+    "scope": "wifi",
+    "state": "3",
+    "supported": true,
+    "target": "wifi",
+    "title": "Wi-Fi · 三格"
+  },
+  {
+    "role": "wifi.4",
+    "scope": "wifi",
+    "state": "4",
+    "supported": true,
+    "target": "wifi",
+    "title": "Wi-Fi · 满格"
+  },
+  {
+    "role": "cellular.none",
+    "scope": "cellular",
+    "state": "none",
+    "supported": true,
+    "target": "cellular",
+    "title": "蜂窝信号 · 未连接"
+  },
+  {
+    "role": "cellular.0",
+    "scope": "cellular",
+    "state": "0",
+    "supported": true,
+    "target": "cellular",
+    "title": "蜂窝信号 · 零格"
+  },
+  {
+    "role": "cellular.1",
+    "scope": "cellular",
+    "state": "1",
+    "supported": true,
+    "target": "cellular",
+    "title": "蜂窝信号 · 一格"
+  },
+  {
+    "role": "cellular.2",
+    "scope": "cellular",
+    "state": "2",
+    "supported": true,
+    "target": "cellular",
+    "title": "蜂窝信号 · 两格"
+  },
+  {
+    "role": "cellular.3",
+    "scope": "cellular",
+    "state": "3",
+    "supported": true,
+    "target": "cellular",
+    "title": "蜂窝信号 · 三格"
+  },
+  {
+    "role": "cellular.4",
+    "scope": "cellular",
+    "state": "4",
+    "supported": true,
+    "target": "cellular",
+    "title": "蜂窝信号 · 满格"
+  },
+  {
+    "role": "battery.0",
+    "scope": "battery",
+    "state": "0",
+    "supported": true,
+    "target": "battery",
+    "title": "电池外形 · 0%"
+  },
+  {
+    "role": "battery.10",
+    "scope": "battery",
+    "state": "10",
+    "supported": true,
+    "target": "battery",
+    "title": "电池外形 · 10%"
+  },
+  {
+    "role": "battery.20",
+    "scope": "battery",
+    "state": "20",
+    "supported": true,
+    "target": "battery",
+    "title": "电池外形 · 20%"
+  },
+  {
+    "role": "battery.30",
+    "scope": "battery",
+    "state": "30",
+    "supported": true,
+    "target": "battery",
+    "title": "电池外形 · 30%"
+  },
+  {
+    "role": "battery.40",
+    "scope": "battery",
+    "state": "40",
+    "supported": true,
+    "target": "battery",
+    "title": "电池外形 · 40%"
+  },
+  {
+    "role": "battery.50",
+    "scope": "battery",
+    "state": "50",
+    "supported": true,
+    "target": "battery",
+    "title": "电池外形 · 50%"
+  },
+  {
+    "role": "battery.60",
+    "scope": "battery",
+    "state": "60",
+    "supported": true,
+    "target": "battery",
+    "title": "电池外形 · 60%"
+  },
+  {
+    "role": "battery.70",
+    "scope": "battery",
+    "state": "70",
+    "supported": true,
+    "target": "battery",
+    "title": "电池外形 · 70%"
+  },
+  {
+    "role": "battery.80",
+    "scope": "battery",
+    "state": "80",
+    "supported": true,
+    "target": "battery",
+    "title": "电池外形 · 80%"
+  },
+  {
+    "role": "battery.90",
+    "scope": "battery",
+    "state": "90",
+    "supported": true,
+    "target": "battery",
+    "title": "电池外形 · 90%"
+  },
+  {
+    "role": "battery.100",
+    "scope": "battery",
+    "state": "100",
+    "supported": true,
+    "target": "battery",
+    "title": "电池外形 · 100%"
+  },
+  {
+    "role": "battery.charging.0",
+    "scope": "battery",
+    "state": "0",
+    "supported": true,
+    "target": "battery.charging",
+    "title": "充电电池外形 · 0%"
+  },
+  {
+    "role": "battery.charging.10",
+    "scope": "battery",
+    "state": "10",
+    "supported": true,
+    "target": "battery.charging",
+    "title": "充电电池外形 · 10%"
+  },
+  {
+    "role": "battery.charging.20",
+    "scope": "battery",
+    "state": "20",
+    "supported": true,
+    "target": "battery.charging",
+    "title": "充电电池外形 · 20%"
+  },
+  {
+    "role": "battery.charging.30",
+    "scope": "battery",
+    "state": "30",
+    "supported": true,
+    "target": "battery.charging",
+    "title": "充电电池外形 · 30%"
+  },
+  {
+    "role": "battery.charging.40",
+    "scope": "battery",
+    "state": "40",
+    "supported": true,
+    "target": "battery.charging",
+    "title": "充电电池外形 · 40%"
+  },
+  {
+    "role": "battery.charging.50",
+    "scope": "battery",
+    "state": "50",
+    "supported": true,
+    "target": "battery.charging",
+    "title": "充电电池外形 · 50%"
+  },
+  {
+    "role": "battery.charging.60",
+    "scope": "battery",
+    "state": "60",
+    "supported": true,
+    "target": "battery.charging",
+    "title": "充电电池外形 · 60%"
+  },
+  {
+    "role": "battery.charging.70",
+    "scope": "battery",
+    "state": "70",
+    "supported": true,
+    "target": "battery.charging",
+    "title": "充电电池外形 · 70%"
+  },
+  {
+    "role": "battery.charging.80",
+    "scope": "battery",
+    "state": "80",
+    "supported": true,
+    "target": "battery.charging",
+    "title": "充电电池外形 · 80%"
+  },
+  {
+    "role": "battery.charging.90",
+    "scope": "battery",
+    "state": "90",
+    "supported": true,
+    "target": "battery.charging",
+    "title": "充电电池外形 · 90%"
+  },
+  {
+    "role": "battery.charging.100",
+    "scope": "battery",
+    "state": "100",
+    "supported": true,
+    "target": "battery.charging",
+    "title": "充电电池外形 · 100%"
+  },
+  {
+    "role": "tile.wifi.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.wifi",
+    "title": "Wi-Fi · 关闭"
+  },
+  {
+    "role": "tile.wifi.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.wifi",
+    "title": "Wi-Fi · 开启"
+  },
+  {
+    "role": "tile.wifi.unavailable",
+    "scope": "tile",
+    "state": "unavailable",
+    "supported": true,
+    "target": "tile.wifi",
+    "title": "Wi-Fi · 不可用"
+  },
+  {
+    "role": "tile.bluetooth.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.bluetooth",
+    "title": "蓝牙 · 关闭"
+  },
+  {
+    "role": "tile.bluetooth.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.bluetooth",
+    "title": "蓝牙 · 开启"
+  },
+  {
+    "role": "tile.bluetooth.unavailable",
+    "scope": "tile",
+    "state": "unavailable",
+    "supported": true,
+    "target": "tile.bluetooth",
+    "title": "蓝牙 · 不可用"
+  },
+  {
+    "role": "tile.mobile_data.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.mobile_data",
+    "title": "移动数据 · 关闭"
+  },
+  {
+    "role": "tile.mobile_data.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.mobile_data",
+    "title": "移动数据 · 开启"
+  },
+  {
+    "role": "tile.mobile_data.unavailable",
+    "scope": "tile",
+    "state": "unavailable",
+    "supported": true,
+    "target": "tile.mobile_data",
+    "title": "移动数据 · 不可用"
+  },
+  {
+    "role": "tile.hotspot.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.hotspot",
+    "title": "个人热点 · 关闭"
+  },
+  {
+    "role": "tile.hotspot.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.hotspot",
+    "title": "个人热点 · 开启"
+  },
+  {
+    "role": "tile.hotspot.unavailable",
+    "scope": "tile",
+    "state": "unavailable",
+    "supported": true,
+    "target": "tile.hotspot",
+    "title": "个人热点 · 不可用"
+  },
+  {
+    "role": "tile.airplane.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.airplane",
+    "title": "飞行模式 · 关闭"
+  },
+  {
+    "role": "tile.airplane.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.airplane",
+    "title": "飞行模式 · 开启"
+  },
+  {
+    "role": "tile.airplane.unavailable",
+    "scope": "tile",
+    "state": "unavailable",
+    "supported": true,
+    "target": "tile.airplane",
+    "title": "飞行模式 · 不可用"
+  },
+  {
+    "role": "tile.nfc.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.nfc",
+    "title": "NFC · 关闭"
+  },
+  {
+    "role": "tile.nfc.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.nfc",
+    "title": "NFC · 开启"
+  },
+  {
+    "role": "tile.nfc.unavailable",
+    "scope": "tile",
+    "state": "unavailable",
+    "supported": true,
+    "target": "tile.nfc",
+    "title": "NFC · 不可用"
+  },
+  {
+    "role": "tile.flashlight.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.flashlight",
+    "title": "手电筒 · 关闭"
+  },
+  {
+    "role": "tile.flashlight.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.flashlight",
+    "title": "手电筒 · 开启"
+  },
+  {
+    "role": "tile.flashlight.unavailable",
+    "scope": "tile",
+    "state": "unavailable",
+    "supported": true,
+    "target": "tile.flashlight",
+    "title": "手电筒 · 不可用"
+  },
+  {
+    "role": "tile.rotation.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.rotation",
+    "title": "屏幕旋转 · 旋转锁定"
+  },
+  {
+    "role": "tile.rotation.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.rotation",
+    "title": "屏幕旋转 · 自动旋转"
+  },
+  {
+    "role": "tile.rotation.unavailable",
+    "scope": "tile",
+    "state": "unavailable",
+    "supported": true,
+    "target": "tile.rotation",
+    "title": "屏幕旋转 · 不可用"
+  },
+  {
+    "role": "tile.dark.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.dark",
+    "title": "深色模式 · 浅色模式"
+  },
+  {
+    "role": "tile.dark.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.dark",
+    "title": "深色模式 · 深色模式"
+  },
+  {
+    "role": "tile.dark.unavailable",
+    "scope": "tile",
+    "state": "unavailable",
+    "supported": true,
+    "target": "tile.dark",
+    "title": "深色模式 · 不可用"
+  },
+  {
+    "role": "tile.location.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.location",
+    "title": "定位 · 关闭"
+  },
+  {
+    "role": "tile.location.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.location",
+    "title": "定位 · 开启"
+  },
+  {
+    "role": "tile.location.unavailable",
+    "scope": "tile",
+    "state": "unavailable",
+    "supported": true,
+    "target": "tile.location",
+    "title": "定位 · 不可用"
+  },
+  {
+    "role": "tile.camera.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.camera",
+    "title": "相机权限 · 阻止访问"
+  },
+  {
+    "role": "tile.camera.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.camera",
+    "title": "相机权限 · 允许访问"
+  },
+  {
+    "role": "tile.camera.unavailable",
+    "scope": "tile",
+    "state": "unavailable",
+    "supported": true,
+    "target": "tile.camera",
+    "title": "相机权限 · 不可用"
+  },
+  {
+    "role": "tile.microphone.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.microphone",
+    "title": "麦克风权限 · 阻止访问"
+  },
+  {
+    "role": "tile.microphone.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.microphone",
+    "title": "麦克风权限 · 允许访问"
+  },
+  {
+    "role": "tile.microphone.unavailable",
+    "scope": "tile",
+    "state": "unavailable",
+    "supported": true,
+    "target": "tile.microphone",
+    "title": "麦克风权限 · 不可用"
+  },
+  {
+    "role": "tile.cast.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": false,
+    "target": "tile.cast",
+    "title": "投屏 · 关闭"
+  },
+  {
+    "role": "tile.cast.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": false,
+    "target": "tile.cast",
+    "title": "投屏 · 开启"
+  },
+  {
+    "role": "tile.cast.unavailable",
+    "scope": "tile",
+    "state": "unavailable",
+    "supported": false,
+    "target": "tile.cast",
+    "title": "投屏 · 不可用"
+  },
+  {
+    "role": "tile.auto_brightness.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.auto_brightness",
+    "title": "自动亮度 · 关闭"
+  },
+  {
+    "role": "tile.auto_brightness.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.auto_brightness",
+    "title": "自动亮度 · 开启"
+  },
+  {
+    "role": "tile.auto_color_temperature.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.auto_color_temperature",
+    "title": "自动色温 · 关闭"
+  },
+  {
+    "role": "tile.auto_color_temperature.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.auto_color_temperature",
+    "title": "自动色温 · 开启"
+  },
+  {
+    "role": "tile.data_saver.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.data_saver",
+    "title": "流量节省 · 关闭"
+  },
+  {
+    "role": "tile.data_saver.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.data_saver",
+    "title": "流量节省 · 开启"
+  },
+  {
+    "role": "tile.dolby.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.dolby",
+    "title": "杜比音效 · 关闭"
+  },
+  {
+    "role": "tile.dolby.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.dolby",
+    "title": "杜比音效 · 开启"
+  },
+  {
+    "role": "tile.breathing_light.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.breathing_light",
+    "title": "呼吸灯 · 关闭"
+  },
+  {
+    "role": "tile.breathing_light.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.breathing_light",
+    "title": "呼吸灯 · 开启"
+  },
+  {
+    "role": "tile.work.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.work",
+    "title": "工作资料 · 关闭"
+  },
+  {
+    "role": "tile.work.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.work",
+    "title": "工作资料 · 开启"
+  },
+  {
+    "role": "tile.osie.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.osie",
+    "title": "OSIE 图像增强 · 关闭"
+  },
+  {
+    "role": "tile.osie.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.osie",
+    "title": "OSIE 图像增强 · 开启"
+  },
+  {
+    "role": "tile.iris.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.iris",
+    "title": "视频增强 · 关闭"
+  },
+  {
+    "role": "tile.iris.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.iris",
+    "title": "视频增强 · 开启"
+  },
+  {
+    "role": "tile.iris.unavailable",
+    "scope": "tile",
+    "state": "unavailable",
+    "supported": true,
+    "target": "tile.iris",
+    "title": "视频增强 · 不可用"
+  },
+  {
+    "role": "tile.vpn.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.vpn",
+    "title": "VPN 状态 · 关闭"
+  },
+  {
+    "role": "tile.vpn.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.vpn",
+    "title": "VPN 状态 · 开启"
+  },
+  {
+    "role": "tile.otg.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.otg",
+    "title": "OTG · 关闭"
+  },
+  {
+    "role": "tile.otg.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.otg",
+    "title": "OTG · 开启"
+  },
+  {
+    "role": "tile.dnd.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.dnd",
+    "title": "勿扰模式 · 关闭"
+  },
+  {
+    "role": "tile.dnd.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.dnd",
+    "title": "勿扰模式 · 开启"
+  },
+  {
+    "role": "tile.no_disturb.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.no_disturb",
+    "title": "原生免打扰 · 关闭"
+  },
+  {
+    "role": "tile.no_disturb.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.no_disturb",
+    "title": "原生免打扰 · 开启"
+  },
+  {
+    "role": "tile.battery_saver.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.battery_saver",
+    "title": "省电模式 · 关闭"
+  },
+  {
+    "role": "tile.battery_saver.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.battery_saver",
+    "title": "省电模式 · 开启"
+  },
+  {
+    "role": "tile.phone_anti_theft.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.phone_anti_theft",
+    "title": "防盗报警 · 关闭"
+  },
+  {
+    "role": "tile.phone_anti_theft.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.phone_anti_theft",
+    "title": "防盗报警 · 开启"
+  },
+  {
+    "role": "tile.super_power_saver.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.super_power_saver",
+    "title": "超级省电模式 · 关闭"
+  },
+  {
+    "role": "tile.super_power_saver.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.super_power_saver",
+    "title": "超级省电模式 · 开启"
+  },
+  {
+    "role": "tile.super_power_saver.unavailable",
+    "scope": "tile",
+    "state": "unavailable",
+    "supported": true,
+    "target": "tile.super_power_saver",
+    "title": "超级省电模式 · 不可用"
+  },
+  {
+    "role": "tile.vibration.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.vibration",
+    "title": "当前铃声模式的振动 · 关闭"
+  },
+  {
+    "role": "tile.vibration.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.vibration",
+    "title": "当前铃声模式的振动 · 开启"
+  },
+  {
+    "role": "tile.small_screen.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.small_screen",
+    "title": "单手小屏 · 关闭"
+  },
+  {
+    "role": "tile.small_screen.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.small_screen",
+    "title": "单手小屏 · 开启"
+  },
+  {
+    "role": "tile.small_screen.unavailable",
+    "scope": "tile",
+    "state": "unavailable",
+    "supported": true,
+    "target": "tile.small_screen",
+    "title": "单手小屏 · 不可用"
+  },
+  {
+    "role": "tile.envelope.off",
+    "scope": "tile",
+    "state": "off",
+    "supported": true,
+    "target": "tile.envelope",
+    "title": "红包助手 · 关闭"
+  },
+  {
+    "role": "tile.envelope.on",
+    "scope": "tile",
+    "state": "on",
+    "supported": true,
+    "target": "tile.envelope",
+    "title": "红包助手 · 开启"
+  },
+  {
+    "role": "tile.alipay.default",
+    "scope": "tile",
+    "state": "default",
+    "supported": true,
+    "target": "tile.alipay",
+    "title": "支付宝付款 · 操作入口"
+  },
+  {
+    "role": "tile.ali_scan.default",
+    "scope": "tile",
+    "state": "default",
+    "supported": true,
+    "target": "tile.ali_scan",
+    "title": "支付宝扫一扫 · 操作入口"
+  },
+  {
+    "role": "tile.wechat_pay.default",
+    "scope": "tile",
+    "state": "default",
+    "supported": true,
+    "target": "tile.wechat_pay",
+    "title": "微信付款 · 操作入口"
+  },
+  {
+    "role": "tile.wechat_scan.default",
+    "scope": "tile",
+    "state": "default",
+    "supported": true,
+    "target": "tile.wechat_scan",
+    "title": "微信扫一扫 · 操作入口"
+  },
+  {
+    "role": "tile.calculator.default",
+    "scope": "tile",
+    "state": "default",
+    "supported": true,
+    "target": "tile.calculator",
+    "title": "计算器 · 操作入口"
+  },
+  {
+    "role": "tile.clean.default",
+    "scope": "tile",
+    "state": "default",
+    "supported": true,
+    "target": "tile.clean",
+    "title": "清理 · 操作入口"
+  },
+  {
+    "role": "tile.google_now.default",
+    "scope": "tile",
+    "state": "default",
+    "supported": true,
+    "target": "tile.google_now",
+    "title": "助手入口 · 操作入口"
+  },
+  {
+    "role": "tile.lock_screen.default",
+    "scope": "tile",
+    "state": "default",
+    "supported": true,
+    "target": "tile.lock_screen",
+    "title": "锁屏 · 操作入口"
+  },
+  {
+    "role": "tile.input_method.default",
+    "scope": "tile",
+    "state": "default",
+    "supported": true,
+    "target": "tile.input_method",
+    "title": "输入法选择 · 操作入口"
+  },
+  {
+    "role": "tile.shutdown.default",
+    "scope": "tile",
+    "state": "default",
+    "supported": true,
+    "target": "tile.shutdown",
+    "title": "电源操作 · 操作入口"
+  },
+  {
+    "role": "tile.qr_scanner.default",
+    "scope": "tile",
+    "state": "default",
+    "supported": true,
+    "target": "tile.qr_scanner",
+    "title": "系统扫码 · 操作入口"
+  },
+  {
+    "role": "tile.multi_system.default",
+    "scope": "tile",
+    "state": "default",
+    "supported": true,
+    "target": "tile.multi_system",
+    "title": "系统切换 · 操作入口"
+  },
+  {
+    "role": "tile.screenshot.default",
+    "scope": "tile",
+    "state": "default",
+    "supported": true,
+    "target": "tile.screenshot",
+    "title": "截屏 · 操作入口"
+  },
+  {
+    "role": "tile.ringer_mode.silent",
+    "scope": "tile",
+    "state": "silent",
+    "supported": true,
+    "target": "tile.ringer_mode",
+    "title": "铃声模式 · 静音"
+  },
+  {
+    "role": "tile.ringer_mode.vibrate",
+    "scope": "tile",
+    "state": "vibrate",
+    "supported": true,
+    "target": "tile.ringer_mode",
+    "title": "铃声模式 · 振动"
+  },
+  {
+    "role": "tile.ringer_mode.ring",
+    "scope": "tile",
+    "state": "ring",
+    "supported": true,
+    "target": "tile.ringer_mode",
+    "title": "铃声模式 · 响铃"
+  },
+  {
+    "role": "tile.screen_record.unavailable",
+    "scope": "tile",
+    "state": "unavailable",
+    "supported": true,
+    "target": "tile.screen_record",
+    "title": "录屏 · 不可用"
+  },
+  {
+    "role": "tile.screen_record.idle",
+    "scope": "tile",
+    "state": "idle",
+    "supported": true,
+    "target": "tile.screen_record",
+    "title": "录屏 · 可开始录屏"
+  },
+  {
+    "role": "tile.screen_record.recording",
+    "scope": "tile",
+    "state": "recording",
+    "supported": true,
+    "target": "tile.screen_record",
+    "title": "录屏 · 录屏活动"
+  },
+  {
+    "role": "tile.controls.default",
+    "scope": "tile",
+    "state": "default",
+    "supported": false,
+    "target": "tile.controls",
+    "title": "设备控制 · 系统服务入口"
+  },
+  {
+    "role": "tile.wallet.default",
+    "scope": "tile",
+    "state": "default",
+    "supported": false,
+    "target": "tile.wallet",
+    "title": "钱包 · 系统卡片与服务"
+  },
+  {
+    "role": "slider.volume.normal.mute",
+    "scope": "slider",
+    "state": "mute",
+    "supported": true,
+    "target": "slider.volume.normal",
+    "title": "音量 · 本机扬声器 · 静音"
+  },
+  {
+    "role": "slider.volume.normal.low",
+    "scope": "slider",
+    "state": "low",
+    "supported": true,
+    "target": "slider.volume.normal",
+    "title": "音量 · 本机扬声器 · 低音量"
+  },
+  {
+    "role": "slider.volume.normal.medium",
+    "scope": "slider",
+    "state": "medium",
+    "supported": true,
+    "target": "slider.volume.normal",
+    "title": "音量 · 本机扬声器 · 中音量"
+  },
+  {
+    "role": "slider.volume.normal.high",
+    "scope": "slider",
+    "state": "high",
+    "supported": true,
+    "target": "slider.volume.normal",
+    "title": "音量 · 本机扬声器 · 高音量"
+  },
+  {
+    "role": "slider.volume.wired.mute",
+    "scope": "slider",
+    "state": "mute",
+    "supported": true,
+    "target": "slider.volume.wired",
+    "title": "音量 · 有线设备 · 静音"
+  },
+  {
+    "role": "slider.volume.wired.unmute",
+    "scope": "slider",
+    "state": "unmute",
+    "supported": true,
+    "target": "slider.volume.wired",
+    "title": "音量 · 有线设备 · 有音量"
+  },
+  {
+    "role": "slider.volume.bluetooth.mute",
+    "scope": "slider",
+    "state": "mute",
+    "supported": true,
+    "target": "slider.volume.bluetooth",
+    "title": "音量 · 蓝牙设备 · 静音"
+  },
+  {
+    "role": "slider.volume.bluetooth.unmute",
+    "scope": "slider",
+    "state": "unmute",
+    "supported": true,
+    "target": "slider.volume.bluetooth",
+    "title": "音量 · 蓝牙设备 · 有音量"
+  },
+  {
+    "role": "slider.brightness.default",
+    "scope": "slider",
+    "state": "default",
+    "supported": true,
+    "target": "slider.brightness",
+    "title": "亮度主图形 · 当前亮度"
+  },
+  {
+    "role": "slider.brightness_auto.default",
+    "scope": "slider",
+    "state": "default",
+    "supported": true,
+    "target": "slider.brightness_auto",
+    "title": "自动亮度标记 · 自动模式"
+  },
+  {
+    "role": "footer.settings.default",
+    "scope": "footer",
+    "state": "default",
+    "supported": true,
+    "target": "footer.settings",
+    "title": "设置 · 入口"
+  },
+  {
+    "role": "footer.more.default",
+    "scope": "footer",
+    "state": "default",
+    "supported": true,
+    "target": "footer.more",
+    "title": "更多 · 入口"
+  },
+  {
+    "role": "media.play_pause.play",
+    "scope": "media",
+    "state": "play",
+    "supported": true,
+    "target": "media.play_pause",
+    "title": "媒体播放控制 · 播放"
+  },
+  {
+    "role": "media.play_pause.pause",
+    "scope": "media",
+    "state": "pause",
+    "supported": true,
+    "target": "media.play_pause",
+    "title": "媒体播放控制 · 暂停"
+  },
+  {
+    "role": "media.previous.default",
+    "scope": "media",
+    "state": "default",
+    "supported": true,
+    "target": "media.previous",
+    "title": "上一首 · 系统标准操作"
+  },
+  {
+    "role": "media.next.default",
+    "scope": "media",
+    "state": "default",
+    "supported": true,
+    "target": "media.next",
+    "title": "下一首 · 系统标准操作"
+  },
+  {
+    "role": "media.output.default",
+    "scope": "media",
+    "state": "default",
+    "supported": true,
+    "target": "media.output",
+    "title": "音频输出 · 系统标准操作"
+  },
+  {
+    "role": "device.entrance.default",
+    "scope": "device",
+    "state": "default",
+    "supported": true,
+    "target": "device.entrance",
+    "title": "设备控制入口 · 入口"
+  },
+  {
+    "role": "device.phone.default",
+    "scope": "device",
+    "state": "default",
+    "supported": true,
+    "target": "device.phone",
+    "title": "手机 · 系统通用图形"
+  },
+  {
+    "role": "device.pad.default",
+    "scope": "device",
+    "state": "default",
+    "supported": true,
+    "target": "device.pad",
+    "title": "平板 · 系统通用图形"
+  },
+  {
+    "role": "device.computer.default",
+    "scope": "device",
+    "state": "default",
+    "supported": true,
+    "target": "device.computer",
+    "title": "电脑 · 系统通用图形"
+  },
+  {
+    "role": "device.headset.default",
+    "scope": "device",
+    "state": "default",
+    "supported": true,
+    "target": "device.headset",
+    "title": "耳机 · 系统通用图形"
+  },
+  {
+    "role": "device.tv.default",
+    "scope": "device",
+    "state": "default",
+    "supported": true,
+    "target": "device.tv",
+    "title": "电视 · 系统通用图形"
+  },
+  {
+    "role": "device.watch.default",
+    "scope": "device",
+    "state": "default",
+    "supported": true,
+    "target": "device.watch",
+    "title": "手表 · 系统通用图形"
+  },
+  {
+    "role": "device.wristband.default",
+    "scope": "device",
+    "state": "default",
+    "supported": true,
+    "target": "device.wristband",
+    "title": "手环 · 系统通用图形"
+  }
+]

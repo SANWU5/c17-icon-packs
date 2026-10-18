@@ -1,30 +1,33 @@
-# C17 状态栏图标库规范
+# C17 图标管理 v3
 
-配套模块：[SANWU5/c17-statusbar](https://github.com/SANWU5/c17-statusbar)。模块 1.8.1 兼容 v1 完整系列图标包和 v2 部分状态图标包，正式安装包以主仓库 Releases 为准。
+适用于 **C17 1.8.3-beta.95 / code188 测试版**的图标管理 v3。v3 包格式与 beta94/code187 相同；下文的可见高度归一、总开关和预览流程以 beta95/code188 为准，不能据此推定旧版行为。规范与源码接入不代表全部功能已通过手机视觉验收。旧 v1/v2 包不能直接用于新版。主模块：[c17-statusbar](https://github.com/SANWU5/c17-statusbar)。历史规范已移至 [docs/legacy](docs/legacy/README.md)。
 
-此仓库定义 C17 模块可导入的图标包格式，并提供原创教学示例。它不包含手机截图、用户配置、日志、原始 SystemUI 文件或第三方 PUI 模块资源。
+本仓库只收录规范、制作工具和原创资源。没有PUI图案、用户主题、原始OEM APK、反汇编代码、手机截图或用户配置，也不提供旧主题导入功能。
 
-C17 默认保留系统与模块现有图标。导入不会自动启用；用户可命名、排序、重命名、删除或禁用已导入的库。新库默认供逐项选择使用，可另开“整库自动匹配”。整库匹配从列表顶端向下查找，每个库没有资源时继续查下一库，最后使用原有系统/PUI 外观。已有整库配置保留原行为。最多保存 32 个库、同时启用 16 个库。
+## C17示例库与操作
 
-## 按图标选择图案
+- [C17示例库 · XML主包](dist/c17-rounded-27.zip)：177个登记静态角色、3个纯图形短转场声明。
+- [96px PNG备用包](dist/c17-rounded-27-png.zip)：相同原创几何和状态。
+- [浅深色接触表](dist/contact-sheet.png)、[角色快照](roles.json)、[制作报告与SHA-256](dist/report.json)。
 
-模块中的统一入口为 **配置 → 其他 → 自定义系统图标**。在“管理图标库”导入并启用来源库，再进入“逐项替换图标”，选择目标图标与来源图案。也可从 **配置 → 状态栏 → 电池 / Wi-Fi 图标 / 蜂窝信号 → 自定义图标** 直接选择对应类别的图案，位置和大小沿用各页设置。来源可以是任何已启用库中的合法图案，选中后显示缩略图供确认；无需整套替换。
+图案由圆、线、圆角矩形及贝塞尔曲线原创制作，没有临摹Apple、SF Symbols、OEM或PUI。支付和助手入口使用原创功能符号，不复制服务商Logo。
 
-例如，保持“整库自动匹配”关闭，只给蓝牙选择图案，已有 Wi-Fi、电池和蜂窝信号便不会被该库替换。也可分别指定 Wi-Fi 信号档位或电池电量档位。逐项指定优先于整库排序；蓝牙的 `.on` / `.off` 指定优先于通用 `hint.bluetooth`。删除该项指定后恢复自动匹配，来源库被禁用、删除或图片不可读取时，在启用整库匹配的库中按顺序回退，最后使用原生外观。
+**C17示例库是格式与角色制作示例，不是 iOS 27、Apple 或 SF Symbols 原版素材。** 文件路径与包内 `id` 中的 `c17-rounded-27` 是兼容标记，不代表 Apple 版本或素材来源。
 
-模块 1.8.1 支持下述两种格式。制作者无需增加配置脚本，也不能通过图标包改变系统图标的显示条件。
+App入口为 **其他 → 图标管理**，首页分“选套装”和“自定义”。导入或下载先暂存预览，选择范围并查看缺项后应用；取消暂存不入库、不改效果。高级选项也可“仅加入图标库”，供稍后自定义选取。单个目标可选择系统默认或具体图案，再按需设置颜色、透明度、逐状态与动画。总开关关闭后保留已保存的选择并恢复系统或功能默认图案；关闭时保存选择不会自动启用总开关。删除来源后受影响图案回退，独立颜色和透明度保留。
 
-## 制作与分发
+角色明确“系统默认”优先；其他情况依次尝试明确单项来源、所选范围套装中的同一角色、原生。不借另一档信号、普通电池或另一开关状态。包不改变原生开关、系统隐藏条件、点击、无障碍、位置或布局。
 
-ZIP 或未加密的单卷 RAR4/RAR5 内应有一个 `manifest.json`。文件可处于根目录，也可整体放入一个文件夹；不接受含多个 manifest 的归档。RAR 解码由 Android 的 libarchive 提供，遇到不支持的加密、分卷或损坏归档会拒绝导入，请改用 ZIP。
+## 文件格式
+
+ZIP内恰好一个`manifest.json`，位于根目录或统一的一层外部文件夹中。建议发布独立ZIP，整个规范仓库含多个历史示例，不能作为一个图标包导入。
+
+本页两个 `dist` ZIP 可单独下载后从文件导入。App“从 GitHub 导入”按仓库寻找 Release 资源 `icon-pack-v3.zip`；仅把规范和 `dist` 文件推送到仓库，不会自动生成这个 Release 资源，也不表示整个源码仓库可导入。
 
 ```text
 manifest.json
-assets/
-  bluetooth.png
-  wifi-0.png
-  wifi-1.png
-  ...
+assets/bluetooth-on.xml
+assets/wifi-4.png
 LICENSE.txt
 README.md
 ```
@@ -32,92 +35,76 @@ README.md
 ```json
 {
   "format": "c17-statusbar-icons",
-  "version": 1,
-  "name": "我的简约图标",
-  "author": "作者名称",
-  "license": "CC0-1.0",
-  "render": "mask",
+  "version": 3,
+  "id": "my-original-icons",
+  "name": "我的原创图标",
+  "author": "作者",
+  "license": "MIT",
+  "fallback": "native",
   "icons": {
-    "hint.bluetooth": "assets/bluetooth.png"
+    "hint.bluetooth.on": {"source": "assets/bluetooth-on.xml", "render": "mask"},
+    "wifi.4": {"source": "assets/wifi-4.png", "render": "color"}
+  },
+  "transitions": {}
+}
+```
+
+`id`为1–64字符的小写英文/数字/下划线/连字符标记。App按规范化manifest和资源字节计算实际内容身份；改包名不会覆盖旧库。`name`为1–64字符，`author`最多128字符，`license`必填且最多128字符。素材许可不因导入改变。
+
+每项资源使用对象记录。`render=mask`使用源Alpha、跟随宿主实际前景色；`render=color`默认保留原RGB。App可分别设置范围/目标/状态的颜色与透明度；颜色继承与透明度继承独立，显式0透明度也有效。包不携带App颜色偏好或宿主查找代码。可选`sha256`必须为实际资源字节的64位小写摘要；App导入时补齐摘要，Provider、SystemUI与缓存会再次核验。
+
+静态仅支持透明 **PNG** 与受限 **VectorDrawable XML**，拒绝WebP、SVG、APNG、AVD、字体、DEX、APK、脚本和URL。PNG最长边1024且须含真实透明像素；运行时按比例解码至最多256px。XML只接受`vector/group/path/clip-path`及明确Android几何/填充/描边属性；颜色直接写`#AARRGGBB`，禁止DTD、实体、资源/主题引用及外链。外部XML先解析为自有节点模型，不直接inflate成Drawable。
+
+### beta95/code188 的静态可见高度
+
+后台解码后，以所有 **Alpha > 0** 的真实像素计算可见边界；XML 使用栅格化后的像素。极低 Alpha 的艺术边缘仍计入边界，不按主观阈值裁掉。绘制以原生图形区域的高度为锚点，按可见宽高比等比缩放、居中，超过可用宽度时限宽。透明画布的宽高不再把窄图案再次缩小；不拉伸、不改 OEM View 尺寸，也不改变已有 Canvas 变换。
+
+原文件、原始位图 RGB/Alpha 与完整画布保留，只在绘制时使用缓存的可见源区域。预览使用同一解码规则去掉外围透明留白；这是显示归一，不是重写素材。空白或无法得到有效边界的图案在运行时保留原生。边界只在后台计算，热绘制不读文件、不扫描像素、不逐帧生成裁剪图。
+
+动态图形本版不按每帧可见边界归一，以免播放时尺寸跳动；静态端点的规则不能当作整段动画已完成高度适配。制作时保持动画全程画布与端点一致，并检查真实宿主效果。[详细边界](docs/V3-VALIDATION.zh-CN.md)仍适用。
+
+动态为受限纯图形 **Lottie JSON**，仅接受shape layer及group/path/fill/stroke/transform/ellipse/rectangle。至少一项包含真实变化的两帧；静态或不变关键帧不能冒充动画。禁止图片、文字、表达式、mask/effects、父层、3D、时间重映射和外部资源。稳定切换≤800ms，真实瞬态≤1500ms。
+
+```json
+"transitions": {
+  "tile.flashlight.off_to_on": {
+    "source": "assets/flashlight-on.json",
+    "from": "off", "to": "on", "reversible": false
   }
 }
 ```
 
-`name` 为 1–64 字符，作者最多 128 字符，`license` 必填并保留资源自身许可。`render` 当前仅支持 `mask`：使用透明 PNG/WebP 的 Alpha 通道，实际颜色继续遵循模块或系统的浅深色、活动状态和用户设置。图片中的 RGB 不用于替换系统着色。建议 128×128 或 256×256 透明画布、白色主体、相同视觉边距；不建议四周留下大片透明空白。图片最大 1024×1024，导入后保持比例归一化为最大 256 像素 PNG。禁止 SVG、Drawable XML、字体、DEX、APK、脚本和远程图片 URL。
+`off_to_on/on_to_off`必须提供精确静态两端；`transient`须`from=transient`、`to=on/off`且不能反播。首次绑定、换来源、回收复用显示静态末态。播放还取决于真实宿主、原生许可、可见性和生命周期；3个动画文件不表示所有目标已可播或实机通过。
 
-### v1 与 v2
+## 角色和真实状态
 
-`version: 1` 保持原有完整系列要求，适合兼容已有模块；不能包含 `fallback` 字段。`version: 2` 必须同时声明 `fallback: "native"`，允许只提供真实存在的部分状态。模块 1.8.1 同时支持 v1 和 v2，仅支持 v1 的旧模块会拒绝导入 v2。
+[roles.json](roles.json)是生产Registry的177角色、89目标快照，包含`hint/wifi/cellular/battery/tile/slider/media/device/footer`。`supported`是该版源码接入状态，不是每台ROM或视觉效果的验收结果。未知但语法安全的角色只可保留为候选，包不能定义原生类、方法、Tile spec或新增宿主。
 
-```json
-{
-  "format": "c17-statusbar-icons",
-  "version": 2,
-  "fallback": "native",
-  "name": "部分状态示例",
-  "license": "MIT",
-  "render": "mask",
-  "icons": {"wifi.4": "assets/wifi-4.png"}
-}
+- 相机/麦克风`.on`为**允许访问**，`.off`为**阻止访问**，不能把“隐私屏蔽开启”画成`.on`。
+- 旋转`.on`为自动旋转、`.off`为旋转锁定。蓝牙磁贴开启不等于耳机已连接。
+- 支付、扫码、计算器、锁屏和电源等只有`.default`操作入口。铃声用`silent/vibrate/ring`；录屏用`unavailable/idle/recording`。
+- `tile.cast`没有当前OEM stock factory分支；`controls/wallet`复杂服务入口仍保留原生。品牌照片、自定义媒体动作、第三方TileService不会因有图案就成为适配目标。
+- 电池图只画外形和进度，不嵌百分数字、字母或闪电，避免与原生重复。
+
+允许部分状态包；已登记目标的非法状态（如`wifi.5`、`tile.alipay.on`）必须拒绝。
+
+## 制作和验证
+
+压缩包≤24MiB、条目≤1024、单文件≤1MiB、展开总量≤48MiB；manifest≤256KiB、XML≤128KiB、Lottie≤256KiB、说明/许可各≤64KiB。只允许普通文件和安全路径，拒绝加密、链接、特殊文件、穿越、重复和大小写冲突路径。Android另支持未加密单卷RAR4/RAR5；本仓库工具只预检ZIP，RAR交实际App验证。
+
+```powershell
+python -m pip install -r requirements.txt
+python tools/generate_original.py
+python tools/validate_pack.py dist/c17-rounded-27.zip dist/c17-rounded-27-png.zip
+python tools/check_validator.py
 ```
 
-v2 中未提供的状态继续尝试后续启用库，最终保留系统或模块现有图形；不会复制相邻信号等级或猜测缺失图案。缺少充电电池档位时不会借用该库的普通电池档位。多个库的顺序和逐图标指定来源仍按用户配置处理，`fallback` 不会自动开启或隐藏任何系统状态。
+生成器读当前角色快照，新增目标缺少绘图函数时直接失败，绝不补通用占位。ZIP顺序、时间、属性固定，同输入可复现。更新快照须从模块生产Registry导出，不手写新宿主规则。
 
-资源路径只能为 `assets/<文件名>.png` 或 `.webp`；文件名使用英文字母、数字、下划线、连字符。最多 128 项图标、256 个归档条目，压缩文件最多 8 MB，单文件最多 1 MB，展开总内容最多 16 MB。归档内链接、路径穿越和加密文件不能用于资源导入。
+[schema](manifest.schema.json)仅供字段提示；[验证器](tools/validate_pack.py)还检查严格JSON、真实PNG CRC/Alpha、XML路径、Lottie预算、SHA及静态端点，并附畸形负样例。[验证边界](docs/V3-VALIDATION.zh-CN.md)：**桌面预检不能替代Android严格生产parser、真实事务、RAR JNI、OEM播放或手机视觉验收**。
 
-## 图标标识与状态
+## 许可和发布状态
 
-| 范围 | 标识 | 规则 |
-| --- | --- | --- |
-| 原生提示图标 | `hint.bluetooth`、`hint.location` 等 | 通用图标，可用 `.on` / `.off` 提供状态差异；缺状态时回退通用图标 |
-| Wi-Fi | `wifi.none`、`wifi.0` … `wifi.4` | v1 声明系列时六个状态全部提供；v2 可部分提供 |
-| 蜂窝信号 | `cellular.none`、`cellular.0` … `cellular.4` | v1 声明系列时六个状态全部提供；v2 可部分提供；双卡按各卡原始信号分别绘制 |
-| 电池 | `battery.0`、`battery.10` … `battery.100` | v1 声明系列时 11 个状态全部提供；v2 可部分提供；使用向下十位取整的电量档位 |
-| 充电电池 | `battery.charging.0` … `battery.charging.100` | v1 可省略整套并使用普通电池，声明时需完整两套系列；v2 缺失状态继续回退，不借用普通电池 |
+规范、新桌面验证器与历史教学资源保留[MIT](LICENSE)。**C17示例库图案和生成器为GPL-3.0-only**，源文件及包内已注明，[完整GPL文本](LICENSES/GPL-3.0-only.txt)保留。它们不因放入此仓库改为MIT，第三方素材也保留自身许可。
 
-原生提示图标槽名：`bluetooth`、`location`、`alarm_clock`、`zen`、`volume`、`hotspot`、`headset`、`rotate`、`vpn`、`nfc`、`cast`、`screen_record`、`microphone`、`camera`、`privacy_call`、`usb`、`hd`、`airplane`。
-
-例如蓝牙使用 `hint.bluetooth`；按原生启用状态分开设计时，使用 `hint.bluetooth.on` 和 `hint.bluetooth.off`。未知的 `hint.<slot>` 可以保留在包内，当前模块不会据此反射类或改变其他控件；只有实际适配过的原生槽位会使用。通知 App 图标、时间、网速文字、网络文字、数据箭头和电池内文字不属于此图标包范围，继续使用原有独立功能。
-
-电池图片只包含背景外形和电量进度，不要画入百分数字、字母或闪电；动态百分数和充电指示继续由原生控件绘制，避免重复。当前蒙版版本使用电池轮廓色统一着色，不支持一张图片分别应用原生进度色和背景色；文字与充电指示仍使用各自颜色。不同档位的画布、外形位置应一致，充电版本可以改变外形但同样不画闪电。
-
-整套系列可不提供，例如只制作蓝牙和定位是合法的；v1 不能只提供某一个 Wi-Fi 档位。v2 允许部分档位，但状态切换时可能回到后续库或原生外观，作者应在说明中明确覆盖范围。正在过渡中的原生动画、图标尺寸、布局和间距由 C17 运行时保持；此规范不能保证第三方 ROM 未适配的控件都能替换。当前 C17 状态栏只接入 Wi-Fi 0–4，`wifi.none` 作为协议保留状态不会被伪装成活动箭头。提示图标 `.off` 的实时差异目前只有蓝牙连接状态已接入，其他提示通常只使用 `.on` 或通用图标。
-
-## 用户主题本地导入
-
-新版模块的“PUI 主题导入”接收用户自己持有的原始主题 ZIP，只读取 `PuiThemeSignalIcon.apk` 和 `PuiThemeStatusIcon.apk` 中已适配的静态资源，转为 PNG 蒙版后保存为 v2 图标库。当前覆盖 Wi-Fi 0–4、蜂窝 0–4/无信号以及九项提示图形（蓝牙两状态、定位、闹钟、勿扰、耳机、VPN、NFC、飞行模式）。缺少的 `wifi.none`、电池和其他提示保留后续库或原生图形，不凭空补出状态。
-
-导入不安装资源 APK，不运行主题内脚本或代码，也不应用整套主题；Quick Settings、应用图标和其他未适配资源不在转换范围。原素材的权利仍属于原作者。规范仓库只包含原创教学图形，不收录用户提供的 PUI 图片、转换结果或主题归档；用户应按素材原有授权使用和分享自己的图标库。
-
-目前适配的 ColorOS 17 在 Wi-Fi 未连接时隐藏状态栏 Wi-Fi 图标，因此不会绘制 `wifi.none`，也不会把数据活动箭头的 `wifi_none` 资源当作该图标。v1 声明 Wi-Fi 系列时仍须提供 `wifi.none` 以兼容既有规范；v2 可省略。逐项设置页只列当前可绘制的目标。提示图标的系统隐藏条件同样保留，除已适配的蓝牙状态外，通用 `hint.<slot>` 是其他提示图标的主要匹配入口。
-
-运行时先合并优先图标映射，只对实际使用的资源做后台解码。缓存限制为 4M 像素 Alpha 蒙版（约 4 MB）；超出预算、损坏或无法读取的图片会继续尝试下一库，再回退系统。上层已完全覆盖的库不会额外解码相同图标。
-
-## GitHub 下载
-
-在 App 输入 `owner/repo` 或 GitHub 仓库网址：优先选择最新发布的 `icon-pack.zip`，其次 `icon-pack.rar`；没有上述名字时，仅有一个 ZIP/RAR 附件才会选择。若有多个候选，请输入具体附件下载网址。仓库没有发布时尝试默认分支源代码 ZIP，仍要求归档里只有一个 manifest，因此包含多个示例的本规范仓库应下载 Releases 的单独示例包，而不是整仓库导入。
-
-可直接输入 GitHub Release、raw.githubusercontent.com 或 codeload.github.com 的公开 ZIP/RAR 下载网址。无需 GitHub Token，不支持私人仓库。下载每次重定向检查官方 HTTPS 主机、限制大小和超时；下载的临时压缩包在处理后删除。导入后的库保存在 App 私有存储，卸载由系统删除。配置仅保存顺序与库 ID，不包含图标字节；迁移设备时需重新导入。
-
-## 示例和验证
-
-[PUI 资源对应表](docs/PUI-RESOURCE-MAPPING.zh-CN.md)记录所提供 ColorOS 17 包中的状态栏资源类别、可对应角色和缺项，仅包含清点结果，不转载素材。
-
-`examples/minimal-hints/` 是可与现有默认样式混用的 v1 最小示例；`examples/complete-outline/` 是 v1 完整系列示例；`examples/partial-native/` 是 v2 部分状态回退示例。对应归档为 `dist/hints-only.zip`、`dist/icon-pack.zip` 和 `dist/partial-native.zip`。它们仅演示规范和透明蒙版，不是 PUI 图标转载。
-
-执行以下命令可使用 Pillow 重新生成示例和 ZIP，并分别检查 v1 完整包、v1 提示图标包和 v2 部分状态包的目录、状态覆盖与图片规格：
-
-```text
-python tools/build_examples.py
-python tools/validate_pack.py dist/icon-pack.zip
-python tools/validate_pack.py dist/hints-only.zip
-python tools/validate_pack.py dist/partial-native.zip
-```
-
-`manifest.schema.json` 提供编辑器可用的字段约束，v1 系列完整性还需运行验证工具检查。Android App 的导入检查为最终准入依据，本地工具不伪称验证过 Android RAR JNI 或真实 SystemUI 视觉效果。
-
-规范文本、工具与原创示例资源均按 MIT License 分发，见 `LICENSE`。第三方制作和导入的图标保留各自许可，不因导入而自动变为 MIT。
-
-## 联系
-
-作者 aiingjie · GitHub [SANWU5](https://github.com/SANWU5) · 酷安 konwo · QQ 2726344450。交流、合作或自愿捐赠可联系作者；模块永久免费，捐赠渠道见模块“关于”页。
+本仓库发布制作规范、校验工具与示例；模块版本与手机效果以模块发布说明及实际验收为准。本仓库不接收PUI/OEM原始或转换素材。

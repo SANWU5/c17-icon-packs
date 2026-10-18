@@ -5,7 +5,7 @@ from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 from PIL import Image, ImageDraw
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 SLOTS = 'bluetooth location alarm_clock zen volume hotspot headset rotate vpn nfc cast screen_record microphone camera privacy_call usb hd airplane'.split()
 WHITE = (255, 255, 255, 255)
 
@@ -79,7 +79,7 @@ def battery(level, charging=False):
 
 
 def build(name, complete):
-    folder = ROOT / 'examples' / name
+    folder = ROOT / 'examples' / 'legacy' / name
     assets = folder / 'assets'
     assets.mkdir(parents=True, exist_ok=True)
     mapping = {}
@@ -100,7 +100,7 @@ def build(name, complete):
     manifest = dict(format='c17-statusbar-icons', version=1, name='完整线条教学示例' if complete else '蓝牙定位教学示例', author='aiingjie', license='MIT', render='mask', icons=mapping)
     (folder / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     (folder / 'LICENSE.txt').write_bytes((ROOT / 'LICENSE').read_bytes())
-    dist = ROOT / 'dist'
+    dist = ROOT / 'dist' / 'legacy'
     dist.mkdir(exist_ok=True)
     destination = dist / ('icon-pack.zip' if complete else 'hints-only.zip')
     with ZipFile(destination, 'w', ZIP_DEFLATED) as archive:
@@ -112,7 +112,7 @@ def build(name, complete):
 
 def build_partial():
     """An original v2 example deliberately omits every other Wi-Fi level."""
-    folder = ROOT / 'examples' / 'partial-native'
+    folder = ROOT / 'examples' / 'legacy' / 'partial-native'
     assets = folder / 'assets'
     assets.mkdir(parents=True, exist_ok=True)
     wifi(4).save(assets / 'wifi-4.png')
@@ -123,7 +123,7 @@ def build_partial():
                                          'hint.location': 'assets/location.png'})
     (folder / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     (folder / 'LICENSE.txt').write_bytes((ROOT / 'LICENSE').read_bytes())
-    dist = ROOT / 'dist'
+    dist = ROOT / 'dist' / 'legacy'
     dist.mkdir(exist_ok=True)
     destination = dist / 'partial-native.zip'
     with ZipFile(destination, 'w', ZIP_DEFLATED) as archive:

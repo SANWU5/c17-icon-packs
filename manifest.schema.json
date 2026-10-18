@@ -1,26 +1,43 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "C17 状态栏图标包 v1 / v2",
-  "description": "C17 模块 1.8.1 同时支持 v1 完整系列与声明 fallback=native 的 v2 部分状态图标包。",
-  "type": "object",
-  "required": ["format", "version", "name", "license", "icons"],
+  "title": "C17 图标管理 v3 图标包",
+  "description": "1.8.3-beta.95/code188 测试版，v3格式兼容beta94/code187；schema不能替代真实资源与Android生产准入或静态可见高度验收。",
+  "type": "object", "additionalProperties": false,
+  "required": ["format", "version", "fallback", "id", "name", "license", "icons"],
   "properties": {
-    "format": {"const": "c17-statusbar-icons"},
-    "version": {"type": "integer", "enum": [1, 2]},
-    "fallback": {"const": "native"},
+    "format": {"const": "c17-statusbar-icons"}, "version": {"const": 3}, "fallback": {"const": "native"},
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{0,63}$"},
     "name": {"type": "string", "minLength": 1, "maxLength": 64},
     "author": {"type": "string", "maxLength": 128},
     "license": {"type": "string", "minLength": 1, "maxLength": 128},
-    "render": {"const": "mask"},
     "icons": {
-      "type": "object", "minProperties": 1, "maxProperties": 128,
-      "propertyNames": {"pattern": "^(hint\\.[a-z][a-z0-9_]{0,47}(\\.(on|off))?|(wifi|cellular)\\.([0-4]|none)|battery\\.(charging\\.)?(0|[1-9]0|100))$"},
-      "additionalProperties": {"type": "string", "pattern": "^assets/[a-zA-Z0-9][a-zA-Z0-9_-]{0,63}\\.(png|webp)$"}
+      "type": "object", "minProperties": 1, "maxProperties": 512,
+      "propertyNames": {"type": "string", "maxLength": 128, "pattern": "^(hint|wifi|cellular|battery|tile|slider|media|device|footer)(\\.[a-z0-9][a-z0-9_]{0,47}){1,5}$"},
+      "additionalProperties": {"$ref": "#/$defs/staticAsset"}
+    },
+    "transitions": {
+      "type": "object", "maxProperties": 128,
+      "propertyNames": {"pattern": "^tile(\\.[a-z0-9][a-z0-9_]{0,47}){1,4}\\.(off_to_on|on_to_off|transient)$"},
+      "additionalProperties": {"$ref": "#/$defs/transition"}
     }
   },
-  "allOf": [
-    {"if": {"properties": {"version": {"const": 1}}}, "then": {"not": {"required": ["fallback"]}}},
-    {"if": {"properties": {"version": {"const": 2}}}, "then": {"required": ["fallback"]}}
-  ],
-  "$comment": "v1 additionally requires complete declared Wi-Fi/cellular state sets and 11-step battery sets. v2 requires fallback=native and permits partial families. Missing v2 charging artwork must not reuse ordinary battery artwork. Use tools/validate_pack.py and the Android importer."
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^([a-f0-9]{64})?$"},
+    "staticAsset": {
+      "type": "object", "additionalProperties": false, "required": ["source"],
+      "properties": {
+        "source": {"type": "string", "pattern": "^assets/[A-Za-z0-9][A-Za-z0-9_-]{0,95}\\.(png|xml)$"},
+        "render": {"enum": ["mask", "color"], "default": "mask"}, "sha256": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "transition": {
+      "type": "object", "additionalProperties": false, "required": ["source", "from", "to"],
+      "properties": {
+        "source": {"type": "string", "pattern": "^assets/[A-Za-z0-9][A-Za-z0-9_-]{0,95}\\.json$"},
+        "from": {"enum": ["on", "off", "transient"]}, "to": {"enum": ["on", "off"]},
+        "reversible": {"type": "boolean", "default": false}, "sha256": {"$ref": "#/$defs/digest"}
+      }
+    }
+  },
+  "$comment": "跨字段from/to、精确静态端点、已知目标状态、重复JSON键、字节摘要、PNG/XML/Lottie预算另由桌面工具和Android严格parser检查。"
 }

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Original C17示例库; GPL-3.0-only; no traced third-party artwork. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+    <path android:fillColor="#00000000" android:strokeColor="#FFFFFFFF" android:strokeWidth="1.8" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M 6.5 5.5 L 17.5 5.5 C 19.1569 5.5 20.5 6.8431 20.5 8.5 L 20.5 15.5 C 20.5 17.1569 19.1569 18.5 17.5 18.5 L 6.5 18.5 C 4.8431 18.5 3.5 17.1569 3.5 15.5 L 3.5 8.5 C 3.5 6.8431 4.8431 5.5 6.5 5.5 Z" />
+    <path android:fillColor="#FFFFFFFF" android:pathData="M 10 9 L 14 9 C 14.5523 9 15 9.4477 15 10 L 15 14 C 15 14.5523 14.5523 15 14 15 L 10 15 C 9.4477 15 9 14.5523 9 14 L 9 10 C 9 9.4477 9.4477 9 10 9 Z" />
+</vector>

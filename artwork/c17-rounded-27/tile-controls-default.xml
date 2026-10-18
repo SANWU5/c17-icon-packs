@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Original C17示例库; GPL-3.0-only; no traced third-party artwork. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+    <path android:fillColor="#00000000" android:strokeColor="#FFFFFFFF" android:strokeWidth="1.8" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M 3 11 L 12 3 L 21 11" />
+    <path android:fillColor="#00000000" android:strokeColor="#FFFFFFFF" android:strokeWidth="1.8" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M 7.8 10 L 16.2 10 C 17.1941 10 18 10.8059 18 11.8 L 18 19.2 C 18 20.1941 17.1941 21 16.2 21 L 7.8 21 C 6.8059 21 6 20.1941 6 19.2 L 6 11.8 C 6 10.8059 6.8059 10 7.8 10 Z" />
+    <path android:fillColor="#00000000" android:strokeColor="#FFFFFFFF" android:strokeWidth="1.2" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M 9 13 L 9 18" />
+    <path android:fillColor="#00000000" android:strokeColor="#FFFFFFFF" android:strokeWidth="1.2" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M 15 13 L 15 18" />
+    <path android:fillColor="#FFFFFFFF" android:pathData="M 10.2 14.5 C 10.2 15.1627 9.6627 15.7 9 15.7 C 8.3373 15.7 7.8 15.1627 7.8 14.5 C 7.8 13.8373 8.3373 13.3 9 13.3 C 9.6627 13.3 10.2 13.8373 10.2 14.5 Z" />
+    <path android:fillColor="#FFFFFFFF" android:pathData="M 16.2 17 C 16.2 17.6627 15.6627 18.2 15 18.2 C 14.3373 18.2 13.8 17.6627 13.8 17 C 13.8 16.3373 14.3373 15.8 15 15.8 C 15.6627 15.8 16.2 16.3373 16.2 17 Z" />
+</vector>

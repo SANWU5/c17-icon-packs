@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Original C17示例库; GPL-3.0-only; no traced third-party artwork. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+    <path android:fillColor="#00000000" android:strokeColor="#FFFFFFFF" android:strokeWidth="1.8" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M 4.7495 8.6191 L 5.4132 7.4597 L 6.2606 6.4269 L 7.268 5.5495 L 8.4074 4.852 L 9.647 4.3539 L 10.9521 4.0689 L 12.2865 4.0051 L 13.6129 4.1643 L 14.8944 4.5419 L 16.0951 5.1276 L 17.1816 5.9048 L 18.1236 6.8521 L 18.8949 7.9429 L 19.4739 9.1468 L 19.8445 10.4303 L 19.9963 11.7575 L 19.9252 13.0915 L 19.633 14.3951 L 19.1281 15.6319" />
+    <path android:fillColor="#00000000" android:strokeColor="#FFFFFFFF" android:strokeWidth="1.8" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M 19 7 L 20 11.8 L 15.5 11" />
+    <path android:fillColor="#00000000" android:strokeColor="#FFFFFFFF" android:strokeWidth="1.5" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M 10.4 7.5 L 13.6 7.5 C 14.4837 7.5 15.2 8.2163 15.2 9.1 L 15.2 15.9 C 15.2 16.7837 14.4837 17.5 13.6 17.5 L 10.4 17.5 C 9.5163 17.5 8.8 16.7837 8.8 15.9 L 8.8 9.1 C 8.8 8.2163 9.5163 7.5 10.4 7.5 Z" />
+    <path android:fillColor="#00000000" android:strokeColor="#FFFFFFFF" android:strokeWidth="2" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M 4 4 L 20 20" />
+</vector>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Original C17示例库; GPL-3.0-only; no traced third-party artwork. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+    <path android:fillColor="#00000000" android:strokeColor="#FFFFFFFF" android:strokeWidth="1.8" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M 5 3 L 13.5 3 C 14.6046 3 15.5 3.8954 15.5 5 L 15.5 14 C 15.5 15.1046 14.6046 16 13.5 16 L 5 16 C 3.8954 16 3 15.1046 3 14 L 3 5 C 3 3.8954 3.8954 3 5 3 Z" />
+    <path android:fillColor="#00000000" android:strokeColor="#FFFFFFFF" android:strokeWidth="1.8" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M 10.5 8 L 19 8 C 20.1046 8 21 8.8954 21 10 L 21 19 C 21 20.1046 20.1046 21 19 21 L 10.5 21 C 9.3954 21 8.5 20.1046 8.5 19 L 8.5 10 C 8.5 8.8954 9.3954 8 10.5 8 Z" />
+    <path android:fillColor="#00000000" android:strokeColor="#FFFFFFFF" android:strokeWidth="1.8" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M 10.5 14 L 18.5 14" />
+    <path android:fillColor="#00000000" android:strokeColor="#FFFFFFFF" android:strokeWidth="1.4" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M 16 11.5 L 18.5 14 L 16 16.5" />
+</vector>

@@ -1,0 +1,919 @@
+{
+  "format": "c17-statusbar-icons",
+  "version": 3,
+  "id": "c17-rounded-27-png",
+  "name": "C17示例库 · PNG",
+  "author": "aiingjie",
+  "license": "GPL-3.0-only",
+  "fallback": "native",
+  "transitions": {
+    "tile.flashlight.off_to_on": {
+      "source": "assets/tile-flashlight-off-to-on.json",
+      "from": "off",
+      "to": "on",
+      "reversible": false,
+      "sha256": "4514223ed5356cc995600e5ff8ba6b84701328cfb24b7713fc913c7c31c4e159"
+    },
+    "tile.dark.off_to_on": {
+      "source": "assets/tile-dark-off-to-on.json",
+      "from": "off",
+      "to": "on",
+      "reversible": false,
+      "sha256": "6abef788e4a32b5b911d423629cb3b5b4c242d352468be68f654e21cc50a82b0"
+    },
+    "tile.rotation.off_to_on": {
+      "source": "assets/tile-rotation-off-to-on.json",
+      "from": "off",
+      "to": "on",
+      "reversible": false,
+      "sha256": "a31a5e0cd565399bd46d73a4844f6a0e61c8fd4c479113a47367055390116715"
+    }
+  },
+  "icons": {
+    "hint.bluetooth.on": {
+      "source": "assets/hint-bluetooth-on.png",
+      "render": "mask",
+      "sha256": "be1ff26e669a53d7681f3cba442666bb4411962b0c2c4d77ec6da6efbf3d5f1f"
+    },
+    "hint.bluetooth.off": {
+      "source": "assets/hint-bluetooth-off.png",
+      "render": "mask",
+      "sha256": "5fe37c5c1d017217837e95d3ba95119e988055daa293a35a5e6e18ed8512e763"
+    },
+    "hint.location.default": {
+      "source": "assets/hint-location-default.png",
+      "render": "mask",
+      "sha256": "ebf46e8c1b0092a46b6d3be0db61075dbefa00adde1440a8429d2d757d663bad"
+    },
+    "hint.alarm_clock.default": {
+      "source": "assets/hint-alarm_clock-default.png",
+      "render": "mask",
+      "sha256": "54fafd40c5f212cae5169f4ef86fbdea0989841ec56f405b42aa6cd79d062ae4"
+    },
+    "hint.zen.default": {
+      "source": "assets/hint-zen-default.png",
+      "render": "mask",
+      "sha256": "8a72deddf66ec25d0df72550753c83dd741a8dab8beca6241459037067558ccc"
+    },
+    "hint.volume.default": {
+      "source": "assets/hint-volume-default.png",
+      "render": "mask",
+      "sha256": "d871ee01f32190745f07fbbd6d7cd29df9a18ab1e1d4dc513d07e53ba3a2289d"
+    },
+    "hint.hotspot.default": {
+      "source": "assets/hint-hotspot-default.png",
+      "render": "mask",
+      "sha256": "a6b0b7d3e49c8ecdbd7e95cd22a2f230313e01e5979f8a7a5839836c647544fb"
+    },
+    "hint.headset.default": {
+      "source": "assets/hint-headset-default.png",
+      "render": "mask",
+      "sha256": "32349d5cd1cc6197509559536a6016e8071397f17a77ce497b125b4600a344a5"
+    },
+    "hint.rotate.default": {
+      "source": "assets/hint-rotate-default.png",
+      "render": "mask",
+      "sha256": "2f583b26b0524e8460925ef145c68ab7d5afa44802421caf929068420f70d7b9"
+    },
+    "hint.vpn.default": {
+      "source": "assets/hint-vpn-default.png",
+      "render": "mask",
+      "sha256": "d095edd44931d7f65d5d46e5457141347e271bcd991861f54c2ae2cd4db08d26"
+    },
+    "hint.nfc.default": {
+      "source": "assets/hint-nfc-default.png",
+      "render": "mask",
+      "sha256": "2d07e58de0a20e31ed970b1aa926531f4e60e562fbf0cbbd46cd3319b745e70b"
+    },
+    "hint.cast.default": {
+      "source": "assets/hint-cast-default.png",
+      "render": "mask",
+      "sha256": "6d024c6594d736451dc26117f85c6568369ef9597664ebcdc40b458d436df065"
+    },
+    "hint.screen_record.default": {
+      "source": "assets/hint-screen_record-default.png",
+      "render": "mask",
+      "sha256": "f13676822b841cb3b5cd38931c81bdbf391b2998d75bbf2772b0208d36cedcbe"
+    },
+    "hint.microphone.default": {
+      "source": "assets/hint-microphone-default.png",
+      "render": "mask",
+      "sha256": "e2718b743bf5b112b1fc23c076ab21749cd54269eb044ef13827411a065d80db"
+    },
+    "hint.camera.default": {
+      "source": "assets/hint-camera-default.png",
+      "render": "mask",
+      "sha256": "cc68288e21160431b8ecddf8b7fb9771a2fead321e197700cc8c2604b3168349"
+    },
+    "hint.privacy_call.default": {
+      "source": "assets/hint-privacy_call-default.png",
+      "render": "mask",
+      "sha256": "f1d6f65425a356885febdbbaacab493a424e3aa4e57579846a7f960abc22905b"
+    },
+    "hint.usb.default": {
+      "source": "assets/hint-usb-default.png",
+      "render": "mask",
+      "sha256": "f6243ced7e1113a854a675c5dcb1ad1621c833f8f0e225c81e6f26541e673266"
+    },
+    "hint.hd.default": {
+      "source": "assets/hint-hd-default.png",
+      "render": "mask",
+      "sha256": "d307d296d7dfe5f59ba8c32ccd1e83cdbd81c09575a451b7087c32e7a24c9a56"
+    },
+    "hint.airplane.default": {
+      "source": "assets/hint-airplane-default.png",
+      "render": "mask",
+      "sha256": "ddb1b6c861793af4b2357fbc91a4d265af6d2f94c897b11978898e495836a8e2"
+    },
+    "wifi.none": {
+      "source": "assets/wifi-none.png",
+      "render": "mask",
+      "sha256": "4268dd3a91b4d664eb0a37f1fcc9c0d3bc455385b7274b375c84a1acba4b7bfe"
+    },
+    "wifi.0": {
+      "source": "assets/wifi-0.png",
+      "render": "mask",
+      "sha256": "3fca35af888adf50bc61d1c38f732be54708d45efabda9853d588ba0e9114765"
+    },
+    "wifi.1": {
+      "source": "assets/wifi-1.png",
+      "render": "mask",
+      "sha256": "dc1682bb31adfb6e6948a43ed32b947caf3a50df3ce305352be996fc4fef526d"
+    },
+    "wifi.2": {
+      "source": "assets/wifi-2.png",
+      "render": "mask",
+      "sha256": "7a85c61dcce48a61754f405e902be8d4ec402d016df8a12ea20071f942f371ca"
+    },
+    "wifi.3": {
+      "source": "assets/wifi-3.png",
+      "render": "mask",
+      "sha256": "b0a2d3205b9d52df9d4d1efa031d46a61554dcd654cc4d44b87577f5eae2f8ee"
+    },
+    "wifi.4": {
+      "source": "assets/wifi-4.png",
+      "render": "mask",
+      "sha256": "f905b4ab8d10d6b42ff00f85c811bfb5a5bb8db101b8d8caae7bfffd102d01c7"
+    },
+    "cellular.none": {
+      "source": "assets/cellular-none.png",
+      "render": "mask",
+      "sha256": "9feca1390944a47113137876d1a348d1f96da6e6bbd014ee0d4857f113aa3221"
+    },
+    "cellular.0": {
+      "source": "assets/cellular-0.png",
+      "render": "mask",
+      "sha256": "5f200616afcc621c6814d438d6e997cf44f435e495b26a7e7d5d111113aa0a8b"
+    },
+    "cellular.1": {
+      "source": "assets/cellular-1.png",
+      "render": "mask",
+      "sha256": "c96bd0b856b9fae17c256920354cb23f96f942035e0da32259f2bc66f3eb3d11"
+    },
+    "cellular.2": {
+      "source": "assets/cellular-2.png",
+      "render": "mask",
+      "sha256": "958fd7cb5a1ea8776e3740c9a80b97e8a7466950e8ea3fd42525bd4d75e24188"
+    },
+    "cellular.3": {
+      "source": "assets/cellular-3.png",
+      "render": "mask",
+      "sha256": "ea25195d786a1b8d25e394edaf11722f1b948404ab5396e7592b3e89253633f9"
+    },
+    "cellular.4": {
+      "source": "assets/cellular-4.png",
+      "render": "mask",
+      "sha256": "0dc4228b93e324f33de791d9612227c791539a6e6dc434bf96c84a754a1d0ae7"
+    },
+    "battery.0": {
+      "source": "assets/battery-0.png",
+      "render": "mask",
+      "sha256": "cfc54a1ac722f401a710cc177ede96bd3586ec1118e044ceb5823a09a0d586a8"
+    },
+    "battery.10": {
+      "source": "assets/battery-10.png",
+      "render": "mask",
+      "sha256": "840967c2cf1623b13b1f60dd6a21d3774d43b697d2cb675f59ade6053802a416"
+    },
+    "battery.20": {
+      "source": "assets/battery-20.png",
+      "render": "mask",
+      "sha256": "0a392ea90b05445fd31736ca34ad38718615bb2edb394c01dcfcfc148210c319"
+    },
+    "battery.30": {
+      "source": "assets/battery-30.png",
+      "render": "mask",
+      "sha256": "237e60ed542771a1a08dad3984416d3eec8ec7e03509c96a7728307485419a0b"
+    },
+    "battery.40": {
+      "source": "assets/battery-40.png",
+      "render": "mask",
+      "sha256": "c08ac0f1e6df3bb01a21385107b17b8e5c522690f429c8007c1bb03dedb9dd47"
+    },
+    "battery.50": {
+      "source": "assets/battery-50.png",
+      "render": "mask",
+      "sha256": "6cfc9f42be7849daeb8b6346e6d5baa06e59a954f5e18dc57876d4aeb4ffb81e"
+    },
+    "battery.60": {
+      "source": "assets/battery-60.png",
+      "render": "mask",
+      "sha256": "18fc373cb8b0278b1b7e7b455b357020e348df039cdb37a4351b708bc4cb647f"
+    },
+    "battery.70": {
+      "source": "assets/battery-70.png",
+      "render": "mask",
+      "sha256": "44b044427e206d420016dae89446a59594471848098eca23a509e7bb623943d5"
+    },
+    "battery.80": {
+      "source": "assets/battery-80.png",
+      "render": "mask",
+      "sha256": "6f2aee6fe2d7dddabc8e4a2e051216dff3c727d31c353af24da1d98d6bbc0625"
+    },
+    "battery.90": {
+      "source": "assets/battery-90.png",
+      "render": "mask",
+      "sha256": "0ad3ff58562181f9a82afba97b9830d97aba89c8cb50e02ee9d86202b5fc3774"
+    },
+    "battery.100": {
+      "source": "assets/battery-100.png",
+      "render": "mask",
+      "sha256": "b9051126f3dbac4f8629cbee4fa6734ff1637ea24a94d535b684c2c5adf0ac5e"
+    },
+    "battery.charging.0": {
+      "source": "assets/battery-charging-0.png",
+      "render": "mask",
+      "sha256": "cfc54a1ac722f401a710cc177ede96bd3586ec1118e044ceb5823a09a0d586a8"
+    },
+    "battery.charging.10": {
+      "source": "assets/battery-charging-10.png",
+      "render": "mask",
+      "sha256": "840967c2cf1623b13b1f60dd6a21d3774d43b697d2cb675f59ade6053802a416"
+    },
+    "battery.charging.20": {
+      "source": "assets/battery-charging-20.png",
+      "render": "mask",
+      "sha256": "0a392ea90b05445fd31736ca34ad38718615bb2edb394c01dcfcfc148210c319"
+    },
+    "battery.charging.30": {
+      "source": "assets/battery-charging-30.png",
+      "render": "mask",
+      "sha256": "237e60ed542771a1a08dad3984416d3eec8ec7e03509c96a7728307485419a0b"
+    },
+    "battery.charging.40": {
+      "source": "assets/battery-charging-40.png",
+      "render": "mask",
+      "sha256": "c08ac0f1e6df3bb01a21385107b17b8e5c522690f429c8007c1bb03dedb9dd47"
+    },
+    "battery.charging.50": {
+      "source": "assets/battery-charging-50.png",
+      "render": "mask",
+      "sha256": "6cfc9f42be7849daeb8b6346e6d5baa06e59a954f5e18dc57876d4aeb4ffb81e"
+    },
+    "battery.charging.60": {
+      "source": "assets/battery-charging-60.png",
+      "render": "mask",
+      "sha256": "18fc373cb8b0278b1b7e7b455b357020e348df039cdb37a4351b708bc4cb647f"
+    },
+    "battery.charging.70": {
+      "source": "assets/battery-charging-70.png",
+      "render": "mask",
+      "sha256": "44b044427e206d420016dae89446a59594471848098eca23a509e7bb623943d5"
+    },
+    "battery.charging.80": {
+      "source": "assets/battery-charging-80.png",
+      "render": "mask",
+      "sha256": "6f2aee6fe2d7dddabc8e4a2e051216dff3c727d31c353af24da1d98d6bbc0625"
+    },
+    "battery.charging.90": {
+      "source": "assets/battery-charging-90.png",
+      "render": "mask",
+      "sha256": "0ad3ff58562181f9a82afba97b9830d97aba89c8cb50e02ee9d86202b5fc3774"
+    },
+    "battery.charging.100": {
+      "source": "assets/battery-charging-100.png",
+      "render": "mask",
+      "sha256": "b9051126f3dbac4f8629cbee4fa6734ff1637ea24a94d535b684c2c5adf0ac5e"
+    },
+    "tile.wifi.off": {
+      "source": "assets/tile-wifi-off.png",
+      "render": "mask",
+      "sha256": "4268dd3a91b4d664eb0a37f1fcc9c0d3bc455385b7274b375c84a1acba4b7bfe"
+    },
+    "tile.wifi.on": {
+      "source": "assets/tile-wifi-on.png",
+      "render": "mask",
+      "sha256": "f905b4ab8d10d6b42ff00f85c811bfb5a5bb8db101b8d8caae7bfffd102d01c7"
+    },
+    "tile.wifi.unavailable": {
+      "source": "assets/tile-wifi-unavailable.png",
+      "render": "mask",
+      "sha256": "21ecb3b7a0c2db55d94b12549fa63e6cbe150571139dfc25964c21ab347516c3"
+    },
+    "tile.bluetooth.off": {
+      "source": "assets/tile-bluetooth-off.png",
+      "render": "mask",
+      "sha256": "dc57d3b6a156ae255b0673de6e252c8457931697641fb9de6d6ce0ce0ce66e70"
+    },
+    "tile.bluetooth.on": {
+      "source": "assets/tile-bluetooth-on.png",
+      "render": "mask",
+      "sha256": "5fe37c5c1d017217837e95d3ba95119e988055daa293a35a5e6e18ed8512e763"
+    },
+    "tile.bluetooth.unavailable": {
+      "source": "assets/tile-bluetooth-unavailable.png",
+      "render": "mask",
+      "sha256": "a7b4207880c14930527ba226f42ffe4324d18675f55ef11ec6e910d3842d99ce"
+    },
+    "tile.mobile_data.off": {
+      "source": "assets/tile-mobile_data-off.png",
+      "render": "mask",
+      "sha256": "e04e8ab893531a4ff3a88672c82d8cc3cfa7e16591a3cf81196387d5a8f89e1e"
+    },
+    "tile.mobile_data.on": {
+      "source": "assets/tile-mobile_data-on.png",
+      "render": "mask",
+      "sha256": "e83b78d1919805eb5ab7235676fabf9dbea25aaf6201d1dee76c5b2670a375d3"
+    },
+    "tile.mobile_data.unavailable": {
+      "source": "assets/tile-mobile_data-unavailable.png",
+      "render": "mask",
+      "sha256": "86541f81d6ea8f1ff30cc97fae17ffcf1676d8f2da7eee065888ef833e18d0a5"
+    },
+    "tile.hotspot.off": {
+      "source": "assets/tile-hotspot-off.png",
+      "render": "mask",
+      "sha256": "1768bd3502dc88ec95afe5a435841fc7ea04ea700929867e53c526eebb0c3f56"
+    },
+    "tile.hotspot.on": {
+      "source": "assets/tile-hotspot-on.png",
+      "render": "mask",
+      "sha256": "a6b0b7d3e49c8ecdbd7e95cd22a2f230313e01e5979f8a7a5839836c647544fb"
+    },
+    "tile.hotspot.unavailable": {
+      "source": "assets/tile-hotspot-unavailable.png",
+      "render": "mask",
+      "sha256": "45c6f2a69cedbec628d87fcc45491b7027afa7fa1d2e067b905f391bf28780e6"
+    },
+    "tile.airplane.off": {
+      "source": "assets/tile-airplane-off.png",
+      "render": "mask",
+      "sha256": "6c89b1b61ed7a813147fc4fcb85ee4082c8c22bb81150c80cf6e43d61b11b546"
+    },
+    "tile.airplane.on": {
+      "source": "assets/tile-airplane-on.png",
+      "render": "mask",
+      "sha256": "ddb1b6c861793af4b2357fbc91a4d265af6d2f94c897b11978898e495836a8e2"
+    },
+    "tile.airplane.unavailable": {
+      "source": "assets/tile-airplane-unavailable.png",
+      "render": "mask",
+      "sha256": "89f5c74367744e1024b4193dcfd7a02d49ad01711356a3ed673149625cafea20"
+    },
+    "tile.nfc.off": {
+      "source": "assets/tile-nfc-off.png",
+      "render": "mask",
+      "sha256": "34eca48fc27092e562023b6ab9079a65c12ce36fc5ec77ead278ccfdeff70268"
+    },
+    "tile.nfc.on": {
+      "source": "assets/tile-nfc-on.png",
+      "render": "mask",
+      "sha256": "2d07e58de0a20e31ed970b1aa926531f4e60e562fbf0cbbd46cd3319b745e70b"
+    },
+    "tile.nfc.unavailable": {
+      "source": "assets/tile-nfc-unavailable.png",
+      "render": "mask",
+      "sha256": "9669baff7001478eb2030b827331ec838a40d61709ef84e6208bc62c39dad374"
+    },
+    "tile.flashlight.off": {
+      "source": "assets/tile-flashlight-off.png",
+      "render": "mask",
+      "sha256": "7d4576762fab5ab1b4c465b7b59e6bd3aafbff4e27b47a0269e7dcda36318e6f"
+    },
+    "tile.flashlight.on": {
+      "source": "assets/tile-flashlight-on.png",
+      "render": "mask",
+      "sha256": "32eaef78d0a778c8958394af3660246494caa338d3c478fbe4fa3cf72afec103"
+    },
+    "tile.flashlight.unavailable": {
+      "source": "assets/tile-flashlight-unavailable.png",
+      "render": "mask",
+      "sha256": "601ab1c4c1fd9f343e5bfef5ba2a6d0efb7fba7a18187a0e1655c1fd40339337"
+    },
+    "tile.rotation.off": {
+      "source": "assets/tile-rotation-off.png",
+      "render": "mask",
+      "sha256": "800b85f38af27cc283b0baabcdd313675830292ff90214e534c36bce82737a1a"
+    },
+    "tile.rotation.on": {
+      "source": "assets/tile-rotation-on.png",
+      "render": "mask",
+      "sha256": "2f583b26b0524e8460925ef145c68ab7d5afa44802421caf929068420f70d7b9"
+    },
+    "tile.rotation.unavailable": {
+      "source": "assets/tile-rotation-unavailable.png",
+      "render": "mask",
+      "sha256": "e6c32bb694f5ef62c2635450cd099825c5d80e4ca6a4a7cdd17d458664ee942c"
+    },
+    "tile.dark.off": {
+      "source": "assets/tile-dark-off.png",
+      "render": "mask",
+      "sha256": "7422d6aee39015b9e4fd1583f707d977a39666da05976604c1dbaf37a9b71774"
+    },
+    "tile.dark.on": {
+      "source": "assets/tile-dark-on.png",
+      "render": "mask",
+      "sha256": "8a72deddf66ec25d0df72550753c83dd741a8dab8beca6241459037067558ccc"
+    },
+    "tile.dark.unavailable": {
+      "source": "assets/tile-dark-unavailable.png",
+      "render": "mask",
+      "sha256": "97c8973c205799b7c85e6ba5b8a6f7e1622f63c45adf5a2db8a9ecec07e6bcb8"
+    },
+    "tile.location.off": {
+      "source": "assets/tile-location-off.png",
+      "render": "mask",
+      "sha256": "1ef0303a4c89064ed59797b51285a3a53508832f331331cbbaf7eec14a4b525e"
+    },
+    "tile.location.on": {
+      "source": "assets/tile-location-on.png",
+      "render": "mask",
+      "sha256": "ebf46e8c1b0092a46b6d3be0db61075dbefa00adde1440a8429d2d757d663bad"
+    },
+    "tile.location.unavailable": {
+      "source": "assets/tile-location-unavailable.png",
+      "render": "mask",
+      "sha256": "e4990b8b9ded4dcf7dadd8f398b08b0b4ab830bb7671b526fd0a147c16f73a1b"
+    },
+    "tile.camera.off": {
+      "source": "assets/tile-camera-off.png",
+      "render": "mask",
+      "sha256": "309055de0a27e0dda4ba570ec1078084a4b9724cb4de19c9c9e8ca80029f2079"
+    },
+    "tile.camera.on": {
+      "source": "assets/tile-camera-on.png",
+      "render": "mask",
+      "sha256": "cc68288e21160431b8ecddf8b7fb9771a2fead321e197700cc8c2604b3168349"
+    },
+    "tile.camera.unavailable": {
+      "source": "assets/tile-camera-unavailable.png",
+      "render": "mask",
+      "sha256": "fe7d4c9d3afa69b7636c5322fcad061bc9febd87658ffe21b8418760f19537d8"
+    },
+    "tile.microphone.off": {
+      "source": "assets/tile-microphone-off.png",
+      "render": "mask",
+      "sha256": "43a993b0591ba6f9bb9138e45060479edf08b97e19a52b30e13bd3ba8e407948"
+    },
+    "tile.microphone.on": {
+      "source": "assets/tile-microphone-on.png",
+      "render": "mask",
+      "sha256": "e2718b743bf5b112b1fc23c076ab21749cd54269eb044ef13827411a065d80db"
+    },
+    "tile.microphone.unavailable": {
+      "source": "assets/tile-microphone-unavailable.png",
+      "render": "mask",
+      "sha256": "9a2ea54fe49d2a38e5b158a19380bd8661d1ddede80325c53338f3937ea1d88c"
+    },
+    "tile.cast.off": {
+      "source": "assets/tile-cast-off.png",
+      "render": "mask",
+      "sha256": "e66dc9bbcce141a92fd738b6e0a9d20b7f95f00e815526e2ac63c2d0cf375194"
+    },
+    "tile.cast.on": {
+      "source": "assets/tile-cast-on.png",
+      "render": "mask",
+      "sha256": "6d024c6594d736451dc26117f85c6568369ef9597664ebcdc40b458d436df065"
+    },
+    "tile.cast.unavailable": {
+      "source": "assets/tile-cast-unavailable.png",
+      "render": "mask",
+      "sha256": "e888d3e4dc382e1f0629eadb20f11677400ef8b64900666193c5b4511acac2fa"
+    },
+    "tile.auto_brightness.off": {
+      "source": "assets/tile-auto_brightness-off.png",
+      "render": "mask",
+      "sha256": "24ad2c23ffea354896320b21ea3ad9e3d89008beeef2315f39ae7009463dab63"
+    },
+    "tile.auto_brightness.on": {
+      "source": "assets/tile-auto_brightness-on.png",
+      "render": "mask",
+      "sha256": "808179fcbe5d2539c7e98c962f3570adb43716bb040ed180a00ad9711cefb4c3"
+    },
+    "tile.auto_color_temperature.off": {
+      "source": "assets/tile-auto_color_temperature-off.png",
+      "render": "mask",
+      "sha256": "6c34e93e8c63bab9dfa326a6be16e182bbc64a7c1026a57fb0ceacb3cd00e845"
+    },
+    "tile.auto_color_temperature.on": {
+      "source": "assets/tile-auto_color_temperature-on.png",
+      "render": "mask",
+      "sha256": "6f1d3af30bb54bc594dfebf90c3b3358e6834f4d9ced21f66ff8463b20b3f767"
+    },
+    "tile.data_saver.off": {
+      "source": "assets/tile-data_saver-off.png",
+      "render": "mask",
+      "sha256": "23932f418e247344fa4d86eab336907aaf24ec2dd9d9bfaea9f8885030085ecd"
+    },
+    "tile.data_saver.on": {
+      "source": "assets/tile-data_saver-on.png",
+      "render": "mask",
+      "sha256": "b1d1062f7a5070a07e7c19e7b143a6b2b74c7142ab3e36fa8564a7fdcb6e8439"
+    },
+    "tile.dolby.off": {
+      "source": "assets/tile-dolby-off.png",
+      "render": "mask",
+      "sha256": "62dd69c52dc2eb7ca1d724bb0093dc348f3320bd906c2047b28343d44e0eaf2f"
+    },
+    "tile.dolby.on": {
+      "source": "assets/tile-dolby-on.png",
+      "render": "mask",
+      "sha256": "a9039bfad27f75791dca1e0cf9f87e841c888ddd647e0fccaf0738e742738253"
+    },
+    "tile.breathing_light.off": {
+      "source": "assets/tile-breathing_light-off.png",
+      "render": "mask",
+      "sha256": "44bdcdecc6544af6f8521df0a4410c715902a8add11753c0a57140ca34aa265e"
+    },
+    "tile.breathing_light.on": {
+      "source": "assets/tile-breathing_light-on.png",
+      "render": "mask",
+      "sha256": "83eb4b412772755a9269e645c7180237bef35dbacf59fe520a12d37fbe6803a4"
+    },
+    "tile.work.off": {
+      "source": "assets/tile-work-off.png",
+      "render": "mask",
+      "sha256": "dbc13de388888be2070f1602862c57105618653e09e27cc52435f1fb7717de46"
+    },
+    "tile.work.on": {
+      "source": "assets/tile-work-on.png",
+      "render": "mask",
+      "sha256": "b63718ec419d7109e60f83989bc5452cc9891b72a0c65acb7aa62b63537ac75a"
+    },
+    "tile.osie.off": {
+      "source": "assets/tile-osie-off.png",
+      "render": "mask",
+      "sha256": "1d2806bca73f16b0e4bd685e409eae41f3b93ee9e336295b1cc00c3c0265b2ec"
+    },
+    "tile.osie.on": {
+      "source": "assets/tile-osie-on.png",
+      "render": "mask",
+      "sha256": "e24137b2ed62fce5637bfebbcd69a5271007a7d2856148b5de24244ce64e934b"
+    },
+    "tile.iris.off": {
+      "source": "assets/tile-iris-off.png",
+      "render": "mask",
+      "sha256": "5336e08eb5bdf6eb89f5931d9ff7e3353191490e9630074e5b64633933c09254"
+    },
+    "tile.iris.on": {
+      "source": "assets/tile-iris-on.png",
+      "render": "mask",
+      "sha256": "c135d7a7bed1fefb23be0c678a181de611141b37142381072f2563371ea57164"
+    },
+    "tile.iris.unavailable": {
+      "source": "assets/tile-iris-unavailable.png",
+      "render": "mask",
+      "sha256": "9de395a07612981cbb8df62977ec0b431ad893a33aa8c1f25423d338b4516246"
+    },
+    "tile.vpn.off": {
+      "source": "assets/tile-vpn-off.png",
+      "render": "mask",
+      "sha256": "afe09a6f9b00c38a6fa3c2ecf3a0fe8d4bf5b7f57a7658841f9d53bf6a3f2217"
+    },
+    "tile.vpn.on": {
+      "source": "assets/tile-vpn-on.png",
+      "render": "mask",
+      "sha256": "d095edd44931d7f65d5d46e5457141347e271bcd991861f54c2ae2cd4db08d26"
+    },
+    "tile.otg.off": {
+      "source": "assets/tile-otg-off.png",
+      "render": "mask",
+      "sha256": "f8d4eef9f7b1931d8461c0732c7ac07d6b7f2e9281287b2534992cac7ae40020"
+    },
+    "tile.otg.on": {
+      "source": "assets/tile-otg-on.png",
+      "render": "mask",
+      "sha256": "f6243ced7e1113a854a675c5dcb1ad1621c833f8f0e225c81e6f26541e673266"
+    },
+    "tile.dnd.off": {
+      "source": "assets/tile-dnd-off.png",
+      "render": "mask",
+      "sha256": "7422d6aee39015b9e4fd1583f707d977a39666da05976604c1dbaf37a9b71774"
+    },
+    "tile.dnd.on": {
+      "source": "assets/tile-dnd-on.png",
+      "render": "mask",
+      "sha256": "8a72deddf66ec25d0df72550753c83dd741a8dab8beca6241459037067558ccc"
+    },
+    "tile.no_disturb.off": {
+      "source": "assets/tile-no_disturb-off.png",
+      "render": "mask",
+      "sha256": "e775251543acf6bcbb3726aa9fce2a3d9af74e5b7b723cf6d5b05cda9aadc208"
+    },
+    "tile.no_disturb.on": {
+      "source": "assets/tile-no_disturb-on.png",
+      "render": "mask",
+      "sha256": "fa4d60fb2bb8d2ee3e61f66b2d4648c229f3221ffcc085eb7f2bb7e8bc257397"
+    },
+    "tile.battery_saver.off": {
+      "source": "assets/tile-battery_saver-off.png",
+      "render": "mask",
+      "sha256": "b0a3435556cebc6fc951cd6b9ca4bab1d275d2b61137d482c25a4f290758e6d2"
+    },
+    "tile.battery_saver.on": {
+      "source": "assets/tile-battery_saver-on.png",
+      "render": "mask",
+      "sha256": "3c7370825479dffd408983417c9e0b99eb9fe09dc460b267bfbe8c26307852bb"
+    },
+    "tile.phone_anti_theft.off": {
+      "source": "assets/tile-phone_anti_theft-off.png",
+      "render": "mask",
+      "sha256": "def7db11ee890780b40dd727624a14716318a6685ff9f5da3c01aaa075927389"
+    },
+    "tile.phone_anti_theft.on": {
+      "source": "assets/tile-phone_anti_theft-on.png",
+      "render": "mask",
+      "sha256": "e53fc4340e056c4a8087094d0bba2bcd0ff3bfebf3fa818483bd197ff8195655"
+    },
+    "tile.super_power_saver.off": {
+      "source": "assets/tile-super_power_saver-off.png",
+      "render": "mask",
+      "sha256": "dac46d6922f0177ad1ae679ecbe1bac1d7b170a8e844a4924c03bf5032924341"
+    },
+    "tile.super_power_saver.on": {
+      "source": "assets/tile-super_power_saver-on.png",
+      "render": "mask",
+      "sha256": "3d3e7a118bb629e7aca9ff10464167d1d9e09830ec619f4f1a3b4e875bf61c65"
+    },
+    "tile.super_power_saver.unavailable": {
+      "source": "assets/tile-super_power_saver-unavailable.png",
+      "render": "mask",
+      "sha256": "3584386409ded044cfab5e8c571d8a484f30a94a14b8b77c8d1309f877349f8f"
+    },
+    "tile.vibration.off": {
+      "source": "assets/tile-vibration-off.png",
+      "render": "mask",
+      "sha256": "597b2cb394e8a996eccaace5c146d7007d88312745418a1a045d84ea2bb1b62a"
+    },
+    "tile.vibration.on": {
+      "source": "assets/tile-vibration-on.png",
+      "render": "mask",
+      "sha256": "f650bfe86b9ada25f73094f317ebff7a0858c40eb375b8157f6451cb2218f64e"
+    },
+    "tile.small_screen.off": {
+      "source": "assets/tile-small_screen-off.png",
+      "render": "mask",
+      "sha256": "d0a633f8d2126eaee996b94e18c5c38ad737bb3f7769acffb9b8adf1ed66aeb2"
+    },
+    "tile.small_screen.on": {
+      "source": "assets/tile-small_screen-on.png",
+      "render": "mask",
+      "sha256": "8b549ed400b1ef1ce1d3ab9e4ea20ec935b5d62e7322fef82da2c143508df9ad"
+    },
+    "tile.small_screen.unavailable": {
+      "source": "assets/tile-small_screen-unavailable.png",
+      "render": "mask",
+      "sha256": "a1384d5374be5798d1246e96785d757a00f78ceb449beca3c30f008211a454eb"
+    },
+    "tile.envelope.off": {
+      "source": "assets/tile-envelope-off.png",
+      "render": "mask",
+      "sha256": "0c1e5d13d3ba22915aa398fd9720792ad4db6998af41d2f47a5fbc0dec73a24a"
+    },
+    "tile.envelope.on": {
+      "source": "assets/tile-envelope-on.png",
+      "render": "mask",
+      "sha256": "b2ebd378942fe0a0c7df43a2ef931aec375077c5b8189d9802ad64a78242492e"
+    },
+    "tile.alipay.default": {
+      "source": "assets/tile-alipay-default.png",
+      "render": "mask",
+      "sha256": "f4a4d2d781154b4131c054265facfec6845ab8572fda7d29ef59d12299dc47b9"
+    },
+    "tile.ali_scan.default": {
+      "source": "assets/tile-ali_scan-default.png",
+      "render": "mask",
+      "sha256": "dc7f01f42b1bde697a9eab0ffb27a39f9253263d75497d2953090c39dc0ae632"
+    },
+    "tile.wechat_pay.default": {
+      "source": "assets/tile-wechat_pay-default.png",
+      "render": "mask",
+      "sha256": "ce10d12b320e601ce5129b1801dcf2102a187f239025a42d6f768c59fe3d583a"
+    },
+    "tile.wechat_scan.default": {
+      "source": "assets/tile-wechat_scan-default.png",
+      "render": "mask",
+      "sha256": "ecac255eb0dff1426b77e130b2dafd95a863b195ae9b93c2ed92518dbafdcc54"
+    },
+    "tile.calculator.default": {
+      "source": "assets/tile-calculator-default.png",
+      "render": "mask",
+      "sha256": "32d7ad1a58853a9f4dd4ea790117ae1685362208ca043c18bfe89c832111b64a"
+    },
+    "tile.clean.default": {
+      "source": "assets/tile-clean-default.png",
+      "render": "mask",
+      "sha256": "d70cac6b2d202cb9a1ffe99198385cc1453f627f59e162bb591893b6176aa32f"
+    },
+    "tile.google_now.default": {
+      "source": "assets/tile-google_now-default.png",
+      "render": "mask",
+      "sha256": "e3b4b529e62b20a6cfc7558d21ff763c92c3062c0a634085b6cc3175257ce9bc"
+    },
+    "tile.lock_screen.default": {
+      "source": "assets/tile-lock_screen-default.png",
+      "render": "mask",
+      "sha256": "d095edd44931d7f65d5d46e5457141347e271bcd991861f54c2ae2cd4db08d26"
+    },
+    "tile.input_method.default": {
+      "source": "assets/tile-input_method-default.png",
+      "render": "mask",
+      "sha256": "04d960141e01930e564352912229fbfac8132ae8847e02d1d1afe49775ebe21d"
+    },
+    "tile.shutdown.default": {
+      "source": "assets/tile-shutdown-default.png",
+      "render": "mask",
+      "sha256": "1707454c1fcdec0fff1bb9b9c566d3c1bcaeea2814405bb5578c56a83463070e"
+    },
+    "tile.qr_scanner.default": {
+      "source": "assets/tile-qr_scanner-default.png",
+      "render": "mask",
+      "sha256": "d756670bcdf3ecd794e92c4a4dc639aef180c40fa68cefd45e33dadaf87e9e3c"
+    },
+    "tile.multi_system.default": {
+      "source": "assets/tile-multi_system-default.png",
+      "render": "mask",
+      "sha256": "a2ad148086546dc576542caa8a406c2cde770d85b68ab398b4ec16fd5410d110"
+    },
+    "tile.screenshot.default": {
+      "source": "assets/tile-screenshot-default.png",
+      "render": "mask",
+      "sha256": "1f269329c7a9d38b3bf0e23b52f7189112fb24949e915a42afe9e47c1ee2bee1"
+    },
+    "tile.ringer_mode.silent": {
+      "source": "assets/tile-ringer_mode-silent.png",
+      "render": "mask",
+      "sha256": "fe22d533979ecdc9635e32c706ef701633fa2453350d8e55fbc97654521823a1"
+    },
+    "tile.ringer_mode.vibrate": {
+      "source": "assets/tile-ringer_mode-vibrate.png",
+      "render": "mask",
+      "sha256": "f650bfe86b9ada25f73094f317ebff7a0858c40eb375b8157f6451cb2218f64e"
+    },
+    "tile.ringer_mode.ring": {
+      "source": "assets/tile-ringer_mode-ring.png",
+      "render": "mask",
+      "sha256": "64b5c922bf468dabb2d0cfbd8d65f7c9d6193ff7d0ad45a54dd26218ec5cfa89"
+    },
+    "tile.screen_record.unavailable": {
+      "source": "assets/tile-screen_record-unavailable.png",
+      "render": "mask",
+      "sha256": "c0cf7f5ff5a07c8ea50038f9cfa3db1daffecd286bff8629db9902ab4fe5653c"
+    },
+    "tile.screen_record.idle": {
+      "source": "assets/tile-screen_record-idle.png",
+      "render": "mask",
+      "sha256": "d848e6a36e8addb22eebb0043ad3c6f026fcd21794e74cf66d6502a8c12e29d7"
+    },
+    "tile.screen_record.recording": {
+      "source": "assets/tile-screen_record-recording.png",
+      "render": "mask",
+      "sha256": "694f8f33a9ccfa9716dc410facf89eb2464bdf3b0d3ae6d2135562c61f9cb1bc"
+    },
+    "tile.controls.default": {
+      "source": "assets/tile-controls-default.png",
+      "render": "mask",
+      "sha256": "c265c4d71310a0517c7ffe17f3044be1aa986fcae376a12098dbbe1802698d94"
+    },
+    "tile.wallet.default": {
+      "source": "assets/tile-wallet-default.png",
+      "render": "mask",
+      "sha256": "7f51c5f09e9936f1368ccead91fc9f6eda1d876b88dc9c2dbccbfe44e46a22c0"
+    },
+    "slider.volume.normal.mute": {
+      "source": "assets/slider-volume-normal-mute.png",
+      "render": "mask",
+      "sha256": "d871ee01f32190745f07fbbd6d7cd29df9a18ab1e1d4dc513d07e53ba3a2289d"
+    },
+    "slider.volume.normal.low": {
+      "source": "assets/slider-volume-normal-low.png",
+      "render": "mask",
+      "sha256": "78e04405efcb1b755ad916490cb6f06bebee4b3e4fd491197512691b1dc89a3d"
+    },
+    "slider.volume.normal.medium": {
+      "source": "assets/slider-volume-normal-medium.png",
+      "render": "mask",
+      "sha256": "9f99c6a70e22abd6b0d5f023ccd6d57246c6d94d9e67c57033cecccc4a53be39"
+    },
+    "slider.volume.normal.high": {
+      "source": "assets/slider-volume-normal-high.png",
+      "render": "mask",
+      "sha256": "119798bfdf4e756791ab42a4a740b6fb0a496d4bedbf230fb87b038b16df6bee"
+    },
+    "slider.volume.wired.mute": {
+      "source": "assets/slider-volume-wired-mute.png",
+      "render": "mask",
+      "sha256": "8ba63de1c7d8d223ef43a245c4d9cb6bee520ab0ef286e335388908f81390cc5"
+    },
+    "slider.volume.wired.unmute": {
+      "source": "assets/slider-volume-wired-unmute.png",
+      "render": "mask",
+      "sha256": "32349d5cd1cc6197509559536a6016e8071397f17a77ce497b125b4600a344a5"
+    },
+    "slider.volume.bluetooth.mute": {
+      "source": "assets/slider-volume-bluetooth-mute.png",
+      "render": "mask",
+      "sha256": "dc57d3b6a156ae255b0673de6e252c8457931697641fb9de6d6ce0ce0ce66e70"
+    },
+    "slider.volume.bluetooth.unmute": {
+      "source": "assets/slider-volume-bluetooth-unmute.png",
+      "render": "mask",
+      "sha256": "5fe37c5c1d017217837e95d3ba95119e988055daa293a35a5e6e18ed8512e763"
+    },
+    "slider.brightness.default": {
+      "source": "assets/slider-brightness-default.png",
+      "render": "mask",
+      "sha256": "c1f1b2dbca967cb13ced3f6e5f9d2963a010d2fed922fe24756b875d0c631825"
+    },
+    "slider.brightness_auto.default": {
+      "source": "assets/slider-brightness_auto-default.png",
+      "render": "mask",
+      "sha256": "808179fcbe5d2539c7e98c962f3570adb43716bb040ed180a00ad9711cefb4c3"
+    },
+    "footer.settings.default": {
+      "source": "assets/footer-settings-default.png",
+      "render": "mask",
+      "sha256": "6df8f0d493931bd2ba1c6f26c2540d51d7180e0d9274f2a945a31c3029e1793b"
+    },
+    "footer.more.default": {
+      "source": "assets/footer-more-default.png",
+      "render": "mask",
+      "sha256": "5a79efc1cb54c4da711de4601a7ff1e73a0302e6f5912165420853d501bf03d3"
+    },
+    "media.play_pause.play": {
+      "source": "assets/media-play_pause-play.png",
+      "render": "mask",
+      "sha256": "1a39559bf06ee14132801a20207a7167d0956ad2de85628e64dc0ccb154aa434"
+    },
+    "media.play_pause.pause": {
+      "source": "assets/media-play_pause-pause.png",
+      "render": "mask",
+      "sha256": "f04c03e69d2c49a3acccc4bc682af4a0c247cd233d8c90beb6a44a0760581f80"
+    },
+    "media.previous.default": {
+      "source": "assets/media-previous-default.png",
+      "render": "mask",
+      "sha256": "e8a2d2a02eb2b85204664e1df729da521e8f72fceaaec30e96f7c4883d78d254"
+    },
+    "media.next.default": {
+      "source": "assets/media-next-default.png",
+      "render": "mask",
+      "sha256": "5427605d24ba024125977af40fbc8bfc93fb616bfab8cc7a071757da49074edc"
+    },
+    "media.output.default": {
+      "source": "assets/media-output-default.png",
+      "render": "mask",
+      "sha256": "852c3ee1eb01d592621df7738262e3e8d08e7e973b39f5ad274fc3008e8a22a7"
+    },
+    "device.entrance.default": {
+      "source": "assets/device-entrance-default.png",
+      "render": "mask",
+      "sha256": "e9f8773a5780b7cc5e229be558456dd89b55e00b60464bc0a7ed894dc73a34fd"
+    },
+    "device.phone.default": {
+      "source": "assets/device-phone-default.png",
+      "render": "mask",
+      "sha256": "ddb9139a20d20ef5ea957080a46664841ec79e72f9904b8523ae4ebb139c7a5b"
+    },
+    "device.pad.default": {
+      "source": "assets/device-pad-default.png",
+      "render": "mask",
+      "sha256": "40ed4dd7fad343ccea8ad5fd81896f328909bb97ac9368afa6c8450f237c17b9"
+    },
+    "device.computer.default": {
+      "source": "assets/device-computer-default.png",
+      "render": "mask",
+      "sha256": "8d703d3650d9c2af3e6a63a3de4826f1d420c509ff5d80c0d398a560eb3df7b2"
+    },
+    "device.headset.default": {
+      "source": "assets/device-headset-default.png",
+      "render": "mask",
+      "sha256": "32349d5cd1cc6197509559536a6016e8071397f17a77ce497b125b4600a344a5"
+    },
+    "device.tv.default": {
+      "source": "assets/device-tv-default.png",
+      "render": "mask",
+      "sha256": "ebd415279a3032ffead1d9f8971f426fbbff614fe17fc6823f42029a3be0aa37"
+    },
+    "device.watch.default": {
+      "source": "assets/device-watch-default.png",
+      "render": "mask",
+      "sha256": "72719e42ce9dee307236d1a518030f94a64aaf599e4b774131b9f8328ca092ae"
+    },
+    "device.wristband.default": {
+      "source": "assets/device-wristband-default.png",
+      "render": "mask",
+      "sha256": "93542afd7687362bcb6901cfb0a561803a8146b0c44937f6127ee6416b632525"
+    }
+  }
+}
