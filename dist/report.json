@@ -1,11 +1,11 @@
 {
-  "roles": 189,
-  "targets": 91,
-  "supported_roles": 184,
+  "roles": 214,
+  "targets": 102,
+  "supported_roles": 209,
   "animations": 3,
-  "vector_bytes": 135899,
-  "png_bytes": 466358,
-  "vector_sha256": "1af02148ce53b38515d7ebda4573aa8a1cc6a389be145284c6e578e962cd9479",
-  "png_sha256": "66fef945fa5637fd163998c9d60ac2eef11ea4c18402f46749bcdf7264fbc0aa",
-  "note": "Registered roles only; static/XML/animation admission is not native visual or playback validation."
+  "unplaced_vector_bytes": 151370,
+  "png_bytes": 540804,
+  "unplaced_vector_sha256": "00b78540c0e14ff7393d7f9c1fcb8e161445bfecec0850e603e211438813d1e1",
+  "png_sha256": "c9a9cbcde6bbb67199268daca72ed60ad593d57008a6cdd77928a7a80cb7fa36",
+  "note": "Registered roles only; the PNG pack and the unplaced vector pack follow spec 3.0 (no fit). dist/c17-rounded-27.zip is the spec 3.1 pack placed on system canvases in the module repository. Static/XML/animation admission is not native visual or playback validation."
 }

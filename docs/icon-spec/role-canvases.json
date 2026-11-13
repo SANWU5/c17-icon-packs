@@ -1,0 +1,2587 @@
+{
+ "spec": "c17-icon-pack 3.1",
+ "reference": "ColorOS 17 SystemUI (PJZ110)",
+ "roles": {
+  "hint.bluetooth.on": {
+   "scope": "hint",
+   "target": "hint.bluetooth",
+   "canvas": [
+    17.0,
+    16.0
+   ],
+   "from": "system:stat_sys_data_bluetooth_connected",
+   "systemInk": {
+    "area": 0.73,
+    "longest": 0.812,
+    "height": 0.812
+   }
+  },
+  "hint.bluetooth.off": {
+   "scope": "hint",
+   "target": "hint.bluetooth",
+   "canvas": [
+    13.0,
+    16.0
+   ],
+   "from": "system:stat_sys_data_bluetooth",
+   "systemInk": {
+    "area": 0.714,
+    "longest": 0.8,
+    "height": 0.8
+   }
+  },
+  "hint.location.default": {
+   "scope": "hint",
+   "target": "hint.location",
+   "canvas": [
+    18.0,
+    16.0
+   ],
+   "from": "system:stat_sys_location",
+   "systemInk": {
+    "area": 0.668,
+    "longest": 0.775,
+    "height": 0.775
+   }
+  },
+  "hint.alarm_clock.default": {
+   "scope": "hint",
+   "target": "hint.alarm_clock",
+   "canvas": [
+    18.0,
+    16.0
+   ],
+   "from": "system:stat_sys_alarm",
+   "systemInk": {
+    "area": 0.7,
+    "longest": 0.722,
+    "height": 0.722
+   }
+  },
+  "hint.zen.default": {
+   "scope": "hint",
+   "target": "hint.zen",
+   "canvas": [
+    18.0,
+    16.0
+   ],
+   "from": "system:stat_sys_dnd",
+   "systemInk": {
+    "area": 0.759,
+    "longest": 0.805,
+    "height": 0.805
+   }
+  },
+  "hint.volume.default": {
+   "scope": "hint",
+   "target": "hint.volume",
+   "canvas": [
+    18,
+    16
+   ],
+   "from": "default:hint"
+  },
+  "hint.hotspot.default": {
+   "scope": "hint",
+   "target": "hint.hotspot",
+   "canvas": [
+    18,
+    16
+   ],
+   "from": "default:hint"
+  },
+  "hint.headset.default": {
+   "scope": "hint",
+   "target": "hint.headset",
+   "canvas": [
+    18.0,
+    16.0
+   ],
+   "from": "system:stat_sys_headset",
+   "systemInk": {
+    "area": 0.795,
+    "longest": 0.844,
+    "height": 0.844
+   }
+  },
+  "hint.rotate.default": {
+   "scope": "hint",
+   "target": "hint.rotate",
+   "canvas": [
+    18,
+    16
+   ],
+   "from": "default:hint"
+  },
+  "hint.vpn.default": {
+   "scope": "hint",
+   "target": "hint.vpn",
+   "canvas": [
+    23.0,
+    16.0
+   ],
+   "from": "system:stat_sys_vpn_ic",
+   "systemInk": {
+    "area": 0.787,
+    "longest": 0.826,
+    "height": 0.75
+   }
+  },
+  "hint.nfc.default": {
+   "scope": "hint",
+   "target": "hint.nfc",
+   "canvas": [
+    18.0,
+    16.0
+   ],
+   "from": "system:stat_sys_nfc",
+   "systemInk": {
+    "area": 0.707,
+    "longest": 0.751,
+    "height": 0.751
+   }
+  },
+  "hint.cast.default": {
+   "scope": "hint",
+   "target": "hint.cast",
+   "canvas": [
+    18,
+    16
+   ],
+   "from": "default:hint"
+  },
+  "hint.screen_record.default": {
+   "scope": "hint",
+   "target": "hint.screen_record",
+   "canvas": [
+    18,
+    16
+   ],
+   "from": "default:hint"
+  },
+  "hint.microphone.default": {
+   "scope": "hint",
+   "target": "hint.microphone",
+   "canvas": [
+    18,
+    16
+   ],
+   "from": "default:hint"
+  },
+  "hint.camera.default": {
+   "scope": "hint",
+   "target": "hint.camera",
+   "canvas": [
+    18,
+    16
+   ],
+   "from": "default:hint"
+  },
+  "hint.privacy_call.default": {
+   "scope": "hint",
+   "target": "hint.privacy_call",
+   "canvas": [
+    18,
+    16
+   ],
+   "from": "default:hint"
+  },
+  "hint.usb.default": {
+   "scope": "hint",
+   "target": "hint.usb",
+   "canvas": [
+    18,
+    16
+   ],
+   "from": "default:hint"
+  },
+  "hint.hd.default": {
+   "scope": "hint",
+   "target": "hint.hd",
+   "canvas": [
+    18,
+    16
+   ],
+   "from": "default:hint"
+  },
+  "hint.airplane.default": {
+   "scope": "hint",
+   "target": "hint.airplane",
+   "canvas": [
+    17.0,
+    16.0
+   ],
+   "from": "system:stat_sys_airplane_mode",
+   "systemInk": {
+    "area": 0.807,
+    "longest": 0.875,
+    "height": 0.875
+   }
+  },
+  "wifi.none": {
+   "scope": "wifi",
+   "target": "wifi",
+   "canvas": [
+    23,
+    16
+   ],
+   "from": "default:wifi"
+  },
+  "wifi.0": {
+   "scope": "wifi",
+   "target": "wifi",
+   "canvas": [
+    23.0,
+    16.0
+   ],
+   "from": "system:stat_signal_wifi_signal_0_os17",
+   "systemInk": {
+    "area": 0.723,
+    "longest": 0.752,
+    "height": 0.752
+   }
+  },
+  "wifi.1": {
+   "scope": "wifi",
+   "target": "wifi",
+   "canvas": [
+    23.0,
+    16.0
+   ],
+   "from": "system:stat_signal_wifi_signal_1_os17",
+   "systemInk": {
+    "area": 0.723,
+    "longest": 0.752,
+    "height": 0.752
+   }
+  },
+  "wifi.2": {
+   "scope": "wifi",
+   "target": "wifi",
+   "canvas": [
+    23.0,
+    16.0
+   ],
+   "from": "system:stat_signal_wifi_signal_2_os17",
+   "systemInk": {
+    "area": 0.723,
+    "longest": 0.752,
+    "height": 0.752
+   }
+  },
+  "wifi.3": {
+   "scope": "wifi",
+   "target": "wifi",
+   "canvas": [
+    23.0,
+    16.0
+   ],
+   "from": "system:stat_signal_wifi_signal_3_os17",
+   "systemInk": {
+    "area": 0.724,
+    "longest": 0.752,
+    "height": 0.752
+   }
+  },
+  "wifi.4": {
+   "scope": "wifi",
+   "target": "wifi",
+   "canvas": [
+    23.0,
+    16.0
+   ],
+   "from": "system:stat_signal_wifi_signal_4_os17",
+   "systemInk": {
+    "area": 0.724,
+    "longest": 0.752,
+    "height": 0.752
+   }
+  },
+  "cellular.none": {
+   "scope": "cellular",
+   "target": "cellular",
+   "canvas": [
+    16.0,
+    16.0
+   ],
+   "from": "system:stat_signal_signal_null_lte",
+   "systemInk": {
+    "area": 0.685,
+    "longest": 0.75,
+    "height": 0.75
+   }
+  },
+  "cellular.0": {
+   "scope": "cellular",
+   "target": "cellular",
+   "canvas": [
+    19.0,
+    16.0
+   ],
+   "from": "system:stat_signal_signal_lte_single_0_os17",
+   "systemInk": {
+    "area": 0.754,
+    "longest": 0.758,
+    "height": 0.75
+   }
+  },
+  "cellular.1": {
+   "scope": "cellular",
+   "target": "cellular",
+   "canvas": [
+    19.0,
+    16.0
+   ],
+   "from": "system:stat_signal_signal_lte_single_1_os17",
+   "systemInk": {
+    "area": 0.754,
+    "longest": 0.758,
+    "height": 0.75
+   }
+  },
+  "cellular.2": {
+   "scope": "cellular",
+   "target": "cellular",
+   "canvas": [
+    19.0,
+    16.0
+   ],
+   "from": "system:stat_signal_signal_lte_single_2_os17",
+   "systemInk": {
+    "area": 0.754,
+    "longest": 0.758,
+    "height": 0.75
+   }
+  },
+  "cellular.3": {
+   "scope": "cellular",
+   "target": "cellular",
+   "canvas": [
+    19.0,
+    16.0
+   ],
+   "from": "system:stat_signal_signal_lte_single_3_os17",
+   "systemInk": {
+    "area": 0.754,
+    "longest": 0.758,
+    "height": 0.75
+   }
+  },
+  "cellular.4": {
+   "scope": "cellular",
+   "target": "cellular",
+   "canvas": [
+    19.0,
+    16.0
+   ],
+   "from": "system:stat_signal_signal_lte_single_4_os17",
+   "systemInk": {
+    "area": 0.754,
+    "longest": 0.758,
+    "height": 0.75
+   }
+  },
+  "cellular.stacked_primary.none": {
+   "scope": "cellular",
+   "target": "cellular.stacked_primary",
+   "canvas": [
+    19.0,
+    16.0
+   ],
+   "from": "system:stat_signal_lte_signal_stacked_primary_noservice",
+   "systemInk": {
+    "area": 0.686,
+    "longest": 0.839,
+    "height": 0.56
+   }
+  },
+  "cellular.stacked_primary.0": {
+   "scope": "cellular",
+   "target": "cellular.stacked_primary",
+   "canvas": [
+    19.0,
+    16.0
+   ],
+   "from": "system:stat_signal_lte_signal_stacked_primary_0",
+   "systemInk": {
+    "area": 0.638,
+    "longest": 0.758,
+    "height": 0.537
+   }
+  },
+  "cellular.stacked_primary.1": {
+   "scope": "cellular",
+   "target": "cellular.stacked_primary",
+   "canvas": [
+    19.0,
+    16.0
+   ],
+   "from": "system:stat_signal_lte_signal_stacked_primary_1",
+   "systemInk": {
+    "area": 0.638,
+    "longest": 0.758,
+    "height": 0.537
+   }
+  },
+  "cellular.stacked_primary.2": {
+   "scope": "cellular",
+   "target": "cellular.stacked_primary",
+   "canvas": [
+    19.0,
+    16.0
+   ],
+   "from": "system:stat_signal_lte_signal_stacked_primary_2",
+   "systemInk": {
+    "area": 0.638,
+    "longest": 0.758,
+    "height": 0.537
+   }
+  },
+  "cellular.stacked_primary.3": {
+   "scope": "cellular",
+   "target": "cellular.stacked_primary",
+   "canvas": [
+    19.0,
+    16.0
+   ],
+   "from": "system:stat_signal_lte_signal_stacked_primary_3",
+   "systemInk": {
+    "area": 0.638,
+    "longest": 0.758,
+    "height": 0.537
+   }
+  },
+  "cellular.stacked_primary.4": {
+   "scope": "cellular",
+   "target": "cellular.stacked_primary",
+   "canvas": [
+    19.0,
+    16.0
+   ],
+   "from": "system:stat_signal_lte_signal_stacked_primary_4",
+   "systemInk": {
+    "area": 0.638,
+    "longest": 0.758,
+    "height": 0.537
+   }
+  },
+  "cellular.stacked_secondary.none": {
+   "scope": "cellular",
+   "target": "cellular.stacked_secondary",
+   "canvas": [
+    19,
+    16
+   ],
+   "from": "default:cellular"
+  },
+  "cellular.stacked_secondary.0": {
+   "scope": "cellular",
+   "target": "cellular.stacked_secondary",
+   "canvas": [
+    19.0,
+    16.0
+   ],
+   "from": "system:stat_signal_lte_signal_stacked_secondary_0",
+   "systemInk": {
+    "area": 0.337,
+    "longest": 0.758,
+    "height": 0.15
+   }
+  },
+  "cellular.stacked_secondary.1": {
+   "scope": "cellular",
+   "target": "cellular.stacked_secondary",
+   "canvas": [
+    19.0,
+    16.0
+   ],
+   "from": "system:stat_signal_lte_signal_stacked_secondary_1",
+   "systemInk": {
+    "area": 0.337,
+    "longest": 0.758,
+    "height": 0.15
+   }
+  },
+  "cellular.stacked_secondary.2": {
+   "scope": "cellular",
+   "target": "cellular.stacked_secondary",
+   "canvas": [
+    19.0,
+    16.0
+   ],
+   "from": "system:stat_signal_lte_signal_stacked_secondary_2",
+   "systemInk": {
+    "area": 0.337,
+    "longest": 0.758,
+    "height": 0.15
+   }
+  },
+  "cellular.stacked_secondary.3": {
+   "scope": "cellular",
+   "target": "cellular.stacked_secondary",
+   "canvas": [
+    19.0,
+    16.0
+   ],
+   "from": "system:stat_signal_lte_signal_stacked_secondary_3",
+   "systemInk": {
+    "area": 0.337,
+    "longest": 0.758,
+    "height": 0.15
+   }
+  },
+  "cellular.stacked_secondary.4": {
+   "scope": "cellular",
+   "target": "cellular.stacked_secondary",
+   "canvas": [
+    19.0,
+    16.0
+   ],
+   "from": "system:stat_signal_lte_signal_stacked_secondary_4",
+   "systemInk": {
+    "area": 0.337,
+    "longest": 0.758,
+    "height": 0.15
+   }
+  },
+  "battery.0": {
+   "scope": "battery",
+   "target": "battery",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.10": {
+   "scope": "battery",
+   "target": "battery",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.20": {
+   "scope": "battery",
+   "target": "battery",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.30": {
+   "scope": "battery",
+   "target": "battery",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.40": {
+   "scope": "battery",
+   "target": "battery",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.50": {
+   "scope": "battery",
+   "target": "battery",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.60": {
+   "scope": "battery",
+   "target": "battery",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.70": {
+   "scope": "battery",
+   "target": "battery",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.80": {
+   "scope": "battery",
+   "target": "battery",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.90": {
+   "scope": "battery",
+   "target": "battery",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.100": {
+   "scope": "battery",
+   "target": "battery",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.charging.0": {
+   "scope": "battery",
+   "target": "battery.charging",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.charging.10": {
+   "scope": "battery",
+   "target": "battery.charging",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.charging.20": {
+   "scope": "battery",
+   "target": "battery.charging",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.charging.30": {
+   "scope": "battery",
+   "target": "battery.charging",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.charging.40": {
+   "scope": "battery",
+   "target": "battery.charging",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.charging.50": {
+   "scope": "battery",
+   "target": "battery.charging",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.charging.60": {
+   "scope": "battery",
+   "target": "battery.charging",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.charging.70": {
+   "scope": "battery",
+   "target": "battery.charging",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.charging.80": {
+   "scope": "battery",
+   "target": "battery.charging",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.charging.90": {
+   "scope": "battery",
+   "target": "battery.charging",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "battery.charging.100": {
+   "scope": "battery",
+   "target": "battery.charging",
+   "canvas": [
+    29,
+    16
+   ],
+   "from": "default:battery"
+  },
+  "tile.wifi.off": {
+   "scope": "tile",
+   "target": "tile.wifi",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_wifi_inactive",
+   "systemInk": {
+    "area": 0.809,
+    "longest": 0.951,
+    "height": 0.688
+   }
+  },
+  "tile.wifi.on": {
+   "scope": "tile",
+   "target": "tile.wifi",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_wifi_active",
+   "systemInk": {
+    "area": 0.809,
+    "longest": 0.951,
+    "height": 0.688
+   }
+  },
+  "tile.wifi.unavailable": {
+   "scope": "tile",
+   "target": "tile.wifi",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.bluetooth.off": {
+   "scope": "tile",
+   "target": "tile.bluetooth",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_bluetooth_inactive",
+   "systemInk": {
+    "area": 0.723,
+    "longest": 0.932,
+    "height": 0.932
+   }
+  },
+  "tile.bluetooth.on": {
+   "scope": "tile",
+   "target": "tile.bluetooth",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_bluetooth_active",
+   "systemInk": {
+    "area": 0.723,
+    "longest": 0.932,
+    "height": 0.932
+   }
+  },
+  "tile.bluetooth.unavailable": {
+   "scope": "tile",
+   "target": "tile.bluetooth",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_bluetooth_unavailable",
+   "systemInk": {
+    "area": 0.714,
+    "longest": 0.922,
+    "height": 0.922
+   }
+  },
+  "tile.mobile_data.off": {
+   "scope": "tile",
+   "target": "tile.mobile_data",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_data_inactive",
+   "systemInk": {
+    "area": 0.801,
+    "longest": 0.843,
+    "height": 0.843
+   }
+  },
+  "tile.mobile_data.on": {
+   "scope": "tile",
+   "target": "tile.mobile_data",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_data_active",
+   "systemInk": {
+    "area": 0.801,
+    "longest": 0.843,
+    "height": 0.843
+   }
+  },
+  "tile.mobile_data.unavailable": {
+   "scope": "tile",
+   "target": "tile.mobile_data",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_data_unavailable",
+   "systemInk": {
+    "area": 0.785,
+    "longest": 0.833,
+    "height": 0.833
+   }
+  },
+  "tile.hotspot.off": {
+   "scope": "tile",
+   "target": "tile.hotspot",
+   "canvas": [
+    28.0,
+    28.0
+   ],
+   "from": "system:status_bar_qs_hotspot_inactive",
+   "systemInk": {
+    "area": 0.811,
+    "longest": 0.945,
+    "height": 0.696
+   }
+  },
+  "tile.hotspot.on": {
+   "scope": "tile",
+   "target": "tile.hotspot",
+   "canvas": [
+    28.0,
+    28.0
+   ],
+   "from": "system:status_bar_qs_hotspot_active",
+   "systemInk": {
+    "area": 0.811,
+    "longest": 0.945,
+    "height": 0.696
+   }
+  },
+  "tile.hotspot.unavailable": {
+   "scope": "tile",
+   "target": "tile.hotspot",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_hotspot_unavailable",
+   "systemInk": {
+    "area": 0.828,
+    "longest": 0.945,
+    "height": 0.725
+   }
+  },
+  "tile.airplane.off": {
+   "scope": "tile",
+   "target": "tile.airplane",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_airplane_inactive",
+   "systemInk": {
+    "area": 0.857,
+    "longest": 0.899,
+    "height": 0.899
+   }
+  },
+  "tile.airplane.on": {
+   "scope": "tile",
+   "target": "tile.airplane",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_airplane_active",
+   "systemInk": {
+    "area": 0.857,
+    "longest": 0.899,
+    "height": 0.899
+   }
+  },
+  "tile.airplane.unavailable": {
+   "scope": "tile",
+   "target": "tile.airplane",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_airplane_unavailable",
+   "systemInk": {
+    "area": 0.857,
+    "longest": 0.899,
+    "height": 0.899
+   }
+  },
+  "tile.nfc.off": {
+   "scope": "tile",
+   "target": "tile.nfc",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_nfc_inactive",
+   "systemInk": {
+    "area": 0.735,
+    "longest": 0.735,
+    "height": 0.735
+   }
+  },
+  "tile.nfc.on": {
+   "scope": "tile",
+   "target": "tile.nfc",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_nfc_active",
+   "systemInk": {
+    "area": 0.735,
+    "longest": 0.735,
+    "height": 0.735
+   }
+  },
+  "tile.nfc.unavailable": {
+   "scope": "tile",
+   "target": "tile.nfc",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_nfc_unavailable",
+   "systemInk": {
+    "area": 0.735,
+    "longest": 0.735,
+    "height": 0.735
+   }
+  },
+  "tile.flashlight.off": {
+   "scope": "tile",
+   "target": "tile.flashlight",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_flashlight_inactive",
+   "systemInk": {
+    "area": 0.661,
+    "longest": 0.92,
+    "height": 0.92
+   }
+  },
+  "tile.flashlight.on": {
+   "scope": "tile",
+   "target": "tile.flashlight",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_flashlight_active",
+   "systemInk": {
+    "area": 0.661,
+    "longest": 0.92,
+    "height": 0.92
+   }
+  },
+  "tile.flashlight.unavailable": {
+   "scope": "tile",
+   "target": "tile.flashlight",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_flashlight_unavailable",
+   "systemInk": {
+    "area": 0.661,
+    "longest": 0.92,
+    "height": 0.92
+   }
+  },
+  "tile.rotation.off": {
+   "scope": "tile",
+   "target": "tile.rotation",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_rotation_inactive",
+   "systemInk": {
+    "area": 0.887,
+    "longest": 0.959,
+    "height": 0.821
+   }
+  },
+  "tile.rotation.on": {
+   "scope": "tile",
+   "target": "tile.rotation",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_rotation_active",
+   "systemInk": {
+    "area": 0.887,
+    "longest": 0.959,
+    "height": 0.821
+   }
+  },
+  "tile.rotation.unavailable": {
+   "scope": "tile",
+   "target": "tile.rotation",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.dark.off": {
+   "scope": "tile",
+   "target": "tile.dark",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:darkmode_off_status_bar",
+   "systemInk": {
+    "area": 0.908,
+    "longest": 0.908,
+    "height": 0.908
+   }
+  },
+  "tile.dark.on": {
+   "scope": "tile",
+   "target": "tile.dark",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:darkmode_on_status_bar",
+   "systemInk": {
+    "area": 0.908,
+    "longest": 0.908,
+    "height": 0.908
+   }
+  },
+  "tile.dark.unavailable": {
+   "scope": "tile",
+   "target": "tile.dark",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.location.off": {
+   "scope": "tile",
+   "target": "tile.location",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_location_inactive",
+   "systemInk": {
+    "area": 0.763,
+    "longest": 0.836,
+    "height": 0.836
+   }
+  },
+  "tile.location.on": {
+   "scope": "tile",
+   "target": "tile.location",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_location_active",
+   "systemInk": {
+    "area": 0.763,
+    "longest": 0.836,
+    "height": 0.836
+   }
+  },
+  "tile.location.unavailable": {
+   "scope": "tile",
+   "target": "tile.location",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_location_unavailable",
+   "systemInk": {
+    "area": 0.763,
+    "longest": 0.836,
+    "height": 0.836
+   }
+  },
+  "tile.camera.off": {
+   "scope": "tile",
+   "target": "tile.camera",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_camera_blocked",
+   "systemInk": {
+    "area": 0.745,
+    "longest": 0.833,
+    "height": 0.667
+   }
+  },
+  "tile.camera.on": {
+   "scope": "tile",
+   "target": "tile.camera",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_camera_allowed",
+   "systemInk": {
+    "area": 0.745,
+    "longest": 0.833,
+    "height": 0.667
+   }
+  },
+  "tile.camera.unavailable": {
+   "scope": "tile",
+   "target": "tile.camera",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_camera_unavailable",
+   "systemInk": {
+    "area": 0.745,
+    "longest": 0.833,
+    "height": 0.667
+   }
+  },
+  "tile.microphone.off": {
+   "scope": "tile",
+   "target": "tile.microphone",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_mic_blocked",
+   "systemInk": {
+    "area": 0.857,
+    "longest": 0.933,
+    "height": 0.933
+   }
+  },
+  "tile.microphone.on": {
+   "scope": "tile",
+   "target": "tile.microphone",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_mic_allowed",
+   "systemInk": {
+    "area": 0.857,
+    "longest": 0.933,
+    "height": 0.933
+   }
+  },
+  "tile.microphone.unavailable": {
+   "scope": "tile",
+   "target": "tile.microphone",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_mic_unavailable",
+   "systemInk": {
+    "area": 0.857,
+    "longest": 0.933,
+    "height": 0.933
+   }
+  },
+  "tile.cast.off": {
+   "scope": "tile",
+   "target": "tile.cast",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_cast_inactive",
+   "systemInk": {
+    "area": 0.804,
+    "longest": 0.892,
+    "height": 0.725
+   }
+  },
+  "tile.cast.on": {
+   "scope": "tile",
+   "target": "tile.cast",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.cast.unavailable": {
+   "scope": "tile",
+   "target": "tile.cast",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.auto_brightness.off": {
+   "scope": "tile",
+   "target": "tile.auto_brightness",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.auto_brightness.on": {
+   "scope": "tile",
+   "target": "tile.auto_brightness",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.auto_color_temperature.off": {
+   "scope": "tile",
+   "target": "tile.auto_color_temperature",
+   "canvas": [
+    25.0,
+    24.0
+   ],
+   "from": "system:status_bar_screen_temperature",
+   "systemInk": {
+    "area": 0.874,
+    "longest": 0.892,
+    "height": 0.892
+   }
+  },
+  "tile.auto_color_temperature.on": {
+   "scope": "tile",
+   "target": "tile.auto_color_temperature",
+   "canvas": [
+    25.0,
+    24.0
+   ],
+   "from": "system:status_bar_screen_temperature_active",
+   "systemInk": {
+    "area": 0.874,
+    "longest": 0.892,
+    "height": 0.892
+   }
+  },
+  "tile.data_saver.off": {
+   "scope": "tile",
+   "target": "tile.data_saver",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.data_saver.on": {
+   "scope": "tile",
+   "target": "tile.data_saver",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.dolby.off": {
+   "scope": "tile",
+   "target": "tile.dolby",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.dolby.on": {
+   "scope": "tile",
+   "target": "tile.dolby",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.breathing_light.off": {
+   "scope": "tile",
+   "target": "tile.breathing_light",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.breathing_light.on": {
+   "scope": "tile",
+   "target": "tile.breathing_light",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.work.off": {
+   "scope": "tile",
+   "target": "tile.work",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.work.on": {
+   "scope": "tile",
+   "target": "tile.work",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.osie.off": {
+   "scope": "tile",
+   "target": "tile.osie",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.osie.on": {
+   "scope": "tile",
+   "target": "tile.osie",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.iris.off": {
+   "scope": "tile",
+   "target": "tile.iris",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.iris.on": {
+   "scope": "tile",
+   "target": "tile.iris",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.iris.unavailable": {
+   "scope": "tile",
+   "target": "tile.iris",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.vpn.off": {
+   "scope": "tile",
+   "target": "tile.vpn",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.vpn.on": {
+   "scope": "tile",
+   "target": "tile.vpn",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.otg.off": {
+   "scope": "tile",
+   "target": "tile.otg",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_otg_inactive",
+   "systemInk": {
+    "area": 0.792,
+    "longest": 0.892,
+    "height": 0.892
+   }
+  },
+  "tile.otg.on": {
+   "scope": "tile",
+   "target": "tile.otg",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_otg_active",
+   "systemInk": {
+    "area": 0.792,
+    "longest": 0.892,
+    "height": 0.892
+   }
+  },
+  "tile.dnd.off": {
+   "scope": "tile",
+   "target": "tile.dnd",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_dnd_inactive",
+   "systemInk": {
+    "area": 0.804,
+    "longest": 0.804,
+    "height": 0.804
+   }
+  },
+  "tile.dnd.on": {
+   "scope": "tile",
+   "target": "tile.dnd",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_dnd_active",
+   "systemInk": {
+    "area": 0.804,
+    "longest": 0.804,
+    "height": 0.804
+   }
+  },
+  "tile.no_disturb.off": {
+   "scope": "tile",
+   "target": "tile.no_disturb",
+   "canvas": [
+    25.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_no_disturb_inactive",
+   "systemInk": {
+    "area": 0.763,
+    "longest": 0.78,
+    "height": 0.747
+   }
+  },
+  "tile.no_disturb.on": {
+   "scope": "tile",
+   "target": "tile.no_disturb",
+   "canvas": [
+    25.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_no_disturb_active",
+   "systemInk": {
+    "area": 0.763,
+    "longest": 0.78,
+    "height": 0.747
+   }
+  },
+  "tile.battery_saver.off": {
+   "scope": "tile",
+   "target": "tile.battery_saver",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_battery_inactive",
+   "systemInk": {
+    "area": 0.672,
+    "longest": 0.875,
+    "height": 0.517
+   }
+  },
+  "tile.battery_saver.on": {
+   "scope": "tile",
+   "target": "tile.battery_saver",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_battery_active",
+   "systemInk": {
+    "area": 0.672,
+    "longest": 0.875,
+    "height": 0.517
+   }
+  },
+  "tile.phone_anti_theft.off": {
+   "scope": "tile",
+   "target": "tile.phone_anti_theft",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.phone_anti_theft.on": {
+   "scope": "tile",
+   "target": "tile.phone_anti_theft",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.super_power_saver.off": {
+   "scope": "tile",
+   "target": "tile.super_power_saver",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_super_power_save_inactive",
+   "systemInk": {
+    "area": 0.727,
+    "longest": 0.946,
+    "height": 0.558
+   }
+  },
+  "tile.super_power_saver.on": {
+   "scope": "tile",
+   "target": "tile.super_power_saver",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_super_power_save_active",
+   "systemInk": {
+    "area": 0.727,
+    "longest": 0.946,
+    "height": 0.558
+   }
+  },
+  "tile.super_power_saver.unavailable": {
+   "scope": "tile",
+   "target": "tile.super_power_saver",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_super_power_save_unavailable",
+   "systemInk": {
+    "area": 0.727,
+    "longest": 0.946,
+    "height": 0.558
+   }
+  },
+  "tile.vibration.off": {
+   "scope": "tile",
+   "target": "tile.vibration",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_vibrate_inactive",
+   "systemInk": {
+    "area": 0.897,
+    "longest": 0.897,
+    "height": 0.897
+   }
+  },
+  "tile.vibration.on": {
+   "scope": "tile",
+   "target": "tile.vibration",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_vibrate_active",
+   "systemInk": {
+    "area": 0.812,
+    "longest": 0.816,
+    "height": 0.808
+   }
+  },
+  "tile.small_screen.off": {
+   "scope": "tile",
+   "target": "tile.small_screen",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.small_screen.on": {
+   "scope": "tile",
+   "target": "tile.small_screen",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.small_screen.unavailable": {
+   "scope": "tile",
+   "target": "tile.small_screen",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.envelope.off": {
+   "scope": "tile",
+   "target": "tile.envelope",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_red_packet_inactive",
+   "systemInk": {
+    "area": 0.707,
+    "longest": 0.833,
+    "height": 0.833
+   }
+  },
+  "tile.envelope.on": {
+   "scope": "tile",
+   "target": "tile.envelope",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_red_packet_active",
+   "systemInk": {
+    "area": 0.707,
+    "longest": 0.833,
+    "height": 0.833
+   }
+  },
+  "tile.alipay.default": {
+   "scope": "tile",
+   "target": "tile.alipay",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_alipay_inactive",
+   "systemInk": {
+    "area": 0.772,
+    "longest": 0.834,
+    "height": 0.715
+   }
+  },
+  "tile.ali_scan.default": {
+   "scope": "tile",
+   "target": "tile.ali_scan",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_aliscan_inactive",
+   "systemInk": {
+    "area": 0.767,
+    "longest": 0.767,
+    "height": 0.767
+   }
+  },
+  "tile.wechat_pay.default": {
+   "scope": "tile",
+   "target": "tile.wechat_pay",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_wechat_pay_inactive",
+   "systemInk": {
+    "area": 0.761,
+    "longest": 0.833,
+    "height": 0.694
+   }
+  },
+  "tile.wechat_scan.default": {
+   "scope": "tile",
+   "target": "tile.wechat_scan",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_wechat_scan_inactive",
+   "systemInk": {
+    "area": 0.822,
+    "longest": 0.833,
+    "height": 0.81
+   }
+  },
+  "tile.calculator.default": {
+   "scope": "tile",
+   "target": "tile.calculator",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_calculator_inactive",
+   "systemInk": {
+    "area": 0.824,
+    "longest": 0.833,
+    "height": 0.815
+   }
+  },
+  "tile.clean.default": {
+   "scope": "tile",
+   "target": "tile.clean",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_clean_inactive",
+   "systemInk": {
+    "area": 0.886,
+    "longest": 0.892,
+    "height": 0.88
+   }
+  },
+  "tile.google_now.default": {
+   "scope": "tile",
+   "target": "tile.google_now",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.lock_screen.default": {
+   "scope": "tile",
+   "target": "tile.lock_screen",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_lock_inactive",
+   "systemInk": {
+    "area": 0.718,
+    "longest": 0.825,
+    "height": 0.825
+   }
+  },
+  "tile.input_method.default": {
+   "scope": "tile",
+   "target": "tile.input_method",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.shutdown.default": {
+   "scope": "tile",
+   "target": "tile.shutdown",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:oplus_qs_shutdown_tile_icon",
+   "systemInk": {
+    "area": 0.895,
+    "longest": 0.922,
+    "height": 0.922
+   }
+  },
+  "tile.qr_scanner.default": {
+   "scope": "tile",
+   "target": "tile.qr_scanner",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.multi_system.default": {
+   "scope": "tile",
+   "target": "tile.multi_system",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_multi_system_inactive",
+   "systemInk": {
+    "area": 0.706,
+    "longest": 0.892,
+    "height": 0.892
+   }
+  },
+  "tile.screenshot.default": {
+   "scope": "tile",
+   "target": "tile.screenshot",
+   "canvas": [
+    28.0,
+    28.0
+   ],
+   "from": "system:status_bar_qs_screenshot_inactive",
+   "systemInk": {
+    "area": 0.799,
+    "longest": 0.834,
+    "height": 0.834
+   }
+  },
+  "tile.ringer_mode.silent": {
+   "scope": "tile",
+   "target": "tile.ringer_mode",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_mute_active",
+   "systemInk": {
+    "area": 0.897,
+    "longest": 0.897,
+    "height": 0.897
+   }
+  },
+  "tile.ringer_mode.vibrate": {
+   "scope": "tile",
+   "target": "tile.ringer_mode",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.ringer_mode.ring": {
+   "scope": "tile",
+   "target": "tile.ringer_mode",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_mute_inactive",
+   "systemInk": {
+    "area": 0.791,
+    "longest": 0.825,
+    "height": 0.825
+   }
+  },
+  "tile.screen_record.unavailable": {
+   "scope": "tile",
+   "target": "tile.screen_record",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_screenrecord_disable",
+   "systemInk": {
+    "area": 0.722,
+    "longest": 0.933,
+    "height": 0.558
+   }
+  },
+  "tile.screen_record.idle": {
+   "scope": "tile",
+   "target": "tile.screen_record",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_qs_screenrecord_full_record",
+   "systemInk": {
+    "area": 0.722,
+    "longest": 0.933,
+    "height": 0.558
+   }
+  },
+  "tile.screen_record.recording": {
+   "scope": "tile",
+   "target": "tile.screen_record",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.controls.default": {
+   "scope": "tile",
+   "target": "tile.controls",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "tile.wallet.default": {
+   "scope": "tile",
+   "target": "tile.wallet",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:tile"
+  },
+  "slider.volume.normal.mute": {
+   "scope": "slider",
+   "target": "slider.volume.normal",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:qs_icon_volume_media_mute_no_theme",
+   "systemInk": {
+    "area": 0.925,
+    "longest": 0.925,
+    "height": 0.925
+   }
+  },
+  "slider.volume.normal.low": {
+   "scope": "slider",
+   "target": "slider.volume.normal",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:qs_icon_volume_media_min_no_theme",
+   "systemInk": {
+    "area": 0.725,
+    "longest": 0.813,
+    "height": 0.813
+   }
+  },
+  "slider.volume.normal.medium": {
+   "scope": "slider",
+   "target": "slider.volume.normal",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:qs_icon_volume_media_no_theme",
+   "systemInk": {
+    "area": 0.8,
+    "longest": 0.813,
+    "height": 0.813
+   }
+  },
+  "slider.volume.normal.high": {
+   "scope": "slider",
+   "target": "slider.volume.normal",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:qs_icon_volume_media_max_no_theme",
+   "systemInk": {
+    "area": 0.868,
+    "longest": 0.927,
+    "height": 0.813
+   }
+  },
+  "slider.volume.wired.mute": {
+   "scope": "slider",
+   "target": "slider.volume.wired",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:qs_icon_volume_wired_mute_no_theme",
+   "systemInk": {
+    "area": 0.902,
+    "longest": 0.906,
+    "height": 0.906
+   }
+  },
+  "slider.volume.wired.unmute": {
+   "scope": "slider",
+   "target": "slider.volume.wired",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:qs_icon_volume_wired_no_theme",
+   "systemInk": {
+    "area": 0.862,
+    "longest": 0.891,
+    "height": 0.835
+   }
+  },
+  "slider.volume.bluetooth.mute": {
+   "scope": "slider",
+   "target": "slider.volume.bluetooth",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:qs_icon_volume_media_bt_mute_no_theme",
+   "systemInk": {
+    "area": 0.972,
+    "longest": 0.983,
+    "height": 0.961
+   }
+  },
+  "slider.volume.bluetooth.unmute": {
+   "scope": "slider",
+   "target": "slider.volume.bluetooth",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:qs_icon_volume_media_bt_no_theme",
+   "systemInk": {
+    "area": 0.95,
+    "longest": 0.961,
+    "height": 0.961
+   }
+  },
+  "slider.brightness.default": {
+   "scope": "slider",
+   "target": "slider.brightness",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:qs_brightness_icon_no_theme",
+   "systemInk": {
+    "area": 0.908,
+    "longest": 0.908,
+    "height": 0.908
+   }
+  },
+  "slider.brightness.auto": {
+   "scope": "slider",
+   "target": "slider.brightness",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:qs_brightness_icon_auto_no_theme",
+   "systemInk": {
+    "area": 0.908,
+    "longest": 0.908,
+    "height": 0.908
+   }
+  },
+  "slider.panel_media.on": {
+   "scope": "slider",
+   "target": "slider.panel_media",
+   "canvas": [
+    32.0,
+    32.0
+   ],
+   "from": "system:systemui_icon_volume_media",
+   "systemInk": {
+    "area": 0.716,
+    "longest": 0.734,
+    "height": 0.734
+   }
+  },
+  "slider.panel_media.mute": {
+   "scope": "slider",
+   "target": "slider.panel_media",
+   "canvas": [
+    32.0,
+    32.0
+   ],
+   "from": "system:systemui_icon_volume_media_mute",
+   "systemInk": {
+    "area": 0.755,
+    "longest": 0.766,
+    "height": 0.766
+   }
+  },
+  "slider.panel_media.bluetooth": {
+   "scope": "slider",
+   "target": "slider.panel_media",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:systemui_icon_volume_media_bluetooth",
+   "systemInk": {
+    "area": 0.737,
+    "longest": 0.941,
+    "height": 0.941
+   }
+  },
+  "slider.panel_media.bluetooth_mute": {
+   "scope": "slider",
+   "target": "slider.panel_media",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:systemui_icon_volume_media_bluetooth_mute",
+   "systemInk": {
+    "area": 0.875,
+    "longest": 0.941,
+    "height": 0.941
+   }
+  },
+  "slider.panel_ringer.on": {
+   "scope": "slider",
+   "target": "slider.panel_ringer",
+   "canvas": [
+    32.0,
+    32.0
+   ],
+   "from": "system:systemui_icon_volume_ringer",
+   "systemInk": {
+    "area": 0.696,
+    "longest": 0.716,
+    "height": 0.716
+   }
+  },
+  "slider.panel_ringer.mute": {
+   "scope": "slider",
+   "target": "slider.panel_ringer",
+   "canvas": [
+    32.0,
+    32.0
+   ],
+   "from": "system:systemui_icon_volume_ringer_mute",
+   "systemInk": {
+    "area": 0.785,
+    "longest": 0.785,
+    "height": 0.785
+   }
+  },
+  "slider.panel_ringer.vibrate": {
+   "scope": "slider",
+   "target": "slider.panel_ringer",
+   "canvas": [
+    32.0,
+    32.0
+   ],
+   "from": "system:systemui_icon_volume_ringer_vibrate",
+   "systemInk": {
+    "area": 0.774,
+    "longest": 0.788,
+    "height": 0.788
+   }
+  },
+  "slider.panel_ringer.vibrate_mute": {
+   "scope": "slider",
+   "target": "slider.panel_ringer",
+   "canvas": [
+    32.0,
+    32.0
+   ],
+   "from": "system:systemui_icon_volume_ringer_vibrate_mute",
+   "systemInk": {
+    "area": 0.79,
+    "longest": 0.792,
+    "height": 0.792
+   }
+  },
+  "slider.panel_notification.on": {
+   "scope": "slider",
+   "target": "slider.panel_notification",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:systemui_icon_volume_notification_multi_app",
+   "systemInk": {
+    "area": 0.809,
+    "longest": 0.836,
+    "height": 0.836
+   }
+  },
+  "slider.panel_notification.mute": {
+   "scope": "slider",
+   "target": "slider.panel_notification",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:systemui_icon_volume_notification_mute_multi_app",
+   "systemInk": {
+    "area": 0.801,
+    "longest": 0.836,
+    "height": 0.836
+   }
+  },
+  "slider.panel_alarm.on": {
+   "scope": "slider",
+   "target": "slider.panel_alarm",
+   "canvas": [
+    32.0,
+    32.0
+   ],
+   "from": "system:systemui_icon_volume_alarm",
+   "systemInk": {
+    "area": 0.76,
+    "longest": 0.777,
+    "height": 0.753
+   }
+  },
+  "slider.panel_alarm.mute": {
+   "scope": "slider",
+   "target": "slider.panel_alarm",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:systemui_icon_volume_alarm_mute_multi_app",
+   "systemInk": {
+    "area": 0.862,
+    "longest": 0.875,
+    "height": 0.875
+   }
+  },
+  "slider.panel_voice.on": {
+   "scope": "slider",
+   "target": "slider.panel_voice",
+   "canvas": [
+    32.0,
+    32.0
+   ],
+   "from": "system:systemui_icon_volume_voice",
+   "systemInk": {
+    "area": 0.731,
+    "longest": 0.731,
+    "height": 0.731
+   }
+  },
+  "slider.panel_bt_sco.on": {
+   "scope": "slider",
+   "target": "slider.panel_bt_sco",
+   "canvas": [
+    32.0,
+    32.0
+   ],
+   "from": "system:systemui_icon_volume_bt_sco",
+   "systemInk": {
+    "area": 0.739,
+    "longest": 0.747,
+    "height": 0.747
+   }
+  },
+  "slider.panel_bt_sco.mute": {
+   "scope": "slider",
+   "target": "slider.panel_bt_sco",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:systemui_icon_volume_bt_sco_mute_multi_app",
+   "systemInk": {
+    "area": 0.846,
+    "longest": 0.856,
+    "height": 0.856
+   }
+  },
+  "slider.panel_wired.on": {
+   "scope": "slider",
+   "target": "slider.panel_wired",
+   "canvas": [
+    32.0,
+    32.0
+   ],
+   "from": "system:systemui_icon_volume_wired",
+   "systemInk": {
+    "area": 0.769,
+    "longest": 0.782,
+    "height": 0.757
+   }
+  },
+  "slider.panel_wired.mute": {
+   "scope": "slider",
+   "target": "slider.panel_wired",
+   "canvas": [
+    32.0,
+    32.0
+   ],
+   "from": "system:systemui_icon_volume_wired_mute",
+   "systemInk": {
+    "area": 0.788,
+    "longest": 0.791,
+    "height": 0.786
+   }
+  },
+  "slider.panel_assistant.on": {
+   "scope": "slider",
+   "target": "slider.panel_assistant",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:systemui_icon_volume_assistant",
+   "systemInk": {
+    "area": 0.857,
+    "longest": 0.857,
+    "height": 0.857
+   }
+  },
+  "slider.panel_assistant.mute": {
+   "scope": "slider",
+   "target": "slider.panel_assistant",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:systemui_icon_volume_assistant_mute",
+   "systemInk": {
+    "area": 0.897,
+    "longest": 0.897,
+    "height": 0.897
+   }
+  },
+  "slider.panel_gemini.on": {
+   "scope": "slider",
+   "target": "slider.panel_gemini",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:systemui_icon_volume_gemini_multi_app",
+   "systemInk": {
+    "area": 0.85,
+    "longest": 0.85,
+    "height": 0.85
+   }
+  },
+  "slider.panel_gemini.mute": {
+   "scope": "slider",
+   "target": "slider.panel_gemini",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:systemui_icon_volume_gemini_mute_multi_app",
+   "systemInk": {
+    "area": 0.85,
+    "longest": 0.85,
+    "height": 0.85
+   }
+  },
+  "slider.panel_accessibility.on": {
+   "scope": "slider",
+   "target": "slider.panel_accessibility",
+   "canvas": [
+    32.0,
+    32.0
+   ],
+   "from": "system:systemui_icon_volume_accessibility",
+   "systemInk": {
+    "area": 0.791,
+    "longest": 0.793,
+    "height": 0.789
+   }
+  },
+  "slider.panel_captions.on": {
+   "scope": "slider",
+   "target": "slider.panel_captions",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:systemui_icon_volume_odi_captions",
+   "systemInk": {
+    "area": 0.706,
+    "longest": 0.83,
+    "height": 0.6
+   }
+  },
+  "slider.panel_captions.off": {
+   "scope": "slider",
+   "target": "slider.panel_captions",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:systemui_icon_volume_odi_captions_disabled",
+   "systemInk": {
+    "area": 0.833,
+    "longest": 0.833,
+    "height": 0.833
+   }
+  },
+  "slider.brightness_auto.default": {
+   "scope": "slider",
+   "target": "slider.brightness_auto",
+   "canvas": [
+    24.0,
+    24.0
+   ],
+   "from": "system:status_bar_brightness_auto_mode_icon_alphabet",
+   "systemInk": {
+    "area": 0.208,
+    "longest": 0.208,
+    "height": 0.208
+   }
+  },
+  "footer.settings.default": {
+   "scope": "footer",
+   "target": "footer.settings",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:footer"
+  },
+  "footer.more.default": {
+   "scope": "footer",
+   "target": "footer.more",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:footer"
+  },
+  "media.play_pause.play": {
+   "scope": "media",
+   "target": "media.play_pause",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:media"
+  },
+  "media.play_pause.pause": {
+   "scope": "media",
+   "target": "media.play_pause",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:media"
+  },
+  "media.previous.default": {
+   "scope": "media",
+   "target": "media.previous",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:media"
+  },
+  "media.next.default": {
+   "scope": "media",
+   "target": "media.next",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:media"
+  },
+  "media.output.default": {
+   "scope": "media",
+   "target": "media.output",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:media"
+  },
+  "device.entrance.default": {
+   "scope": "device",
+   "target": "device.entrance",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:device"
+  },
+  "device.phone.default": {
+   "scope": "device",
+   "target": "device.phone",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:device"
+  },
+  "device.pad.default": {
+   "scope": "device",
+   "target": "device.pad",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:device"
+  },
+  "device.computer.default": {
+   "scope": "device",
+   "target": "device.computer",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:device"
+  },
+  "device.headset.default": {
+   "scope": "device",
+   "target": "device.headset",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:device"
+  },
+  "device.tv.default": {
+   "scope": "device",
+   "target": "device.tv",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:device"
+  },
+  "device.watch.default": {
+   "scope": "device",
+   "target": "device.watch",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:device"
+  },
+  "device.wristband.default": {
+   "scope": "device",
+   "target": "device.wristband",
+   "canvas": [
+    24,
+    24
+   ],
+   "from": "default:device"
+  }
+ }
+}

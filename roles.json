@@ -1381,7 +1381,207 @@
     "state": "default",
     "supported": true,
     "target": "slider.brightness",
-    "title": "亮度主图形 · 当前亮度"
+    "title": "亮度主图形 · 手动亮度"
+  },
+  {
+    "role": "slider.brightness.auto",
+    "scope": "slider",
+    "state": "auto",
+    "supported": true,
+    "target": "slider.brightness",
+    "title": "亮度主图形 · 自动亮度"
+  },
+  {
+    "role": "slider.panel_media.on",
+    "scope": "slider",
+    "state": "on",
+    "supported": true,
+    "target": "slider.panel_media",
+    "title": "音量面板 · 媒体 · 有音量"
+  },
+  {
+    "role": "slider.panel_media.mute",
+    "scope": "slider",
+    "state": "mute",
+    "supported": true,
+    "target": "slider.panel_media",
+    "title": "音量面板 · 媒体 · 静音"
+  },
+  {
+    "role": "slider.panel_media.bluetooth",
+    "scope": "slider",
+    "state": "bluetooth",
+    "supported": true,
+    "target": "slider.panel_media",
+    "title": "音量面板 · 媒体 · 蓝牙"
+  },
+  {
+    "role": "slider.panel_media.bluetooth_mute",
+    "scope": "slider",
+    "state": "bluetooth_mute",
+    "supported": true,
+    "target": "slider.panel_media",
+    "title": "音量面板 · 媒体 · 蓝牙静音"
+  },
+  {
+    "role": "slider.panel_ringer.on",
+    "scope": "slider",
+    "state": "on",
+    "supported": true,
+    "target": "slider.panel_ringer",
+    "title": "音量面板 · 铃声 · 响铃"
+  },
+  {
+    "role": "slider.panel_ringer.mute",
+    "scope": "slider",
+    "state": "mute",
+    "supported": true,
+    "target": "slider.panel_ringer",
+    "title": "音量面板 · 铃声 · 静音"
+  },
+  {
+    "role": "slider.panel_ringer.vibrate",
+    "scope": "slider",
+    "state": "vibrate",
+    "supported": true,
+    "target": "slider.panel_ringer",
+    "title": "音量面板 · 铃声 · 振动"
+  },
+  {
+    "role": "slider.panel_ringer.vibrate_mute",
+    "scope": "slider",
+    "state": "vibrate_mute",
+    "supported": true,
+    "target": "slider.panel_ringer",
+    "title": "音量面板 · 铃声 · 振动且静音"
+  },
+  {
+    "role": "slider.panel_notification.on",
+    "scope": "slider",
+    "state": "on",
+    "supported": true,
+    "target": "slider.panel_notification",
+    "title": "音量面板 · 通知 · 有音量"
+  },
+  {
+    "role": "slider.panel_notification.mute",
+    "scope": "slider",
+    "state": "mute",
+    "supported": true,
+    "target": "slider.panel_notification",
+    "title": "音量面板 · 通知 · 静音"
+  },
+  {
+    "role": "slider.panel_alarm.on",
+    "scope": "slider",
+    "state": "on",
+    "supported": true,
+    "target": "slider.panel_alarm",
+    "title": "音量面板 · 闹钟 · 有音量"
+  },
+  {
+    "role": "slider.panel_alarm.mute",
+    "scope": "slider",
+    "state": "mute",
+    "supported": true,
+    "target": "slider.panel_alarm",
+    "title": "音量面板 · 闹钟 · 静音"
+  },
+  {
+    "role": "slider.panel_voice.on",
+    "scope": "slider",
+    "state": "on",
+    "supported": true,
+    "target": "slider.panel_voice",
+    "title": "音量面板 · 通话 · 通话音量"
+  },
+  {
+    "role": "slider.panel_bt_sco.on",
+    "scope": "slider",
+    "state": "on",
+    "supported": true,
+    "target": "slider.panel_bt_sco",
+    "title": "音量面板 · 蓝牙通话 · 有音量"
+  },
+  {
+    "role": "slider.panel_bt_sco.mute",
+    "scope": "slider",
+    "state": "mute",
+    "supported": true,
+    "target": "slider.panel_bt_sco",
+    "title": "音量面板 · 蓝牙通话 · 静音"
+  },
+  {
+    "role": "slider.panel_wired.on",
+    "scope": "slider",
+    "state": "on",
+    "supported": true,
+    "target": "slider.panel_wired",
+    "title": "音量面板 · 有线耳机 · 有音量"
+  },
+  {
+    "role": "slider.panel_wired.mute",
+    "scope": "slider",
+    "state": "mute",
+    "supported": true,
+    "target": "slider.panel_wired",
+    "title": "音量面板 · 有线耳机 · 静音"
+  },
+  {
+    "role": "slider.panel_assistant.on",
+    "scope": "slider",
+    "state": "on",
+    "supported": true,
+    "target": "slider.panel_assistant",
+    "title": "音量面板 · 语音助手 · 有音量"
+  },
+  {
+    "role": "slider.panel_assistant.mute",
+    "scope": "slider",
+    "state": "mute",
+    "supported": true,
+    "target": "slider.panel_assistant",
+    "title": "音量面板 · 语音助手 · 静音"
+  },
+  {
+    "role": "slider.panel_gemini.on",
+    "scope": "slider",
+    "state": "on",
+    "supported": true,
+    "target": "slider.panel_gemini",
+    "title": "音量面板 · Gemini · 有音量"
+  },
+  {
+    "role": "slider.panel_gemini.mute",
+    "scope": "slider",
+    "state": "mute",
+    "supported": true,
+    "target": "slider.panel_gemini",
+    "title": "音量面板 · Gemini · 静音"
+  },
+  {
+    "role": "slider.panel_accessibility.on",
+    "scope": "slider",
+    "state": "on",
+    "supported": true,
+    "target": "slider.panel_accessibility",
+    "title": "音量面板 · 无障碍 · 无障碍音量"
+  },
+  {
+    "role": "slider.panel_captions.on",
+    "scope": "slider",
+    "state": "on",
+    "supported": true,
+    "target": "slider.panel_captions",
+    "title": "音量面板 · 实时字幕 · 开启"
+  },
+  {
+    "role": "slider.panel_captions.off",
+    "scope": "slider",
+    "state": "off",
+    "supported": true,
+    "target": "slider.panel_captions",
+    "title": "音量面板 · 实时字幕 · 关闭"
   },
   {
     "role": "slider.brightness_auto.default",

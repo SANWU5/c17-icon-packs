@@ -370,6 +370,7 @@ def archive_entries(path):
 
 def validate(path):
     entries = archive_entries(Path(path)); manifest = strict_json(entries["manifest.json"], 256*1024)
+    need("fit" not in manifest, "fit 只能写在单个图标上，不能写在包的顶层")
     only(manifest, "format version id name author license fallback icons transitions")
     need(manifest.get("format") == "c17-statusbar-icons" and type(manifest.get("version")) is Decimal and manifest["version"] == 3 and manifest.get("fallback") == "native", "需要 version=3、fallback=native")
     pack_id = text(manifest.get("id"), 64, True); need(re.fullmatch(r"[a-z0-9][a-z0-9_-]{0,63}", pack_id), "包 id 无效")
@@ -377,7 +378,7 @@ def validate(path):
     icons = obj(manifest.get("icons")); need(1 <= len(icons) <= 512, "图案数须为 1–512")
     known, targets = known_roles(); refs, transitions = {}, obj(manifest.get("transitions", {})); need(len(transitions) <= 128, "动画数超过 128")
     def reference(row, static):
-        only(row, "source render sha256" if static else "source from to reversible sha256")
+        only(row, "source render fit sha256" if static else "source from to reversible sha256")
         source = row.get("source"); need(isinstance(source, str) and ASSET.fullmatch(source) and source.endswith((".png", ".xml") if static else ".json"), "资源路径或扩展名无效")
         need(source in entries, "缺少资源：" + source)
         if "sha256" in row:
@@ -386,6 +387,8 @@ def validate(path):
         return source
     for role, row in icons.items():
         role_valid(role, known, targets); reference(row, True); need(row.get("render", "mask") in ("mask", "color"), "render 无效")
+        # Spec 3.1: "canvas" maps the whole canvas onto the system icon box; "visible" (or no fit) is the 3.0 crop-and-fill rule.
+        need(row.get("fit", "visible") in ("canvas", "visible"), "fit 只能是 canvas 或 visible")
     for key, row in transitions.items():
         target, _, kind = key.rpartition("."); need(target.startswith("tile.") and ROLE.fullmatch(target+".on") and kind in ("off_to_on", "on_to_off", "transient"), "动画目标/类型无效")
         source = reference(row, False); to = row.get("to"); start = row.get("from"); reversible = row.get("reversible", False); need(type(reversible) is bool and to in ("on", "off"), "动画末态/反播字段无效")

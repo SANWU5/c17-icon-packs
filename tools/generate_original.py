@@ -7,6 +7,14 @@ VectorDrawable and transparent PNG use the same path primitives. roles.json
 is an exported production Registry snapshot; unknown new targets fail the
 build rather than receiving a generic placeholder. Pillow is the only Python
 dependency. Desktop validation never replaces Android production admission.
+
+Icon pack spec 3.1: the masters here are drawn on a 24 x 24 (or 19 x 16) canvas
+and packed without "fit", as spec 3.0 packs. dist/c17-rounded-27.zip is the 3.1
+pack: the module repository puts each vector master on the canvas of the system
+icon it replaces (one <group> transform per icon, all states of an icon share
+it) and marks it "fit": "canvas". That placement measures the system icons on
+a phone and is not part of this repository; this generator writes the unplaced
+vector pack to build/ and the spec 3.0 PNG backup pack to dist/.
 """
 from __future__ import annotations
 
@@ -544,6 +552,36 @@ BASES.update({"auto_brightness": lambda: sun(True), "auto_color_temperature": te
               "controls": controls, "wallet": wallet})
 
 
+def accessibility():
+    return [circle(12, 4.8, 1.8, fill=True), line((5, 8.5), (19, 8.5)), line((12, 8.5), (12, 14)),
+            line((12, 14), (8.5, 21)), line((12, 14), (15.5, 21))]
+
+
+def captions(off=False):
+    shapes = [rect(3, 5.5, 18, 13, 3), arc(9.2, 12, 2.4, 50, 310, width=1.5), arc(15.6, 12, 2.4, 50, 310, width=1.5)]
+    return shapes + ([slash()] if off else [])
+
+
+def panel_artwork(name: str, state: str):
+    """Volume panel rows (icon management v4): each state is its own native resource; reuse the shared glyphs."""
+    muted = [slash()] if state in ("mute", "bluetooth_mute", "vibrate_mute") else []
+    if name == "media":
+        if state.startswith("bluetooth"): return bluetooth() + muted
+        return speaker(0 if state == "mute" else 3)
+    if name == "ringer":
+        if state.startswith("vibrate"): return vibrate() + muted
+        return tile_artwork("tile.ringer_mode", "silent" if state == "mute" else "ring")
+    if name == "notification": return bell() + muted
+    if name == "alarm": return alarm() + muted
+    if name == "voice": return handset()
+    if name == "bt_sco": return handset() + [circle(19, 5, 2.2, fill=True)] + muted
+    if name == "wired": return headset() + muted
+    if name in ("assistant", "gemini"): return microphone() + ([circle(19, 5, 2.2, fill=True)] if name == "gemini" else []) + muted
+    if name == "accessibility": return accessibility()
+    if name == "captions": return captions(state == "off")
+    raise KeyError("slider.panel_" + name + "." + state)
+
+
 def tile_artwork(target: str, state: str):
     name = target.removeprefix("tile.")
     if name == "ringer_mode":
@@ -580,7 +618,8 @@ def artwork(target: str, state: str):
     if target == "slider.volume.normal": return speaker({"mute": 0, "low": 1, "medium": 2, "high": 3}[state])
     if target == "slider.volume.wired": return headset() + ([slash()] if state == "mute" else [])
     if target == "slider.volume.bluetooth": return bluetooth() + ([slash()] if state == "mute" else [])
-    if target == "slider.brightness": return sun()
+    if target == "slider.brightness": return sun(state == "auto")
+    if target.startswith("slider.panel_"): return panel_artwork(target.removeprefix("slider.panel_"), state)
     if target == "slider.brightness_auto": return sun(True)
     if target.startswith("footer."): return BASES[target.removeprefix("footer.")]()
     if target == "media.play_pause": return {"play": play, "pause": pause}[state]()
@@ -731,6 +770,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=ROOT / "dist")
     parser.add_argument("--copy-to", type=Path, help="optional copy of the generated vector ZIP")
+    parser.add_argument("--unplaced", type=Path, default=ROOT / "build/c17-rounded-27-unplaced.zip",
+                        help="vector ZIP before system-canvas placement (dist/c17-rounded-27.zip is the placed spec 3.1 pack)")
     arguments = parser.parse_args(); output = arguments.output.resolve(); output.mkdir(parents=True, exist_ok=True)
     roles = role_snapshot()
     drawings = {}; missing = []
@@ -764,7 +805,7 @@ def main():
         transitions[target + ".off_to_on"] = {"source": resource, "from": "off", "to": "on", "reversible": False, "sha256": hashlib.sha256(data).hexdigest()}
     base_manifest = {"format": "c17-statusbar-icons", "version": 3, "id": "c17-rounded-27", "name": "C17示例库", "author": "aiingjie", "license": "GPL-3.0-only", "fallback": "native", "transitions": transitions}
     manifest = {**base_manifest, "icons": vector_icons}; png_manifest = {**base_manifest, "id": "c17-rounded-27-png", "name": "C17示例库 · PNG", "icons": png_icons}
-    vector_zip = output / "c17-rounded-27.zip"; png_zip = output / "c17-rounded-27-png.zip"
+    vector_zip = arguments.unplaced.resolve(); vector_zip.parent.mkdir(parents=True, exist_ok=True); png_zip = output / "c17-rounded-27-png.zip"
     write_zip(vector_zip, manifest, vector_resources); write_zip(png_zip, png_manifest, png_resources)
     if arguments.copy_to:
         arguments.copy_to.parent.mkdir(parents=True, exist_ok=True); arguments.copy_to.write_bytes(vector_zip.read_bytes())
@@ -772,13 +813,15 @@ def main():
     validate(vector_zip); validate(png_zip)
     (source_directory / "LICENSE.txt").write_text(LICENSE, "utf-8")
 
-    (output / "manifest-vector.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", "utf-8")
+    (vector_zip.parent / "manifest-vector-unplaced.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", "utf-8")
     (output / "manifest-png.json").write_text(json.dumps(png_manifest, ensure_ascii=False, indent=2) + "\n", "utf-8")
     contact_sheet(roles, drawings, output / "contact-sheet.png")
     report = {"roles": len(roles), "targets": len({row["target"] for row in roles}), "supported_roles": sum(row["supported"] for row in roles), "animations": len(transitions),
-              "vector_bytes": vector_zip.stat().st_size, "png_bytes": png_zip.stat().st_size,
-              "vector_sha256": hashlib.sha256(vector_zip.read_bytes()).hexdigest(), "png_sha256": hashlib.sha256(png_zip.read_bytes()).hexdigest(),
-              "note": "Registered roles only; static/XML/animation admission is not native visual or playback validation."}
+              "unplaced_vector_bytes": vector_zip.stat().st_size, "png_bytes": png_zip.stat().st_size,
+              "unplaced_vector_sha256": hashlib.sha256(vector_zip.read_bytes()).hexdigest(), "png_sha256": hashlib.sha256(png_zip.read_bytes()).hexdigest(),
+              "note": "Registered roles only; the PNG pack and the unplaced vector pack follow spec 3.0 (no fit). "
+                      "dist/c17-rounded-27.zip is the spec 3.1 pack placed on system canvases in the module repository. "
+                      "Static/XML/animation admission is not native visual or playback validation."}
     (output / "report.json").write_text(json.dumps(report, indent=2) + "\n", "utf-8")
     print(json.dumps(report)); print(f"Contact sheet: {output / 'contact-sheet.png'}")
 

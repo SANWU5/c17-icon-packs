@@ -1,5 +1,7 @@
 # v3 制作与验证边界
 
+> 规范 3.1 起，新图标包给每个图标写 `"fit": "canvas"`，整张画布放进系统图标的格子，见[图标包规范 3.1](ICON-PACK-SPEC.zh-CN.md)与[3.1 验证记录](SPEC-3.1-VALIDATION.zh-CN.md)。下文的“可见高度”规则只适用于不写 `fit` 的图标。
+
 schema负责字段提示，Python工具负责有界ZIP预检。Android的`IconManagementManifest/IconManagementArchive/IconAssetDecoder/IconVectorAsset/IconAnimationAsset`及Repository事务仍为最终准入依据。不得把schema或Pillow通过称为Android安全等价、RAR验证、Skia视觉或OEM动画播放通过。
 
 桌面工具验证ZIP中央目录、普通文件类型、数量、路径/大小写冲突、单文件与展开预算；在内存中有界读取，不向任意归档路径解压，不运行包内代码。RAR不在工具能力内。

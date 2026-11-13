@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "C17 图标管理 v3 图标包",
-  "description": "1.8.3-beta.96/code189 测试版；蜂窝双排角色要求code189及以上，beta94/code187与beta95/code188不支持此扩展。包格式仍为v3，旧v3包可导入新版。schema不能替代真实资源与Android生产准入或共用画布绘制验收。",
+  "title": "C17 图标包（manifest v3，规范 3.1）",
+  "description": "图标包规范 3.1（docs/ICON-PACK-SPEC.zh-CN.md）：每个图标画在所替换系统图标的参考画布上并写 \"fit\": \"canvas\"（App302 起识别）；不写 fit 的图标按 3.0 旧规则裁边撑满。蜂窝双排角色要求 beta96/code189 及以上。schema 只做字段提示，不能替代 tools/validate_pack.py、tools/check_spec.py 与模块的实际导入。",
   "type": "object", "additionalProperties": false,
   "required": ["format", "version", "fallback", "id", "name", "license", "icons"],
   "properties": {
@@ -38,7 +38,9 @@
       "type": "object", "additionalProperties": false, "required": ["source"],
       "properties": {
         "source": {"type": "string", "pattern": "^assets/[A-Za-z0-9][A-Za-z0-9_-]{0,95}\\.(png|xml)$"},
-        "render": {"enum": ["mask", "color"], "default": "mask"}, "sha256": {"$ref": "#/$defs/digest"}
+        "render": {"enum": ["mask", "color"], "default": "mask"}, "sha256": {"$ref": "#/$defs/digest"},
+        "fit": {"enum": ["canvas", "visible"], "default": "visible",
+                "description": "canvas：整张画布（含留白）放进系统图标的格子，规范 3.1 要求；visible 或不写：3.0 旧规则，裁到图形边缘再撑满格子。只能写在单个图标上。"}
       }
     },
     "transition": {

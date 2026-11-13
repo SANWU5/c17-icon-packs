@@ -1,24 +1,26 @@
-# C17 图标管理 v3
+# C17 图标包规范 3.1
 
-适用于 **C17 1.8.3-beta.96 / code189 及更新测试版**的图标管理 v3。包格式仍为v3，新增双排蜂窝信号角色；本仓库新版示例含这些角色，**beta94/code187、beta95/code188不能导入**。不含新角色的旧v3包仍可用于新版。可见高度归一、总开关和预览流程始于beta95，双排共用画布规则始于beta96。规范与源码接入不代表手机视觉验收通过。旧v1/v2包不能直接导入。主模块：[c17-statusbar](https://github.com/SANWU5/c17-statusbar)。[历史规范](docs/legacy/README.md)。
+**[图标包规范 3.1](docs/ICON-PACK-SPEC.zh-CN.md)：每个图标画在它所替换的系统图标的画布上，并在清单里给这个图标写 `"fit": "canvas"`。** 模块把整张画布（含留白）原样放进系统图标的格子，图形在画布上画在哪、画多大，手机上就显示在哪、多大。每个角色的参考画布见 [role-canvases.json](docs/icon-spec/role-canvases.json)（214 个角色，131 个为 ColorOS 17 实测）。不写 `fit` 的图标按 3.0 旧规则裁到图形边缘再撑满格子，会比系统图标大，只为兼容旧包保留。
 
-本仓库只收录规范、制作工具和原创资源。没有PUI图案、用户主题、原始OEM APK、反汇编代码、手机截图或用户配置，也不提供旧主题导入功能。
+**版本要求：** `fit` 从模块 **2.1.1_beta.009（code302）** 起识别；更早的版本（包括公开发布的 2.1.0）会拒绝导入含 `fit` 的图标包。清单格式仍为 v3，不写 `fit` 的旧 v3 包照常可用。主模块：[c17-statusbar](https://github.com/SANWU5/c17-statusbar)。[更新记录](CHANGELOG.md) · [历史规范](docs/legacy/README.md)。
+
+本仓库只收录规范、制作工具和原创资源。没有PUI图案、用户主题、原始OEM APK、反汇编代码、手机截图或用户配置，也不提供旧主题导入功能。参考画布表只有角色名、系统资源名和测量出的数字，不含系统图案。
 
 ## C17示例库与操作
 
-- [C17示例库 · XML主包](dist/c17-rounded-27.zip)：189个登记静态角色、3个纯图形短转场声明。
-- [96px PNG备用包](dist/c17-rounded-27-png.zip)：相同原创几何和状态。
-- [浅深色接触表](dist/contact-sheet.png)、[角色快照](roles.json)、[制作报告与SHA-256](dist/report.json)。
+- [C17示例库 · XML主包](dist/c17-rounded-27.zip)：按规范 3.1 制作，214 个静态角色、3 个纯图形短转场。131 个有实测系统画布的角色放在系统画布上并写 `"fit": "canvas"`（其中带转场的 7 个只标记画布、图形不动）；其余 83 个角色没有实测画布，按旧规则不写 `fit`。需要模块 2.1.1_beta.009 或更新版本。[清单](dist/manifest-vector.json)。
+- [96px PNG备用包](dist/c17-rounded-27-png.zip)：相同原创几何和状态，**仍是 3.0 旧规则（不写 `fit`）**，显示会比系统图标大一些；需要 2.1.1_beta.002 或更新版本。
+- [浅深色接触表](dist/contact-sheet.png)、[角色快照](roles.json)、[制作报告与SHA-256](dist/report.json)、[本次验证记录](docs/SPEC-3.1-VALIDATION.zh-CN.md)。
 
 图案由圆、线、圆角矩形及贝塞尔曲线原创制作，没有临摹Apple、SF Symbols、OEM或PUI。支付和助手入口使用原创功能符号，不复制服务商Logo。
 
-**C17示例库是格式与角色制作示例，不是 iOS 27、Apple 或 SF Symbols 原版素材。** 文件路径与包内 `id` 中的 `c17-rounded-27` 是兼容标记，不代表 Apple 版本或素材来源。
+**C17示例库是格式与角色制作示例，不是 iOS 27、Apple 或 SF Symbols 原版素材。** 文件路径与包内 `id` 中的 `c17-rounded-27` 是兼容标记，不代表 Apple 版本或素材来源。这个示例库面向图标包作者，用来参考格式、角色和画布；较新的模块测试版不再内置任何图标库，需要时下载后从文件导入。
 
-App入口为 **其他 → 图标管理**，首页分“选套装”和“自定义”。导入或下载先暂存预览，选择范围并查看缺项后应用；取消暂存不入库、不改效果。高级选项也可“仅加入图标库”，供稍后自定义选取。单个目标可选择系统默认或具体图案，再按需设置颜色、透明度、逐状态与动画。总开关关闭后保留已保存的选择并恢复系统或功能默认图案；关闭时保存选择不会自动启用总开关。删除来源后受影响图案回退，独立颜色和透明度保留。
+App入口为 **其他 → 图标管理**，具体界面以所用模块版本为准。导入或下载先暂存预览，选择范围并查看缺项后应用；取消暂存不入库、不改效果。高级选项也可“仅加入图标库”，供稍后自定义选取。单个目标可选择系统默认或具体图案，再按需设置颜色、透明度、逐状态与动画。总开关关闭后保留已保存的选择并恢复系统或功能默认图案；关闭时保存选择不会自动启用总开关。删除来源后受影响图案回退，独立颜色和透明度保留。
 
-新版管理界面直接显示“状态栏 / 控制中心 / 其他”应用范围，控制中心包含快捷开关、滑块和页脚；只有包内存在图案的范围可选择。“我的套装”直接提供改名和删除，删除前确认受影响的选择。导入时显示名称不能与已入库套装重复，冲突时须手动改名；名称比较去除首尾空白，并忽略大小写及全角/半角兼容差异。同内容包明确提示已入库，可复用已有套装，不重复创建副本。局部改名只修改显示名称，不改变内容身份或原始素材。
+新版管理界面直接显示“状态栏 / 控制中心 / 其他”应用范围，控制中心包含快捷开关、滑块和页脚；只有包内存在图案的范围可选择。已导入的图标库可以改名和删除，删除前确认受影响的选择。导入时显示名称不能与已入库的图标库重复，冲突时须手动改名；名称比较去除首尾空白，并忽略大小写及全角/半角兼容差异。同内容包明确提示已入库，可复用已有图标库，不重复创建副本。局部改名只修改显示名称，不改变内容身份或原始素材。
 
-角色明确“系统默认”优先；其他情况依次尝试明确单项来源、所选范围套装中的同一角色、原生。不借另一档信号、普通电池或另一开关状态。包不改变原生开关、系统隐藏条件、点击、无障碍、位置或布局。
+角色明确“系统默认”优先；其他情况依次尝试明确单项来源、所选范围图标库中的同一角色、原生。不借另一档信号、普通电池或另一开关状态。包不改变原生开关、系统隐藏条件、点击、无障碍、位置或布局。
 
 ## 文件格式
 
@@ -46,8 +48,8 @@ README.md
   "license": "MIT",
   "fallback": "native",
   "icons": {
-    "hint.bluetooth.on": {"source": "assets/bluetooth-on.xml", "render": "mask"},
-    "wifi.4": {"source": "assets/wifi-4.png", "render": "color"}
+    "hint.bluetooth.on": {"source": "assets/bluetooth-on.xml", "render": "mask", "fit": "canvas"},
+    "wifi.4": {"source": "assets/wifi-4.png", "render": "color", "fit": "canvas"}
   },
   "transitions": {}
 }
@@ -55,11 +57,13 @@ README.md
 
 `id`为1–64字符的小写英文/数字/下划线/连字符标记。App按规范化manifest和资源字节计算实际内容身份；改包名不会覆盖旧库。`name`为1–64字符，`author`最多128字符，`license`必填且最多128字符。素材许可不因导入改变。
 
-每项资源使用对象记录。`render=mask`使用源Alpha、跟随宿主实际前景色；`render=color`默认保留原RGB。App可分别设置范围/目标/状态的颜色与透明度；颜色继承与透明度继承独立，显式0透明度也有效。包不携带App颜色偏好或宿主查找代码。可选`sha256`必须为实际资源字节的64位小写摘要；App导入时补齐摘要，Provider、SystemUI与缓存会再次核验。
+每项资源使用对象记录。`fit=canvas`表示整张画布放进系统图标的格子（规范 3.1，例中蓝牙画在 17 × 16、Wi‑Fi 画在 23 × 16 的画布上）；`fit`只能写在单个图标上，写在包顶层会被拒绝。`render=mask`使用源Alpha、跟随宿主实际前景色；`render=color`默认保留原RGB。App可分别设置范围/目标/状态的颜色与透明度；颜色继承与透明度继承独立，显式0透明度也有效。包不携带App颜色偏好或宿主查找代码。可选`sha256`必须为实际资源字节的64位小写摘要；App导入时补齐摘要，Provider、SystemUI与缓存会再次核验。
 
 静态仅支持透明 **PNG** 与受限 **VectorDrawable XML**，拒绝WebP、SVG、APNG、AVD、字体、DEX、APK、脚本和URL。PNG最长边1024且须含真实透明像素；运行时按比例解码至最多256px。XML只接受`vector/group/path/clip-path`及明确Android几何/填充/描边属性；颜色直接写`#AARRGGBB`，禁止DTD、实体、资源/主题引用及外链。外部XML先解析为自有节点模型，不直接inflate成Drawable。
 
-### beta95/code188 的静态可见高度
+### 不写 `fit` 时：3.0 旧规则（可见高度）
+
+以下是不写 `fit`（或写 `"fit": "visible"`）的图标的放法，只为兼容旧包保留；新包请按[规范 3.1](docs/ICON-PACK-SPEC.zh-CN.md)写 `fit`。
 
 后台解码后，以所有 **Alpha > 0** 的真实像素计算可见边界；XML 使用栅格化后的像素。极低 Alpha 的艺术边缘仍计入边界，不按主观阈值裁掉。绘制以原生图形区域的高度为锚点，按可见宽高比等比缩放、居中，超过可用宽度时限宽。透明画布的宽高不再把窄图案再次缩小；不拉伸、不改 OEM View 尺寸，也不改变已有 Canvas 变换。
 
@@ -84,7 +88,7 @@ README.md
 
 ## 角色和真实状态
 
-[roles.json](roles.json)是生产Registry的189角色、91目标快照，包含`hint/wifi/cellular/battery/tile/slider/media/device/footer`。`supported`是该版源码接入状态，不是每台ROM或视觉效果的验收结果。未知但语法安全的角色只可保留为候选，包不能定义原生类、方法、Tile spec或新增宿主。
+[roles.json](roles.json)是生产Registry的214角色、102目标快照（模块 2.1.1_beta.002 起；新增音量面板 `slider.panel_*` 与单张自动亮度 `slider.brightness.auto`，此前为189角色、91目标），包含`hint/wifi/cellular/battery/tile/slider/media/device/footer`。`supported`是该版源码接入状态，不是每台ROM或视觉效果的验收结果。未知但语法安全的角色只可保留为候选，包不能定义原生类、方法、Tile spec或新增宿主。
 
 - 相机/麦克风`.on`为**允许访问**，`.off`为**阻止访问**，不能把“隐私屏蔽开启”画成`.on`。
 - 旋转`.on`为自动旋转、`.off`为旋转锁定。蓝牙磁贴开启不等于耳机已连接。
@@ -103,15 +107,16 @@ README.md
 python -m pip install -r requirements.txt
 python tools/generate_original.py
 python tools/validate_pack.py dist/c17-rounded-27.zip dist/c17-rounded-27-png.zip
+python tools/check_spec.py dist/c17-rounded-27.zip
 python tools/check_validator.py
 ```
 
-生成器读当前角色快照，新增目标缺少绘图函数时直接失败，绝不补通用占位。ZIP顺序、时间、属性固定，同输入可复现。更新快照须从模块生产Registry导出，不手写新宿主规则。
+生成器读当前角色快照，新增目标缺少绘图函数时直接失败，绝不补通用占位。ZIP顺序、时间、属性固定，同输入可复现。它把母版写进`artwork/`、PNG备用包写进`dist/`，未放到系统画布的XML包写进`build/`；`dist/c17-rounded-27.zip`由模块仓库把这些母版逐个放到系统画布（每个图标外加一个`<group>`变换，同一图标各状态共用）后得到，这一步要读取手机上的系统图标测量，不在本仓库。[验证记录](docs/SPEC-3.1-VALIDATION.zh-CN.md)逐个核对了主包里的XML与母版。更新快照须从模块生产Registry导出，不手写新宿主规则。
 
-[schema](manifest.schema.json)仅供字段提示；[验证器](tools/validate_pack.py)还检查严格JSON、真实PNG CRC/Alpha、XML路径、Lottie预算、SHA及静态端点，并附畸形负样例。[验证边界](docs/V3-VALIDATION.zh-CN.md)：**桌面预检不能替代Android严格生产parser、真实事务、RAR JNI、OEM播放或手机视觉验收**。
+[规范检查](tools/check_spec.py)按规范 3.1 检查画布和大小，只用 Python 标准库。[schema](manifest.schema.json)仅供字段提示；[验证器](tools/validate_pack.py)还检查严格JSON、真实PNG CRC/Alpha、XML路径、Lottie预算、SHA及静态端点，并附畸形负样例。[验证边界](docs/V3-VALIDATION.zh-CN.md)：**桌面预检不能替代Android严格生产parser、真实事务、RAR JNI、OEM播放或手机视觉验收**。
 
 ## 许可和发布状态
 
-规范、新桌面验证器与历史教学资源保留[MIT](LICENSE)。**C17示例库图案和生成器为GPL-3.0-only**，源文件及包内已注明，[完整GPL文本](LICENSES/GPL-3.0-only.txt)保留。它们不因放入此仓库改为MIT，第三方素材也保留自身许可。
+规范、参考画布表、桌面验证器与规范检查工具、历史教学资源保留[MIT](LICENSE)。**C17示例库图案和生成器为GPL-3.0-only**，源文件及包内已注明，[完整GPL文本](LICENSES/GPL-3.0-only.txt)保留。它们不因放入此仓库改为MIT，第三方素材也保留自身许可。
 
 本仓库发布制作规范、校验工具与示例；模块版本与手机效果以模块发布说明及实际验收为准。本仓库不接收PUI/OEM原始或转换素材。
